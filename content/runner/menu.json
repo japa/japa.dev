@@ -1,0 +1,122 @@
+[
+  {
+    "name": "root",
+    "categories": [
+      {
+        "name": "root",
+        "docs": [
+          {
+            "title": "Introduction",
+            "permalink": "introduction",
+            "contentPath": "introduction.md"
+          },
+          {
+            "title": "Test Context",
+            "permalink": "test-context",
+            "contentPath": "test-context.md"
+          },
+          {
+            "title": "Testing asynchronous code",
+            "permalink": "testing-async-code",
+            "contentPath": "testing-async-code.md"
+          },
+          {
+            "title": "Underlying Test class",
+            "permalink": "underlying-test-class",
+            "contentPath": "underlying-test-class.md"
+          },
+          {
+            "title": "Lifecycle hooks",
+            "permalink": "lifecycle-hooks",
+            "contentPath": "lifecycle-hooks.md"
+          },
+          {
+            "title": "Grouping tests",
+            "permalink": "grouping-tests",
+            "contentPath": "grouping-tests.md"
+          },
+          {
+            "title": "Datasets",
+            "permalink": "datasets",
+            "contentPath": "datasets.md"
+          },
+          {
+            "title": "Assertion planning",
+            "permalink": "assertion-planning",
+            "contentPath": "assertion-planning.md"
+          },
+          {
+            "title": "Filtering tests",
+            "permalink": "filtering-tests",
+            "contentPath": "filtering-tests.md"
+          },
+          {
+            "title": "Runner config",
+            "permalink": "runner-config",
+            "contentPath": "runner-config.md"
+          },
+          {
+            "title": "Usage with TypeScript",
+            "permalink": "usage-with-typescript",
+            "contentPath": "usage-with-typescript.md"
+          },
+          {
+            "title": "Coverage",
+            "permalink": "coverage",
+            "contentPath": "coverage.md"
+          }
+        ]
+      },
+      {
+        "name": "Plugins",
+        "docs": [
+          {
+            "title": "Spec reporter",
+            "permalink": "plugins/spec-reporter",
+            "contentPath": "plugins/spec-reporter.md"
+          },
+          {
+            "title": "Assert",
+            "permalink": "plugins/assert",
+            "contentPath": "plugins/assert.md"
+          },
+          {
+            "title": "Expect",
+            "permalink": "plugins/expect",
+            "contentPath": "plugins/expect.md"
+          },
+          {
+            "title": "Run failed tests",
+            "permalink": "plugins/run-failed-tests",
+            "contentPath": "plugins/run-failed-tests.md"
+          }
+        ]
+      },
+      {
+        "name": "Extend",
+        "docs": [
+          {
+            "title": "Creating reporters",
+            "permalink": "creating-reporters",
+            "contentPath": "extend/creating-reporters.md"
+          },
+          {
+            "title": "Creating plugins",
+            "permalink": "creating-plugins",
+            "contentPath": "extend/creating-plugins.md"
+          }
+        ]
+      },
+      {
+        "name": "More",
+        "docs": [
+          {
+            "title": "Changelog",
+            "permalink": "changelog",
+            "contentPath": "more/changelog.md"
+          }
+        ]
+      }
+    ]
+  }
+]

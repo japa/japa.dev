@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../fonts/Calibre/stylesheet.css";
+@import "../fonts/polysans/stylesheet.css";
+@import "../fonts/operatorMono/stylesheet.css";
+@import "./markdown.css";
+
+[layout-sidebar] li a.up-current {
+  @apply bg-gray-300 rounded-md text-gray-900;
+}
+
+[layout-header] li a.up-current, [layout-header] li a.persistent-up-current {
+  @apply text-gray-900;
+}

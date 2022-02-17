@@ -1,0 +1,52 @@
+[
+  {
+    "name": "root",
+    "categories": [
+      {
+        "name": "Core",
+        "docs": [
+          {
+            "title": "Introduction",
+            "permalink": "introduction",
+            "contentPath": "introduction.md"
+          },
+          {
+            "title": "Test",
+            "permalink": "test",
+            "contentPath": "test.md"
+          },
+          {
+            "title": "Group",
+            "permalink": "group",
+            "contentPath": "group.md"
+          },
+          {
+            "title": "Suite",
+            "permalink": "suite",
+            "contentPath": "suite.md"
+          },
+          {
+            "title": "Runner",
+            "permalink": "runner",
+            "contentPath": "runner.md"
+          },
+          {
+            "title": "Emitter",
+            "permalink": "emitter",
+            "contentPath": "emitter.md"
+          },
+          {
+            "title": "Refiner",
+            "permalink": "refiner",
+            "contentPath": "refiner.md"
+          },
+          {
+            "title": "Test Context",
+            "permalink": "test-context",
+            "contentPath": "test-context.md"
+          }
+        ]
+      }
+    ]
+  }
+]

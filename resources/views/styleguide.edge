@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japa - Styleguide</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+  </head>
+  <body class="font-display antialiased">
+    <div class="max-w-[70ch] mx-auto px-8">
+      <h1 class="text-6xl font-semibold">AdonisJS UI design system</h1>
+
+      <div class="mt-24">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Typography
+        </h1>
+        <div class="markdown">
+          <h1>The quick brown fox</h1>
+          <h2 class="!mt-0">The quick brown fox</h2>
+          <h3 class="!mt-0">The quick brown fox</h3>
+          <h4>The quick brown fox</h4>
+
+          <p>
+            This is a Paragraph size 1. A really long paragraph of text, to demonstrate prose text,
+            like for example, the kind you might read in a blog post. The
+            <strong>reason we're using</strong> prose here is because the most common use case for
+            this container size is longform text. So we're previewing some longform text here so we
+            can make sure the container width provides an optimal line length for this font size.
+          </p>
+
+          <p>
+            This is a Sup and Sub demo. The kind you might read in a blog post.
+            <sup>1</sup>
+            This is a really long paragraph of text, to demonstrate prose text.
+            <sub>1</sub>
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Text with code
+        </h1>
+        <div class="markdown">
+          <p>
+            There are 5 variants to choose from. Use <code>console.log('Radix').console</code> is
+            for positive states. Traditional business literature won’t help you solve it- most of
+            that stuff is focused on life after product/market fit, after the Trough of Sorrow. A
+            lot of startup stuff is focused on the initial phases, when you don’t have a team, idea,
+            or investors.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-24">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Headings with code
+        </h1>
+        <div class="markdown">
+          <h1>The <code>run</code> method</h1>
+          <h2 class="!mt-0">The <code>configure</code> method</h2>
+          <h3 class="!mt-0">The <code>allows</code> method</h3>
+          <h4>The <code>publicDir</code> method</h4>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Text with links
+        </h1>
+        <div class="markdown">
+          <p>
+            There are 5 variants to choose from. Use <code>console.log('Radix').console</code> is
+            for positive states. <a href="">Traditional business literature</a> won’t help you solve
+            it- most of that stuff is focused on life after product/market fit, after the Trough of
+            Sorrow. <a href="">A lot of startup stuff</a> is focused on the initial phases, when you
+            don’t have a team, idea, or investors.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Alerts
+        </h1>
+        <div class="markdown">
+          <div class="alert alert-note">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                ></path>
+              </svg>
+            </div>
+            <h4>Note</h4>
+            <p>
+              The rest of the documentation assumes basic familiarity with HTML, CSS and JavaScript.
+              If you are totally new to frontend development, it might not be the best idea to jump
+              right into a framework as your first step - grasp the basics then come back! Prior
+              experience with other frameworks helps, but is not required.
+            </p>
+          </div>
+
+          <div class="alert alert-tip">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                ></path>
+              </svg>
+            </div>
+            <h4>Tip</h4>
+            <p>
+              The rest of the documentation assumes basic familiarity with HTML, CSS and JavaScript.
+              If you are totally new to frontend development, it might not be the best idea to jump
+              right into a framework as your first step - grasp the basics then come back! Prior
+              experience with other frameworks helps, but is not required.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Tables
+        </h1>
+        <div class="markdown">
+          <div class="overflow-x-auto lg:ml-[-3rem] lg:mr-[-3rem]">
+            <table>
+              <thead>
+                <tr>
+                  <th><code>.env</code> Value</th>
+                  <th><code>env()</code> Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>true</td>
+                  <td>(bool) true</td>
+                </tr>
+                <tr>
+                  <td>(true)</td>
+                  <td>(bool) true</td>
+                </tr>
+                <tr>
+                  <td>false</td>
+                  <td>(bool) false</td>
+                </tr>
+                <tr>
+                  <td>(false)</td>
+                  <td>(bool) false</td>
+                </tr>
+                <tr>
+                  <td>empty</td>
+                  <td>(string) ''</td>
+                </tr>
+                <tr>
+                  <td>(empty)</td>
+                  <td>(string) ''</td>
+                </tr>
+                <tr>
+                  <td>null</td>
+                  <td>(null) null</td>
+                </tr>
+                <tr>
+                  <td>(null)</td>
+                  <td>(null) null</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Tables with code
+        </h1>
+        <div class="markdown">
+          <div class="overflow-x-auto lg:ml-[-3rem] lg:mr-[-3rem]">
+            @include('styleguide/tables-with-code')
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Table with more content
+        </h1>
+        <div class="markdown">
+          <div class="overflow-x-auto lg:ml-[-3rem] lg:mr-[-3rem]">
+            @include('styleguide/table-with-more-content')
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Undordered Lists
+        </h1>
+        <div class="markdown">
+          <p>When using Vue without a build step, component templates are written either directly in the page's HTML or as inlined JavaScript strings. In such cases, Vue needs to ship the template compiler to the browser in order to perform on-the-fly template compilation. On the other hand, the compiler would be unnecessary if we pre-compile the templates with a build step. To reduce client bundle size, Vue provides <a href="https://unpkg.com/browse/vue@3/dist/" target="_blank" rel="noopener noreferrer">different "builds"</a> optimized for different use cases.</p>
+
+          <ul><li><strong>You have to think up class names all the time</strong> — nothing will slow you down or drain your energy like coming up with a class name for something that doesn’t deserve to be named.</li><li><strong>You have to jump between multiple files to make changes</strong> — which is a way bigger workflow killer than you’d think before co-locating everything together.</li><li><strong>Changing styles is scarier</strong> — CSS is global, are you <em>sure</em> you can change the min-width value in that class without breaking something in another part of the site?</li><li><strong>Your CSS bundle will be bigger</strong> — oof.</li></ul>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Ordered Lists
+        </h1>
+        <div class="markdown">
+          <p>The Vue team maintains <a href="https://github.com/vuejs/eslint-plugin-vue" target="_blank" rel="noopener noreferrer">eslint-plugin-vue</a>, an <a href="https://eslint.org/" target="_blank" rel="noopener noreferrer">ESLint</a> plugin that supports SFC-specific linting rules.</p>
+
+          <p>Users previously using Vue CLI may be used to having linters configured via webpack loaders. However when using a Vite-based build setup, our general recommendation is:</p>
+
+          <ol><li><p><code>npm install -D eslint eslint-plugin-vue</code>, then follow <code>eslint-plugin-vue</code>'s <a href="https://eslint.vuejs.org/user-guide/#usage" target="_blank" rel="noopener noreferrer">configuration guide</a>.</p></li><li><p>Setup ESLint IDE extensions, for example <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="noopener noreferrer">ESLint for VSCode</a>, so you get linter feedback right in your editor during development. This also avoids unnecessary linting cost when starting the dev server.</p></li><li><p>Run ESLint as part of the production build command, so you get full linter feedback before shipping to production.</p></li><li><p>(Optional) Setup tools like <a href="https://github.com/okonet/lint-staged" target="_blank" rel="noopener noreferrer">lint-staged</a> to automatically lint modified files on git commit.</p></li></ol>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Images
+        </h1>
+        <div class="markdown">
+          <figure>
+            <img src="https://res.cloudinary.com/adonis-js/image/upload/v1644228253/japa/inspect-test-context.png" alt="">
+          </figure>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Boxed images
+        </h1>
+        <div class="markdown">
+          <figure class="boxed">
+            <img src="https://res.cloudinary.com/adonis-js/image/upload/v1644228251/japa/Japa-Flow_zmnvyk.png">
+            <figcaption>
+              For example, if we use it on an image with transparent and opaque pixels, the shadow will only apply to the opaque ones:
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Codeblock
+        </h1>
+        <div class="markdown">
+          @include('styleguide/codeblock')
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Codeblock with line highlights
+        </h1>
+        <div class="markdown">
+          @include('styleguide/codeblock-with-line-hightlights')
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Codeblock with diff
+        </h1>
+        <div class="markdown">
+          @include('styleguide/codeblock-with-diff')
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Codeblock with captions
+        </h1>
+        <div class="markdown">
+          <div class="caption caption-error">
+            <div class="icon">
+              <svg width="6" height="6" class="overflow-visible" aria-hidden="true"><path d="M0 0L6 6M6 0L0 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <p>If you've disabled preflight make sure to set the content manually</p>
+          </div>
+          @include('styleguide/codeblock-with-line-hightlights')
+
+          <div class="caption caption-success">
+            <div class="icon">
+              <svg width="6" height="4.5" class="overflow-visible" aria-hidden="true"><path d="M6 0L2 4.5L0 2.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <p>If you've disabled preflight make sure to set the content manually</p>
+          </div>
+          @include('styleguide/codeblock-with-line-hightlights')
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Codegroups
+        </h1>
+        <div class="markdown">
+          @include('styleguide/codeblock-with-tabs')
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h1
+          class="font-semibold text-xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#6366f1] via-[#a855f7] to-[#ec4899]"
+        >
+          Section CTA
+        </h1>
+        <div class="markdown">
+          <a href="cta" class="cta">
+            <span>Query builder documentation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 mt-[4.5px]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

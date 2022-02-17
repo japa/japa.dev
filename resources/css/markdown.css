@@ -1,0 +1,352 @@
+.markdown {
+  @apply text-prose font-body text-gray-800;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Headings
+ * ------------------------------------------------------
+ */
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5 {
+  @apply font-display font-semibold text-gray-900 leading-normal tracking-tight relative scroll-mt-header;
+}
+.markdown h1 {
+  @apply text-5xl mb-5 md:text-prose-6xl;
+}
+.markdown h1 code {
+  @apply text-5xl md:text-prose-6xl;
+}
+.markdown h2 {
+  @apply text-prose-4xl mt-20 mb-3;
+}
+.markdown h2 code {
+  @apply text-prose-4xl;
+}
+.markdown h2 em {
+  @apply text-xl font-mono not-italic font-medium tracking-normal relative top-[-3px];
+}
+.markdown h3 {
+  @apply text-prose-3xl mb-2 mt-12;
+}
+.markdown h3 code {
+  @apply text-prose-3xl;
+}
+.markdown h4 {
+  @apply text-prose-2xl mb-2;
+}
+.markdown h4 code {
+  @apply text-prose-2xl;
+}
+
+/**
+ * Headings bookmark icon
+ */
+.markdown h2 a, .markdown h3 a, .markdown h4 a {
+  @apply text-gray-600 no-underline ml-[-30px] pl-[30px] opacity-0;
+}
+.markdown h2:hover a, .markdown h3:hover a, .markdown h4:hover a {
+  @apply opacity-100;
+}
+.markdown h2 a .icon.icon-link, .markdown h3 a .icon.icon-link, .markdown h4 a .icon.icon-link {
+  @apply bg-no-repeat h-5 w-5 absolute left-[-30px];
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'%3E%3Cpath d='M8.51194 3.00541C9.18829 2.54594 10.0435 2.53694 10.6788 2.95419C10.8231 3.04893 10.9771 3.1993 11.389 3.61119C11.8009 4.02307 11.9513 4.17714 12.046 4.32141C12.4633 4.95675 12.4543 5.81192 11.9948 6.48827C11.8899 6.64264 11.7276 6.80811 11.3006 7.23511L10.6819 7.85383C10.4867 8.04909 10.4867 8.36567 10.6819 8.56093C10.8772 8.7562 11.1938 8.7562 11.389 8.56093L12.0077 7.94221L12.0507 7.89929C12.4203 7.52976 12.6568 7.2933 12.822 7.0502C13.4972 6.05623 13.5321 4.76252 12.8819 3.77248C12.7233 3.53102 12.4922 3.30001 12.1408 2.94871L12.0961 2.90408L12.0515 2.85942C11.7002 2.508 11.4692 2.27689 11.2277 2.11832C10.2377 1.46813 8.94398 1.50299 7.95001 2.17822C7.70691 2.34336 7.47044 2.57991 7.1009 2.94955L7.058 2.99247L6.43928 3.61119C6.24401 3.80645 6.24401 4.12303 6.43928 4.31829C6.63454 4.51355 6.95112 4.51355 7.14638 4.31829L7.7651 3.69957C8.1921 3.27257 8.35757 3.11027 8.51194 3.00541ZM4.31796 7.14672C4.51322 6.95146 4.51322 6.63487 4.31796 6.43961C4.12269 6.24435 3.80611 6.24435 3.61085 6.43961L2.99213 7.05833L2.94922 7.10124C2.57957 7.47077 2.34303 7.70724 2.17788 7.95035C1.50265 8.94432 1.4678 10.238 2.11799 11.2281C2.27656 11.4695 2.50766 11.7005 2.8591 12.0518L2.90374 12.0965L2.94837 12.1411C3.29967 12.4925 3.53068 12.7237 3.77214 12.8822C4.76219 13.5324 6.05589 13.4976 7.04986 12.8223C7.29296 12.6572 7.52943 12.4206 7.89896 12.051L7.89897 12.051L7.94188 12.0081L8.5606 11.3894C8.75586 11.1941 8.75586 10.8775 8.5606 10.6823C8.36533 10.487 8.04875 10.487 7.85349 10.6823L7.23477 11.301C6.80777 11.728 6.6423 11.8903 6.48794 11.9951C5.81158 12.4546 4.95642 12.4636 4.32107 12.0464C4.17681 11.9516 4.02274 11.8012 3.61085 11.3894C3.19896 10.9775 3.0486 10.8234 2.95385 10.6791C2.53661 10.0438 2.54561 9.18863 3.00507 8.51227C3.10993 8.35791 3.27224 8.19244 3.69924 7.76544L4.31796 7.14672ZM9.62172 6.08558C9.81698 5.89032 9.81698 5.57373 9.62172 5.37847C9.42646 5.18321 9.10988 5.18321 8.91461 5.37847L5.37908 8.91401C5.18382 9.10927 5.18382 9.42585 5.37908 9.62111C5.57434 9.81637 5.89092 9.81637 6.08619 9.62111L9.62172 6.08558Z' fill='%2372716d' fill-rule='evenodd' clip-rule='evenodd'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.markdown h2 a .icon.icon-link {
+  @apply mt-[17px];
+}
+.markdown h3 a .icon.icon-link {
+  @apply mt-[10px];
+}
+.markdown h4 a .icon.icon-link {
+  @apply mt-[7px];
+}
+
+/**
+ * ------------------------------------------------------
+ *  Margins for all elements
+ * ------------------------------------------------------
+ */
+.markdown p, .markdown, .markdown figure, .markdown table, .markdown .dimer-highlight, .markdown ul, .markdown ol, .markdown .alert, .markdown .codegroup, .markdown .embed {
+  @apply mb-6;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Table
+ * ------------------------------------------------------
+ */
+.markdown table {
+  @apply min-w-full border-collapse table-auto;
+}
+.markdown table tr th, .markdown table tr td {
+  @apply border border-gray-300 text-left px-3 py-2;
+}
+.markdown table tr th {
+  @apply font-semibold bg-gray-200;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Codeblocks
+ * ------------------------------------------------------
+ */
+.markdown code {
+  @apply text-prose-codeblocks font-mono;
+}
+.markdown :not(pre) > code {
+  @apply text-gray-900 font-medium whitespace-nowrap;
+}
+
+.markdown .dimer-highlight pre {
+  @apply subpixel-antialiased;
+}
+.markdown .dimer-highlight pre code{
+  @apply leading-relaxed text-base;
+}
+
+.markdown .dimer-highlight {
+  @apply relative bg-gray-900 rounded-md py-6 overflow-x-auto;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Codeblocks Highlighted lines
+ * ------------------------------------------------------
+ */
+.markdown .dimer-highlight:hover .line.dim {
+  @apply opacity-100;
+}
+.markdown .dimer-highlight .line {
+  @apply px-8 relative;
+}
+.markdown .dimer-highlight .line.dim {
+  @apply opacity-40 transition-opacity;
+}
+.markdown .dimer-highlight .line.highlight-delete {
+  @apply border-l-4 border-red-500;
+  background-color: rgb(244 63 94/.15);
+}
+.markdown .dimer-highlight .line.highlight-delete:before {
+  @apply text-red-500 absolute font-mono content-['-'] left-[10px];
+}
+.markdown .dimer-highlight .line.highlight-insert {
+  @apply border-l-4 border-green-500;
+  background-color: rgb(45 212 191/.15);
+}
+.markdown .dimer-highlight .line.highlight-insert:before {
+  @apply text-green-500 absolute font-mono left-[10px] content-['+'];
+}
+
+/**
+ * ------------------------------------------------------
+ *  Codeblocks with title
+ * ------------------------------------------------------
+ */
+.markdown .dimer-highlight .codeblock-title {
+  @apply text-gray-300 bg-translucent py-1.5 px-4 rounded-xl inline-block font-mono text-sm font-semibold mb-4 mx-8;
+}
+.markdown .dimer-highlight .ctc-action {
+  @apply absolute right-0 mr-6 text-gray-600 mt-2 hover:text-gray-300 z-20 transition-colors hidden lg:block;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Codegroups
+ * ------------------------------------------------------
+ */
+.markdown .codegroup {
+  @apply relative bg-gray-900 rounded-md overflow-hidden;
+}
+.markdown .codegroup-tabs {
+  @apply flex px-8 scroll-pl-8 relative overflow-x-scroll py-6 -mx-2;
+}
+.markdown .codegroup .dimer-highlight {
+  @apply pt-0 mb-0;
+}
+.markdown .codegroup-tabs .highlighter {
+  @apply absolute bg-translucent z-10 rounded-xl transition-left;
+}
+.markdown .codegroup-tabs a {
+  @apply text-gray-600 rounded-xl font-mono text-sm font-semibold no-underline py-1.5 px-4 whitespace-nowrap relative z-20 transition-colors hover:text-gray-300;
+}
+.markdown .codegroup-tabs a.active {
+  @apply text-gray-300;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Alerts
+ * ------------------------------------------------------
+ */
+.markdown .alert {
+  @apply border-2 rounded-md pr-3 pl-16 py-4 relative;
+}
+.markdown .alert .icon {
+  @apply left-[18px] top-[17px];
+}
+.markdown .alert *:last-child {
+  @apply mb-0;
+}
+.markdown .alert.alert-tip {
+  @apply border-green-500;
+}
+.markdown .alert.alert-tip .icon {
+  @apply absolute bg-green-500 text-white rounded-md px-1 py-1;
+}
+.markdown .alert.alert-note {
+  @apply border-gray-600;
+}
+.markdown .alert.alert-note .icon {
+  @apply absolute bg-gray-600 text-white rounded-md px-1 py-1;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Images
+ * ------------------------------------------------------
+ */
+.markdown figure {
+  @apply max-w-full overflow-hidden min-w-min w-fit;
+}
+.markdown figure.boxed {
+  @apply border-4 border-gray-300 rounded-md flex flex-col items-center;
+}
+.markdown figure.boxed img {
+  @apply px-8 py-8;
+}
+.markdown figure > figcaption {
+  @apply bg-gray-200 border-t border-gray-300 px-4 py-6 text-center text-sm font-display;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Unordered list items
+ * ------------------------------------------------------
+ */
+.markdown ul {
+  @apply ml-6 list-disc;
+}
+.markdown ul li {
+  @apply mb-3 pl-1;
+}
+.markdown ul li::marker {
+  @apply text-brand;
+}
+.markdown ul li ul {
+  @apply mb-0 mt-3 list-circle;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Ordered list items
+ * ------------------------------------------------------
+ */
+.markdown ol {
+  @apply ml-6 list-decimal;
+}
+.markdown ol li {
+  @apply mb-3 pl-2;
+}
+.markdown ol li::marker {
+  @apply text-brand font-medium text-lg;
+}
+.markdown ol li ol {
+  @apply mb-0 mt-3 list-circle;
+}
+
+/**
+ * ------------------------------------------------------
+ *  All other elements
+ * ------------------------------------------------------
+ */
+.markdown a {
+  @apply text-brand underline;
+}
+.markdown strong {
+  @apply font-medium;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Captions
+ * ------------------------------------------------------
+ */
+.markdown .caption {
+  @apply relative pr-3 pl-10 py-3 font-medium;
+}
+.markdown .caption > *:last-child {
+  @apply mb-0;
+}
+.markdown .caption::before {
+  @apply absolute w-px top-[39px] bottom-0 left-[18.5px] content-[''];
+}
+.markdown .caption .icon {
+  @apply absolute left-0 mt-[4.9px] ml-2;
+}
+.markdown .caption-error .icon {
+  @apply bg-red-500 text-white px-2 py-2 rounded-full;
+}
+.markdown .caption-error::before {
+  @apply bg-red-500;
+}
+.markdown .caption-success .icon {
+  @apply bg-green-500 text-white px-2 py-2 rounded-full;
+}
+.markdown .caption-success::before {
+  @apply bg-green-500;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Section CTA
+ * ------------------------------------------------------
+ */
+.markdown .cta {
+  @apply bg-gray-900 text-gray-300 rounded-xl py-3 px-6 text-base font-medium font-display whitespace-nowrap no-underline inline-flex items-center space-x-1 transition-colors hover:bg-gray-900 hover:text-white md:text-left;
+}
+
+/**
+ * ------------------------------------------------------
+ *  Table of contents
+ * ------------------------------------------------------
+ */
+.toc-container {
+  @apply border-l border-gray-300 h-full w-toc overflow-y-auto px-8 py-4 font-body;
+}
+.toc-container h3 {
+  @apply font-display font-semibold my-4;
+}
+.toc-container em {
+  font-style: normal;
+}
+
+.toc-container nav ul a {
+  @apply text-gray-600;
+}
+.toc-container nav ul a.active {
+  @apply text-gray-900;
+}
+.toc-container code {
+  @apply font-body;
+}
+
+/**
+ * Nested list
+ */
+.toc-container nav ul li ul {
+  @apply ml-2 pt-1.5;
+}
+.toc-container nav ul li {
+  @apply py-0.5;
+}
+
+/**
+ * Top-level links
+ */
+.toc-container nav > ul > li {
+  @apply py-1;
+}
+.toc-container nav > ul > li > a, .toc-container nav > ul > li > p > a {
+  @apply font-medium;
+}

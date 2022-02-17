@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Operator Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Operator Mono Book'),
+    url('OperatorMono-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Operator Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Operator Mono Medium'),
+    url('OperatorMono-Medium.woff') format('woff');
+}

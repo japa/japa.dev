@@ -1,0 +1,120 @@
+# Test Context
+
+An instance of [Test Context class](https://github.com/japa/runner/blob/develop/src/Core/index.ts#L12) is shared every Japa test. You can access it as the first argument within the test callback.
+
+:::languageSwitcher
+```ts
+// title: ESM
+import { test } from '@japa/runner'
+
+test('add two numbers', (ctx) => {
+  console.log(ctx)
+})
+```
+
+```ts
+// title: CommonJS
+const { test } = require('@japa/runner')
+
+test('add two numbers', (ctx) => {
+  console.log(ctx)
+})
+```
+:::
+
+![](https://res.cloudinary.com/adonis-js/image/upload/v1644228253/japa/inspect-test-context.png)
+
+The goal of the test context is to share/pass data to the test. For example, the `@japa/assert` package adds the `assert` property to the context and `@japa/expect` package adds the `expect` property to the context.
+
+The context object is isolated between tests, hence you can safely assume that properties/mutations from one test context will not leak to other tests.
+
+## Adding custom properties to the Context
+
+The Test Context is extensible by nature. You can make use of the Macros and Getters to add custom properties to it.
+
+:::note
+You can write the code for extending the context within the `bin/test.js` file, or create a new file and import it inside the `bin/test.js` file.
+:::
+
+### Getters
+
+A getter accepts the property name as the first argument and a callback function that returns the value for the property.
+
+:::languageSwitcher
+```ts
+// title: ESM
+import { TestContext } from '@japa/runner'
+
+TestContext.getter('foo', function () {
+  return { foo: true }
+})
+```
+
+```ts
+// title: CommonJS
+const { TestContext } = require('@japa/runner')
+
+TestContext.getter('foo', function () {
+  return { foo: true }
+})
+```
+:::
+
+By default, the callback is called every time the property is accessed. However, you can also create singleton getters by passing a third argument.
+
+```ts
+TestContext.getter('foo', function () {
+  return { foo: true }
+}, true) // 👈 singleton
+```
+
+You can access the test context instance within the callback using `this`.
+
+```ts
+TestContext.getter('foo', function () {
+  console.log(this instanceof TestContext) // true
+})
+```
+
+### Macros
+
+A macro also accepts the property name as the first argument, followed by the value. The value can be a literal or a function. For example:
+
+```ts
+TestContext.macro('getTime', function () {
+  return new Date().getTime()
+})
+
+TestContext.macro('nodeVersion', process.version)
+```
+
+```ts
+// Access as a function
+ctx.getTime()
+
+// Access as a property
+ctx.nodeVersion
+```
+
+
+### Usage with TypeScript
+
+Since getters and macros are added at runtime, you must inform the TypeScript compiler about these new properties separately. 
+
+You can make use of [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) to define these properties at a static level.
+
+Create a new file, `bin/japaTypes.ts`, and paste the following code inside it.
+
+```ts
+declare module '@japa/runner' {
+    
+  // Interface must match the class name
+  interface TestContext {
+    getTime(): number
+    nodeVersion: string
+    foo: { foo: boolean }
+  }
+
+}
+```
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japa - Styleguide</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="font-display antialiased bg-gray-200 text-gray-900">
+    <div>
+    <div class="w-sidebar hidden lg:block">
+      <aside class="fixed top-0 bottom-0 left-0">
+        <div class="w-sidebar h-full">
+          <header class="flex h-header items-center px-10">
+            @include('partials/logo')
+          </header>
+
+          <div class="overflow-y-auto py-8 h-screen-wo-header">
+            <div class="px-8">
+              <div>
+                <input
+                  type=""
+                  name=""
+                  placeholder="Quick search"
+                  class="border border-gray-300 px-4 py-1.5 rounded-md w-full placeholder:text-gray-600"
+                >
+              </div>
+            </div>
+
+            <div class="px-10 mt-12">
+              <div>
+                <h3 class="text-gray-900 text-xl font-semibold">
+                  Fundamentals
+                </h3>
+
+                <div class="mb-8">
+                  <ul class="pt-2">
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        Application
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        Config
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        AdonisRC file
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-900 px-4 bg-gray-300 rounded-md">
+                        Environment variables
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        TypeScript build process
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        Deployment
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="block px-4 -ml-4 py-1.5 text-gray-600 px-4">
+                        Async local storage
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  HTTP
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  Validator
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  Database
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  ORM
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  Auth
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+
+              <div>
+                <h3 class="text-gray-600 text-xl font-semibold">
+                  Security
+                </h3>
+                <div class="mb-8 h-0">
+                  <ul class="pt-2">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="bg-white min-h-screen lg:shadow-xl lg:ml-sidebar">
+      <header class="h-header border-b border-gray-300 flex items-center lg:justify-end px-8">
+        <div class="lg:px-8">
+          <a href="" class="lg:hidden">
+            @include('partials/logo')
+          </a>
+          <nav class="hidden lg:block">
+            <ul class="flex space-x-8">
+              <li><a href="" class="text-gray-600"> Guides </a></li>
+              <li><a href="" class="text-gray-600"> API reference </a></li>
+              <li><a href="" class="text-gray-600"> Cookbooks </a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="border-l border-gray-300 px-8 leading-0 flex items-center space-x-4">
+          <button class="hidden lg:block">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="stroke-gray-600"></path><path d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836" class="stroke-gray-600"></path></svg>
+          </button>
+          <a href="" class="text-gray-600 hidden lg:block">
+            <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          </a>
+        </div>
+      </header>
+
+      <main class="flex px-8">
+        <div class="max-w-[65ch] w-full mx-auto py-20">
+          @include('partials/sample-doc')
+        </div>
+
+        <div class="w-toc">
+          <div class="fixed right-0 top-0 bottom-0 mt-header hidden">
+            <div class="toc-container">
+              @include('partials/toc')
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="px-8 pb-12 lg:mr-toc">
+        <div class="bg-gray-200 rounded-md px-8 py-8 lg:px-20 lg:py-12">
+          <div class="flex flex-col flex-wrap justify-between">
+            <div class="mb-8 lg:mb-0">
+              <h3 class="font-semibold text-sm"> Resources </h3>
+              <ul class="mt-3 lg:mt-4 font-body text-lg">
+                <li><a href="" class="text-gray-600"> Polls app </a></li>
+                <li><a href="" class="text-gray-600"> Jokes app </a></li>
+                <li><a href="" class="text-gray-600"> Community packages </a></li>
+                <li><a href=""  class="text-gray-600"> Jagr screencasts </a></li>
+              </ul>
+            </div>
+
+            <div class="mb-8 lg:mb-0">
+              <h3 class="font-semibold text-sm"> About </h3>
+              <ul class="mt-3 lg:mt-4 font-body text-lg">
+                <li><a href="" class="text-gray-600"> Newsletter </a></li>
+                <li><a href="" class="text-gray-600"> Roadmap </a></li>
+                <li><a href="" class="text-gray-600"> Releases </a></li>
+                <li><a href="" class="text-gray-600"> Branding guidelines </a></li>
+              </ul>
+            </div>
+
+            <div class="mb-8 lg:mb-0">
+              <h3 class="font-semibold text-sm"> Help / Social </h3>
+              <ul class="mt-3 lg:mt-4 font-body text-lg">
+                <li><a href=""  class="text-gray-600"> Discord </a></li>
+                <li><a href=""  class="text-gray-600"> Forum </a></li>
+                <li><a href=""  class="text-gray-600"> Github </a></li>
+                <li><a href=""  class="text-gray-600"> Twitter </a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-sm"> Sponsors </h3>
+              <ul class="mt-3 lg:mt-4 font-body text-lg">
+                <li><a href=""  class="text-gray-600"> Cleavr </a></li>
+                <li><a href=""  class="text-gray-600"> Ably </a></li>
+                <li><a href=""  class="text-gray-600"> FOSS </a></li>
+                <li><a href=""  class="text-gray-600"> Cavai </a></li>
+                <li><a href=""  class="text-gray-600"> Become a sponsor </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>

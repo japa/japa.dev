@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japa</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="font-display antialiased bg-gray-200 text-gray-900">
+    {{{ await $slots.main() }}}
+  </body>
+</html>

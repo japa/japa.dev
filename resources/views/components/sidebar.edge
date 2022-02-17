@@ -1,0 +1,21 @@
+<div class="w-sidebar" layout-sidebar>
+  <aside class="fixed top-0 bottom-0 left-0">
+    <div class="w-sidebar h-full">
+      <header class="flex h-header items-center px-10">
+        @!logo()
+      </header>
+
+      <div class="mt-8 h-screen-wo-header flex flex-col">
+        <div class="px-8">
+          @!search()
+        </div>
+
+        <div class="px-10 mt-8 pb-12 overflow-y-auto h-full">
+          <nav>
+            {{{ await $slots.main() }}}
+          </nav>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>

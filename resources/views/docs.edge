@@ -1,0 +1,75 @@
+@layouts.doc()
+  @sidebar()
+    @each((groups, name) in zones)
+      @if(name === doc.zone)
+        @each(group in groups)
+          @each(category in group.categories)
+            @!sidebar.section({
+              title: category.name,
+              links: category.docs.map((categoryDoc) => {
+                return {
+                  href: categoryDoc.url,
+                  title: categoryDoc.title,
+                  active: doc.url === categoryDoc.url
+                }
+              }),
+            })
+          @end
+        @end
+      @end
+    @end
+  @end
+
+  @main()
+    <div>
+      <div class="h-header">
+        <header class="h-header border-b border-gray-300 flex items-center px-8 fixed top-0 right-0 left-0 ml-sidebar bg-white z-10 justify-end" layout-header>
+          <nav class="pr-12">
+            <ul class="flex space-x-8 items-center">
+              @each((groups, name) in zones)
+                <li>
+                  <a
+                    up-target="body"
+                    href="{{ groups[0].landingDoc.url }}"
+                    class="text-gray-600 {{ doc.zone === name ? 'persistent-up-current' : '' }}"
+                  >
+                    {{ name }}
+                  </a>
+                </li>
+              @end
+              <li>
+                <a href="https://github.com/japa/core" class="text-gray-600">
+                  Github
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+
+      <main class="flex px-8" up-main layout-main>
+        <div class="max-w-[65ch] w-full mx-auto py-20">
+          @if(file.messages.length && app.env.get('NODE_ENV') !== 'production')
+            {{ inspect(file.messages.map((message) => `${message.name} - ${message.reason}`)) }}
+          @end
+
+          <div class="markdown">
+            @dimerTree(file.ast.children)~
+          </div>
+        </div>
+        <div class="w-toc">
+          <div class="fixed right-0 top-0 bottom-0 mt-header" x-data="urlHashWatcher">
+            @if(file.toc)
+              <div class="toc-container">
+                <h3> On this page </h3>
+                <nav>
+                  @dimerTree([file.toc])~
+                </nav>
+              </div>
+            @end
+          </div>
+        </div>
+      </main>
+    </div>
+  @end
+@end

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Median.woff2') format('woff2'),
+        url('PolySans-Median.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Neutral.woff2') format('woff2'),
+        url('PolySans-Neutral.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
