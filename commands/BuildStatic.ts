@@ -40,7 +40,7 @@ export default class BuildStatic extends BaseCommand {
    */
   private async generateHtmlFile(doc: ProcessedDoc) {
     const Content = (await import('App/Services/Content')).default
-    const filePath = `${doc.url}.html`
+    const filePath = `${doc.url === '/' ? 'index' : doc.url}.html`
 
     const { html, error } = await Content.render(doc.url)
     if (error) {

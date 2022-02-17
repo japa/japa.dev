@@ -7,7 +7,7 @@
         "docs": [
           {
             "title": "Introduction",
-            "permalink": "introduction",
+            "permalink": "/",
             "contentPath": "introduction.md"
           },
           {
