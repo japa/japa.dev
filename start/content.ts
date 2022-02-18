@@ -11,6 +11,14 @@
 import { Renderer } from '@dimerapp/edge'
 import Content from 'App/Services/Content'
 import { zones, codeBlocksTheme } from 'Config/markdown'
+import View from '@ioc:Adonis/Core/View'
+
+View.global('icon', (filePath: string) => {
+  return View.GLOBALS.asset(`assets/icons/${filePath}`)
+})
+View.global('social', (filePath: string) => {
+  return View.GLOBALS.asset(`assets/social-images/${filePath}`)
+})
 
 /**
  * Renderer makes the markdown AST and convert them to HTML by processing

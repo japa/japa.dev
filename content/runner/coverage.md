@@ -1,3 +1,9 @@
+---
+title: Coverage
+description: Use existing tools like nyc and c8 to collect coverage metrics for Japa tests.
+ogImage: coverage.jpeg
+---
+
 # Coverage
 
 Japa does not need any special treatment to collect the code coverage metrics. You can rely on the existing tools like [nyc](https://www.npmjs.com/package/nyc) and [c8](https://github.com/bcoe/c8) for the same.

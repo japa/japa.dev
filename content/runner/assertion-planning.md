@@ -1,7 +1,13 @@
-# Assertion planning
-Assertion planning is a technique to eliminate tests with **false-positive** outcome.
+---
+title: Assertion planning
+description: Plan assertions to eliminate false-positive tests
+ogImage: assertion-planning.jpeg
+---
 
-In the following test, we are expecting the `someOperation` method to raise an exception. However, our test will be green if no exception is ever raised. 
+# Assertion planning
+Assertion planning is a technique to eliminate tests with **false-positive** outcomes.
+
+We expect the `someOperation` method to raise an exception in the following test. However, our test will still be green if no exception is ever raised. 
 
 This is a classic case of a **false-positive** test, as the assertion block is never executed.
 
@@ -15,9 +21,9 @@ test('a false-positive test', async ({ assert }) => {
 })
 ```
 
-To prevent this behavior, you can make use of **assertion planning**. Now, in the following example, we are telling the assert module to expect exactly one assertion (using `assert.plan(1)` method) by the end of the test.
+To prevent this behavior, you can use **assertion planning**. In the following example, we tell the assert module to expect exactly one assertion (using the `assert.plan(1)` method) by the end of the test.
 
-If no assertions were made (meaning, the `someOperation` method didn't raise any exception), then mark the test as failed.
+If no assertions were made (meaning, the `someOperation` method didn't raise an exception), mark the test as failed.
 
 ```ts
 test('a false-positive test', async ({ assert }) => {
@@ -48,7 +54,7 @@ test('a false-positive test', async ({ assert }) => {
 })
 ```
 
-If less or more assertions are made, then it will make the test fail with the following error message.
+If fewer or more assertions are made, then it will make the test fail with the following error message.
 
 ![](https://res.cloudinary.com/adonis-js/image/upload/v1645072583/japa/chai-assertion-planning_cn8hps.png)
 
@@ -67,6 +73,6 @@ test('a false-positive test', async ({ expect }) => {
 })
 ```
 
-If less or more assertions are made, then it will make the test fail with the following error message.
+If fewer or more assertions are made, then it will make the test fail with the following error message.
 
 ![](https://res.cloudinary.com/adonis-js/image/upload/v1645072584/japa/expect-assertion-planning_kzelvc.png)

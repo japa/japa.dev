@@ -1,8 +1,14 @@
+---
+title: Underlying Test class
+description: Explore available test methods to configure the test further.
+ogImage: underlying-test-class.jpeg
+---
+
 # Underlying Test class
 
-Tests created using the `test` method are instances of the [Test class](https://github.com/japa/core/tree/develop/src/Test/index.ts). You can invoke the available class methods to further configure the test.
+Tests created using the `test` method are instances of the [Test class](https://github.com/japa/core/tree/develop/src/Test/index.ts). You can invoke the available class methods to configure the test further.
 
-In this guide, we will go through all the methods and properties available on the test class.
+This guide will go through all the methods and properties available in the test class.
 
 ## skip
 
@@ -168,7 +174,7 @@ Define the dataset for the test. The dataset must be an array, and we will execu
 :::note
 We recommend using the `run` method instead of passing the callback as the 2nd argument. 
 
-The `run` method called after the `with` method has added benefit of type safety in TypeScript projects.
+The `run` method called after the `with` method has added the benefit of type safety in TypeScript projects.
 :::
 
 ```ts
@@ -265,10 +271,10 @@ test('add two numbers', (ctx) => {
 
 ## Extending Test class
 
-The Test class is extensible by nature. You can make use of the Macros and Getters to add custom properties to it.
+The Test class is extensible by nature. You can use the Macros and Getters to add custom properties to it.
 
 :::note
-You can write the code for extending the Test class within the `bin/test.js` file, or create a new file and import it inside the `bin/test.js` file.
+You can write the code for extending the Test class within the `bin/test.js` file or create a new file and import it inside the `bin/test.js` file.
 :::
 
 ### About getters and macros
@@ -303,7 +309,7 @@ Since getters and macros are added at runtime, you must inform the TypeScript co
 
 You can make use of [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation) to define these properties at a static level.
 
-Create a new file, `japaTypes.ts`, and paste the following code inside it.
+Create a new file, `bin/japaTypes.ts`, and paste the following code inside it.
 
 ```ts
 declare module '@japa/runner' {

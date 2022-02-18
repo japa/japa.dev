@@ -1,3 +1,9 @@
+---
+title: Creating plugins
+description: Japa plugins can mutate config, extend the test class, add context properties, define hooks, and does a lot more.
+ogImage: creating-plugins.jpeg
+---
+
 # Creating plugins
 
 Plugins in Japa are meant to extend the tests runner. You can use plugins to **mutate config**, **extend the test class**, **add context properties**, **define hooks** and a lot more.

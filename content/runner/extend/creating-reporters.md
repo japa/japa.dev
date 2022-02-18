@@ -1,6 +1,12 @@
+---
+title: Creating reporters
+description: Create a reporter to observe tests progress and display it on the terminal or write it to a file.
+ogImage: creating-reporters.jpeg
+---
+
 # Creating reporters
 
-Reporters are used to displaying/saving the progress of tests as they are executed. For example, the [@japa/spec-reporter](https://github.com/japa/spec-reporter) shows the progress of tests in the terminal.
+Reporters are used to display/save the progress of tests as they are executed. For example, the [@japa/spec-reporter](https://github.com/japa/spec-reporter) shows the progress of tests in the terminal.
 
 In this guide, we will learn how to create and use custom reporters with Japa.
 

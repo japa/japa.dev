@@ -1,3 +1,9 @@
+---
+title: Grouping tests
+description: Use groups to define lifecycle hooks and bulk configure tests
+ogImage: grouping-tests.jpeg
+---
+
 # Grouping tests
 
 You can create a group of tests using the `test.group` method. It accepts the **group title** as the first argument and a **callback function** to define tests within the group's scope.
@@ -26,7 +32,7 @@ test.group('Maths.add', (group) => {
 ```
 :::
 
-An instance of the [Group class](https://github.com/japa/core/blob/develop/src/Group/index.ts) is given to the callback as the first argument. You can access it to configure the group or tests within the group.
+The callback is given an instance of the [Group class](https://github.com/japa/core/blob/develop/src/Group/index.ts) as the first argument. You can access it to configure the group or tests within the group.
 
 In the following example, we define a timeout for all the tests using the `group.each.timeout` method.
 

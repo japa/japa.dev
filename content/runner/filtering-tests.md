@@ -1,8 +1,14 @@
+---
+title: Filtering tests
+description: Apply different filtering layers to cherry-pick and run specific tests
+ogImage: filtering-tests.jpeg
+---
+
 # Filtering tests
 
 You can apply different layers of filters to run only specific tests. Japa supports **pinning tests**, filtering by the **test title**, **group title**, **file names**, and **test tags**.
 
-Before diving into the filtering layers, let's make sure that your test config file uses the `processCliArgs` to convert command line arguments into configuration options.
+Before diving into the filtering layers, let's ensure that your test config file uses the `processCliArgs` to convert command line arguments into configuration options.
 
 :::languageSwitcher
 ```ts

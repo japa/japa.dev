@@ -1,15 +1,20 @@
+---
+title: Japa - A feature rich testing framework for Node.js
+description: Japa is an API first testing framework. It focuses only on testing Node.js (backend) applications, thus resulting in a fast, small, and a simple tests runner.
+ogImage: introduction.jpeg
+---
+
 # Introduction
 
-Japa is an API first testing framework. It focuses only on testing Node.js (backend) applications, thus resulting in a fast, small, and a simple tests runner.
+Japa is an API-first testing framework. It focuses only on testing Node.js (backend) applications, thus resulting in a fast, small, and simple tests runner.
 
-In this guide, we will go through the Japa features and also learn about the rationale behind the project.
+In this guide, we will go through the Japa features and learn about the rationale behind the project.
 
 ## Features
-Despite being a small and a simple tests runner. Japa has a ton of features you expect from a testing framework. It includes:
+Despite being a small and a simple tests runner, Japa has a ton of features you expect from a great testing framework. It includes:
 
-- Support for [test groups](./grouping-tests.md), timeout, todo and [regression tests](./underlying-test-class.md#fails).
+- Support for [test groups](./grouping-tests.md), timeout, todo tests and [regression tests](./underlying-test-class.md#fails).
 - Support for [Datasets](./datasets.md).
-- Support for test suites.
 - Assertion libraries with support for [assertion planning](./assertion-planning.md).
 - Ability to [filter](./filtering-tests.md) and run specific or only failing tests.
 - Re-imagined [lifecycle hooks](./lifecycle-hooks.md).
@@ -18,13 +23,24 @@ Despite being a small and a simple tests runner. Japa has a ton of features you 
 - Works with **ESM** and [TypeScript](./usage-with-typescript.md) both with zero additional setup.
 
 ## Why Japa?
-There are many testing frameworks available in the JavaScript ecosystem. However, a majority of them are heavily influenced by the frontend ecosystem or we can say they are frontend first.
+There are many testing frameworks available in the JavaScript ecosystem. So let's explore what makes Japa different.
 
-On the other hand Japa is only meant to work with Node.js to test backend applications like a web app or a CLI tool. 
+### Node only
+Most mainstream testing frameworks in JavaScript are heavily influenced by the frontend ecosystem, or we can say they are frontend first.
 
-This laser focus today allows to produce a relatively simpler codebase and also **grow the ecosystem around the needs of backend testing**.
+Even though JavaScript can run almost everywhere, the needs and approaches of different ecosystems do vary. For example:
 
-> If you want to test your Node.js backend application, then give Japa a try. You will ❤️ it.
+- Jest, process all of your source files through the `@jest/transform` package, which uses `babel-jest` internally by default. Also, you can register additional transformers for TypeScript, Vue, and so on.
+- Similarly, Vitest uses Vite under the hood for code transformation.
+
+The code transformation layer is not at all required when writing backend applications for Node.js. **So why pay the penalty of doing so?**
+
+Also, much community effort goes into creating plugins/extensions required by frontend applications. Whereas with Japa, we focus on **growing the ecosystem around the needs of backend testing**.
+
+To conclude, I am not saying Jest or Vitest are technically inferior. It's just Node.js deserves its own first-class testing experience.
+
+### Extensible
+Japa is extensible to its core. Not only you can create **plugins** and **reporters** for Japa, you can also extend the [Test](./underlying-test-class.md), [TestContext](./test-context.md), and [Group](./grouping-tests.md) classes to add additional behavior.
 
 ## Installation
 
@@ -88,4 +104,4 @@ This is how it works under the hood.
 2. First, the `configure` method is called to configure the tests runner.
 3. Then the `run` method is called, which uses the configuration options and runs all the tests accordingly.
 
-Since, the execution of tests is not abstracted behind a CLI. You can simply open the `bin/test.js` file and make any customizations you want.
+Since the execution of tests is not abstracted behind a CLI. You can open the `bin/test.js` file and make any customizations you want.

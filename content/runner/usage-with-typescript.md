@@ -1,3 +1,9 @@
+---
+title: Usage with TypeScript
+description: Use Japa inside a TypeScript project with any additional Japa specific build tools 
+ogImage: usage-with-typescript.jpeg
+---
+
 # Usage with TypeScript
 
 Since Japa does not have any CLI, you do not have to rely on us to add explicit support for TypeScript. Instead, you can use your existing tooling to run Japa tests within a TypeScript project.

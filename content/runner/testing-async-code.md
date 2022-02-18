@@ -1,19 +1,33 @@
+---
+title: Testing asynchronous code
+description: Japa has first class support for testing asynchronous workflows including Promises, events, callbacks and streams.
+ogImage: async-code.jpeg
+---
+
 # Testing asynchronous code
 
 Japa has first class support for testing asynchronous workflows including **Promises**, **events**, **callbacks** and **streams**.
 
-In this guide, we will learn how to mark a test as completed and also explore multiple ways to convert different common async workflows to promises.
+In this guide, we will learn how to test asynchronous code and explore various techniques to convert common async workflows to promises.
 
 ## async/await and Promises
-Writing tests that uses promises or async/await is the preferred and recommended approach. As soon as the test callback is finished, Japa will mark the test as passed. The test will be marked as failed in case of an error.
+Writing tests that use promises or async/await is the recommended approach. As soon as the test callback is finished, Japa will mark the test as passed. Likewise, the test will be marked as failed in case of an error.
 
 ```ts
 test('verify email address', async () => {
+  // await promise
   await validateEmail(email)
 })
 ```
 
-## Using the done callback
+```ts
+test('verify email address', async () => {
+  // Return promise
+  return validateEmail(email)
+})
+```
+
+## Using the `done` callback
 
 If your test code relies on the **event emitter**, **callbacks**, or **timeouts**, then you can instruct Japa to wait for an explicit call to the `done` method.
 
@@ -55,7 +69,7 @@ test('make redis connection', async (ctx, done) => {
 
 ## Strategies to use async/await most of the time
 
-Even though you can write tests that rely on callbacks or events, we highly recommend you to prefer `async/await` over any other async API. The `async/await` code reads linearly and is easy to reason about. 
+Even though you can write tests that rely on callbacks or events, we highly recommend you prefer `async/await` over any other async API. The `async/await` code reads linearly and is easy to reason. 
 
 Let us share some of the ways you can use to convert callbacks, events, or timeouts to promises.
 
@@ -106,7 +120,7 @@ test('generate pdf', async (ctx) => {
 
 ### Converting setTimeout to promise
 
-Most of the time, you use `setTimeout` to sleep between operations. Therefore, you can create a dedicated sleep method that resolves the following promise.
+Most of the time, you use `setTimeout` to sleep between operations. Therefore, you can create a dedicated sleep method that resolves the promise after the timeout.
 
 ```ts
 const sleep = (time) => {

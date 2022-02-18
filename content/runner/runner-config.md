@@ -1,6 +1,12 @@
+---
+title: Runner config
+description: Reference to the configuration options accepted by the Japa runner
+ogImage: runner-config.jpeg
+---
+
 # Runner config
 
-The `configure` method call configures the tests runner within the `bin/test.js` file. The method accepts an object of configuration values. 
+The `configure` method configures the tests runner within the `bin/test.js` file. The method accepts an object of configuration values. 
 
 You can either hardcode all the values or compute them dynamically. In the following example, we use the `processCliArgs` method to process the command-line flags and merge them with a handwritten object.
 
@@ -82,7 +88,7 @@ You can also implement a custom function to collect test files. The function mus
 
 ## plugins *(optional)*
 
-The `plugins` property allows you to register multiple plugins. Every plugin is represented as a function and called at the time of running the tests.
+The `plugins` property allows you to register multiple plugins. Every plugin is represented as a function and called when running the tests.
 
 ```ts
 configure({
@@ -126,7 +132,7 @@ configure({
 
 ## filters *(optional)*
 
-The `filters` property accepts an object of different filtering layers to cherry pick and run specific tests.
+The `filters` property accepts an object of different filtering layers to cherry-pick and run specific tests.
 
 ```ts
 configure({

@@ -1,3 +1,9 @@
+---
+title: Assert
+description: Assertion plugin built on top of Chai.js assert package.
+ogImage: assert-plugin.jpeg
+---
+
 # Assert
 
 The Assert plugin of Japa is built on top of [Chai.js assert](https://www.chaijs.com/api/assert/) package. However, it is not an exact copy of chai, and therefore we recommend you to consult the API documented in this guide.
@@ -22,7 +28,7 @@ import { configure, processCliArgs } from '@japa/runner'
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.js']
+    files: ['tests/**/*.spec.js'],
     // highlight-start
     plugins: [assert()]
     // highlight-end
@@ -40,7 +46,7 @@ const { configure, processCliArgs } = require('@japa/runner')
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.js']
+    files: ['tests/**/*.spec.js'],
     // highlight-start
     plugins: [assert()]
     // highlight-end

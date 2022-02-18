@@ -1,3 +1,8 @@
+---
+title: Spec reporter
+description: View detailed progress of tests in the terminal.
+---
+
 # Spec reporter
 
 Reporters in Japa are responsible for displaying/saving the progress of tests. The spec reporter displays a detailed report of all the tests in the terminal.

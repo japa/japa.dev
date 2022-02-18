@@ -1,3 +1,9 @@
+---
+title: Expect
+description: Wrapper for Jest expect.
+ogImage: expect-plugin.jpeg
+---
+
 # Expect
 
 The `@japa/expect` plugin is a wrapper on top of [jest-expect](https://jestjs.io/docs/expect). Please read the Jest documentation to view the methods available on the `expect` object.
@@ -22,7 +28,7 @@ import { configure, processCliArgs } from '@japa/runner'
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.js']
+    files: ['tests/**/*.spec.js'],
     // highlight-start
     plugins: [expect()]
     // highlight-end
@@ -40,7 +46,7 @@ const { configure, processCliArgs } = require('@japa/runner')
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.js']
+    files: ['tests/**/*.spec.js'],
     // highlight-start
     plugins: [expect()]
     // highlight-end

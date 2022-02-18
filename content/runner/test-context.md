@@ -1,6 +1,12 @@
+---
+title: Test Context
+description: Test Context in Japa is used to share/pass data to the test. Context can be extended to add custom properties as well.
+ogImage: test-context.jpeg
+---
+
 # Test Context
 
-An instance of [Test Context class](https://github.com/japa/runner/blob/develop/src/Core/index.ts#L12) is shared every Japa test. You can access it as the first argument within the test callback.
+An instance of [Test Context class](https://github.com/japa/runner/blob/develop/src/Core/index.ts#L12) is shared every Japa test. Therefore, you can access it as the first argument within the test callback.
 
 :::languageSwitcher
 ```ts
@@ -24,16 +30,16 @@ test('add two numbers', (ctx) => {
 
 ![](https://res.cloudinary.com/adonis-js/image/upload/v1644228253/japa/inspect-test-context.png)
 
-The goal of the test context is to share/pass data to the test. For example, the `@japa/assert` package adds the `assert` property to the context and `@japa/expect` package adds the `expect` property to the context.
+The goal of the test context is to share/pass data to the test. So, for example, the `@japa/assert` package adds the `assert` property to the context, and the `@japa/expect` package adds the `expect` property.
 
-The context object is isolated between tests, hence you can safely assume that properties/mutations from one test context will not leak to other tests.
+The context object is isolated between tests; hence you can safely assume that properties/mutations from one test context will not leak to other tests.
 
 ## Adding custom properties to the Context
 
-The Test Context is extensible by nature. You can make use of the Macros and Getters to add custom properties to it.
+The Test Context is extensible by nature. You can use the Macros and Getters to add custom properties to it.
 
 :::note
-You can write the code for extending the context within the `bin/test.js` file, or create a new file and import it inside the `bin/test.js` file.
+You can write the code for extending the context within the `bin/test.js` file or create a new file and import it inside the `bin/test.js` file.
 :::
 
 ### Getters

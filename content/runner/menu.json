@@ -108,12 +108,12 @@
         ]
       },
       {
-        "name": "More",
+        "name": "Releases",
         "docs": [
           {
-            "title": "Changelog",
-            "permalink": "changelog",
-            "contentPath": "more/changelog.md"
+            "title": "Version 5",
+            "permalink": "releases/version-5",
+            "contentPath": "releases/version-5.md"
           }
         ]
       }
