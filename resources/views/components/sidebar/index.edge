@@ -1,5 +1,19 @@
-<div class="w-sidebar" layout-sidebar>
-  <aside class="fixed top-0 bottom-0 left-0">
+<div
+  class="w-sidebar"
+  layout-sidebar
+  x-data="{ visible: false }"
+  @toogle-sidebar.window="visible = !visible"
+>
+  <div
+    class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] invisible lg:hidden"
+    :class="{ '!visible': visible }"
+    @click="visible = false"
+  ></div>
+
+  <aside
+    class="fixed top-0 bottom-0 left-0 bg-gray-200 sidebar z-50"
+    :class="{ 'visible': visible }"
+  >
     <div class="w-sidebar h-full">
       <header class="flex h-header items-center px-10">
         <a href="/">
@@ -7,12 +21,8 @@
         </a>
       </header>
 
-      <div class="mt-8 h-screen-wo-header flex flex-col">
-        <div class="px-8">
-          @include('partials/search')
-        </div>
-
-        <div class="px-10 mt-8 pb-12 overflow-y-auto h-full">
+      <div class="h-screen-wo-header flex flex-col mt-4 lg:mt-8">
+        <div class="px-10 pb-12 overflow-y-auto h-full">
           <nav>
             {{{ await $slots.main() }}}
           </nav>

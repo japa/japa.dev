@@ -11,7 +11,7 @@
   @apply font-display font-semibold text-gray-900 leading-normal tracking-tight relative scroll-mt-header;
 }
 .markdown h1 {
-  @apply text-5xl mb-5 md:text-prose-6xl;
+  @apply text-5xl mb-5 md:text-prose-6xl hidden lg:block;
 }
 .markdown h1 code {
   @apply text-5xl md:text-prose-6xl;
