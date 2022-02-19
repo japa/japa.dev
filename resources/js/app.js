@@ -2,6 +2,7 @@ import '../css/app.css'
 import 'lazysizes'
 import 'unpoly'
 import Alpine from 'alpinejs'
+import { listen } from 'quicklink'
 import persist from '@alpinejs/persist'
 
 Alpine.plugin(persist)
@@ -53,6 +54,16 @@ Alpine.data('urlHashWatcher', function () {
 
       window.addEventListener('hashchange', () => {
         this.findActiveLink(anchors)
+      })
+    },
+  }
+})
+
+Alpine.data('prefetch', function () {
+  return {
+    init() {
+      listen({
+        el: this.$el,
       })
     },
   }

@@ -24,7 +24,7 @@
 
       <div class="h-screen-wo-header flex flex-col mt-4 lg:mt-8">
         <div class="px-10 pb-12 overflow-y-auto h-full">
-          <nav>
+          <nav x-data="prefetch">
             {{{ await $slots.main() }}}
           </nav>
         </div>

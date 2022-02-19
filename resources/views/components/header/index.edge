@@ -62,7 +62,7 @@
 
     <nav class="px-8 h-full hidden lg:block">
       <div class="flex items-center h-full">
-        <ul class="flex items-center space-x-8 w-[65ch] mx-auto">
+        <ul class="flex items-center space-x-8 w-[65ch] mx-auto" x-data="prefetch">
           @each(link in links)
             <li>
               <a
