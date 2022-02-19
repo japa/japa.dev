@@ -1,0 +1,25 @@
+<div class="h-header">
+  <header
+    class="h-header border-b border-gray-300 flex items-center px-8 fixed top-0 right-0 left-0 ml-sidebar bg-white z-10 justify-end"
+    layout-header
+  >
+    <nav class="pr-12">
+      <ul class="flex space-x-8 items-center">
+        @each(link in links)
+          <li>
+            <a
+              up-target="body"
+              up-preload
+              href="{{ link.url }}"
+              class="text-gray-600 hover:text-gray-900 {{
+                link.active ? 'persistent-up-current' : ''
+              }}"
+            >
+              {{ link.title }}
+            </a>
+          </li>
+        @end
+      </ul>
+    </nav>
+  </header>
+</div>

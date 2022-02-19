@@ -1,12 +1,14 @@
 @set('isCta', node.properties.className && node.properties.className.includes('cta'))
+@set('isExternal', node.properties.href.startsWith('http'))
+@set('classes', (node.properties.className || []).join(' '))
+
 <a
   href="{{ node.properties.href }}"
-  {{ node.properties.href.startsWith('http') ? 'target="_blank" rel="noopener"' : '' }}
-  {{ node.properties.className ? `class=${node.properties.className.join('')}` : '' }}
-><span>
+  class="{{ classes }}"
+  {{ isExternal ? 'target="_blank" rel="noopener"' : '' }}><span>
 @dimerTree(node.children)~
 </span>
 @if(isCta)~
-<svg xmlns="http://www.w3.org/2000/svg" class="h-4 mt-[3.5px]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+@!icons.arrow()
 @end~
 </a>

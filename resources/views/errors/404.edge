@@ -1,1 +1,28 @@
-<h2>404</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @include('partials/icons')
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+  </head>
+  <body class="font-display antialiased bg-gray-200 text-gray-900">
+    <section class="flex flex-col items-center justify-center min-h-screen max-w-6xl mx-auto">
+      <div>
+        <img src="{{ image('squirrel.png') }}" class="w-64">
+      </div>
+      <div>
+        <p class="text-lg"><strong>404</strong>. No thoughts or opinions here.</p>
+      </div>
+      <div class="mt-8">
+        <a
+          href="/"
+          class="bg-white shadow-lg py-3 px-8 border border-gray-100 text-gray-600 rounded-md inline-block font-semibold"
+        >
+          Go Back Home
+        </a>
+      </div>
+    </section>
+  </body>
+</html>

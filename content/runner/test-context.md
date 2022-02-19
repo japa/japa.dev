@@ -28,7 +28,7 @@ test('add two numbers', (ctx) => {
 ```
 :::
 
-![](https://res.cloudinary.com/adonis-js/image/upload/v1644228253/japa/inspect-test-context.png)
+![](inspect-test-context.png)
 
 The goal of the test context is to share/pass data to the test. So, for example, the `@japa/assert` package adds the `assert` property to the context, and the `@japa/expect` package adds the `expect` property.
 

@@ -10,11 +10,16 @@ Alpine.store('languageSwitcher', {
   value: Alpine.$persist(1),
 })
 
-Alpine.data('languageSwitcher', function () {
+Alpine.data('codegroup', function (store) {
   return {
-    moveTo(index, event) {
-      this.$store.languageSwitcher.value = index
-      event.preventDefault()
+    store: store,
+    activeTab: store ? this.$store[store].value : 0,
+
+    moveTo(index) {
+      this.activeTab = index
+      if (this.store) {
+        this.$store[this.store].value = index
+      }
     },
 
     changeTab(index) {
@@ -26,7 +31,7 @@ Alpine.data('languageSwitcher', function () {
     },
 
     init() {
-      this.changeTab(this.$store.languageSwitcher.value)
+      this.changeTab(this.store ? this.$store[this.store].value : 0)
     },
   }
 })

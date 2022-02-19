@@ -62,8 +62,8 @@ Encore.copyFiles({
   to: './icons/[path][name].[ext]',
 })
 Encore.copyFiles({
-  from: './resources/social-images',
-  to: './social-images/[path][name].[ext]',
+  from: './resources/images',
+  to: './images/[path][name].[ext]',
 })
 
 /*

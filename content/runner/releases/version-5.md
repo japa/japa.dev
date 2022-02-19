@@ -1,6 +1,7 @@
 ---
 title: Upgrade to version 5
 description: Upgrade your existing Japa test suites to v5 in under 10mins.
+ogImage: version-5.jpeg
 ---
 
 # Version 5.0

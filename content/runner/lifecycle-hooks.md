@@ -169,9 +169,9 @@ Allow me to answer this question in the following screencast by making a small c
 
 ## Test flow with hooks
 
-:img{src="https://res.cloudinary.com/adonis-js/image/upload/v1644228251/japa/Japa-Flow_zmnvyk.png" boxed="true"}
+:img{src="test-flow.png" class="boxed"}
 
 
 ## Group flow with hooks
 
-:img{src="https://res.cloudinary.com/adonis-js/image/upload/v1644228251/japa/Japa-Flow_Group_elt0rd.png" boxed="true"}
+:img{src="group-flow.png" class="boxed"}

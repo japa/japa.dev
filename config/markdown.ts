@@ -38,7 +38,7 @@ export const zones = [
   {
     title: 'Runner',
     baseUrl: '/',
-    template: 'docs',
+    template: 'templates/docs',
     contentPath: './content/runner',
     menu: Runner,
     caption: 'Use Japa runner to test your applications',
@@ -46,7 +46,7 @@ export const zones = [
   {
     title: 'Core',
     baseUrl: '/core',
-    template: 'docs',
+    template: 'templates/docs',
     contentPath: './content/core',
     menu: Core,
     caption: 'Use Japa core to create your own tests runner',

@@ -13,6 +13,7 @@ module.exports = {
         500: '#fb7185',
       },
       gray: {
+        100: '#C1BFB9',
         200: '#f8f7f6',
         300: '#e7e5e0',
         600: '#72716d',
@@ -42,6 +43,7 @@ module.exports = {
       },
       boxShadow: {
         xl: '0px 8px 32px rgba(0, 0, 0, 0.08);',
+        lg: '0px 2px 4px rgba(44, 43, 42, 0.1)',
       },
       transitionProperty: {
         left: 'left',

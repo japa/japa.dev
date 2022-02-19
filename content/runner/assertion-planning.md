@@ -56,7 +56,7 @@ test('a false-positive test', async ({ assert }) => {
 
 If fewer or more assertions are made, then it will make the test fail with the following error message.
 
-![](https://res.cloudinary.com/adonis-js/image/upload/v1645072583/japa/chai-assertion-planning_cn8hps.png)
+![](chai-assertion-planning.png)
 
 ## Assertion planning with `@japa/expect`
 The `@japa/expect` plugin uses the Jest expect [expect.assertions](https://jestjs.io/docs/expect#expectassertionsnumber) method.
@@ -75,4 +75,4 @@ test('a false-positive test', async ({ expect }) => {
 
 If fewer or more assertions are made, then it will make the test fail with the following error message.
 
-![](https://res.cloudinary.com/adonis-js/image/upload/v1645072584/japa/expect-assertion-planning_kzelvc.png)
+![](expect-assertion-planning.png)

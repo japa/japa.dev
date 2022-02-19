@@ -1,24 +1,27 @@
 @set('tabs', JSON.parse(node.properties.dataTabs))
+@set('alpineStore', node.properties.alpineStore)
+@set('alpineValueRef', alpineStore ? '$store.languageSwitcher.value' : 'activeTab')
 
-<div x-data="{{ node.properties.component }}()" class="codegroup">
+<div
+  x-data="codegroup({{ alpineStore ? `'${alpineStore}'` : undefined }})"
+  class="codegroup"
+>
   <div class="codegroup-tabs">
     @each((tab, index) in tabs)
       <a
         href="#"
-        @click.prevent="moveTo({{ index }}, event)"
         x-ref="tab-{{ index }}"
-        x-effect="changeTab($store.languageSwitcher.value)"
-        :class="{ active: {{ index }} === $store.languageSwitcher.value }"
-      >
-        {{ tab }}
-      </a>
+        x-effect="changeTab({{ alpineValueRef }})"
+        :class="{ active: {{ index }} === {{ alpineValueRef }} }"
+        @click.prevent="moveTo({{ index }})"
+      > {{ tab }} </a>
     @end
     <div x-ref="highlighter" class="highlighter"></div>
   </div>
 
   <div>
     @each((child, index) in node.children)
-      <div x-show="$store.languageSwitcher.value === {{ index }}">
+      <div x-show="{{ alpineValueRef }} === {{ index }}">
         @set(child.properties, 'dataTitle', null)
         @dimerTree([child])~
       </div>

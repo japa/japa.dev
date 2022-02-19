@@ -1,0 +1,28 @@
+@layouts.doc()
+  @sidebar()
+    @each(group in groups)
+      @each(category in group.categories)
+        @!sidebar.section({
+          title: category.name,
+          links: category.docs
+        })
+      @end
+    @end
+  @end
+
+  <section class="bg-white min-h-screen lg:shadow-xl lg:ml-sidebar">
+    @!header({
+      links: Object.keys(zones).map((name) => {
+        return {
+          title: name,
+          url: zones[name][0].landingDoc.url,
+          active: doc.zone === name
+        }
+      }).concat([{ url: 'https://github.com/japa/core', title: 'Github' }])
+    })
+    <main class="flex px-8" up-main layout-main>
+      @include('partials/markdown')
+      @include('partials/toc')
+    </main>
+  </section>
+@end

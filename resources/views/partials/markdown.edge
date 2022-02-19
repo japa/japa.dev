@@ -1,0 +1,8 @@
+<div class="max-w-[65ch] w-full mx-auto py-20">
+  @if(file.messages.length && app.env.get('NODE_ENV') !== 'production')
+    {{ inspect(file.messages.map((message) => `${message.name} - ${message.reason}`)) }}
+  @end
+  <div class="markdown">
+    @dimerTree(file.ast.children)~
+  </div>
+</div>

@@ -21,15 +21,12 @@
 import Content from 'App/Services/Content'
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/404', () => '404')
-Route.get('/styleguide', async ({ view }) => {
-  return view.render('styleguide')
-})
+Route.on('404').render('errors/404')
+Route.on('styleguide').render('styleguide')
 
-Route.get('/layout', async ({ view }) => {
-  return view.render('layout')
-})
-
+/**
+ * Handled by content module
+ */
 Route.get('*', async ({ request, response }) => {
   const { html, error } = await Content.render(request.url())
 

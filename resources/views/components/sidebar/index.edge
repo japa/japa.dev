@@ -3,13 +3,13 @@
     <div class="w-sidebar h-full">
       <header class="flex h-header items-center px-10">
         <a href="/">
-          @!logo()
+          @include('partials/logo')
         </a>
       </header>
 
       <div class="mt-8 h-screen-wo-header flex flex-col">
         <div class="px-8">
-          @!search()
+          @include('partials/search')
         </div>
 
         <div class="px-10 mt-8 pb-12 overflow-y-auto h-full">

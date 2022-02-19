@@ -8,10 +8,11 @@
       @each(link in links)
         <li>
           <a
-            href="{{ link.href }}"
+            href="{{ link.url }}"
             up-preload
+            up-focus="false"
             up-target="[layout-main]"
-            class="block px-4 -ml-4 py-1.5 px-4 text-gray-600 {{ link.active ? 'up-current' : '' }} hover:text-gray-900"
+            class="block px-4 -ml-4 py-1.5 px-4 text-gray-600 hover:text-gray-900"
           >
             {{ link.title }}
           </a>

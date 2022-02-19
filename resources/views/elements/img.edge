@@ -1,10 +1,11 @@
-<figure class="{{ node.properties.boxed ? 'boxed' : '' }}">
-  <img
-    data-src="{{ node.properties.src }}"
-    alt="{{ node.properties.alt }}"
-    class="lazyload"
-    {{ node.properties.width ? `width=${node.properties.width}` : ''  }}
-  >
+@set('classes', (node.properties.className || []).join(' '))
+@set(
+  'src',
+  node.properties.src.startsWith('http') ? node.properties.src : image(node.properties.src)
+)
+
+<figure class="{{ classes }}">
+  <img data-src="{{ src }}" alt="{{ node.properties.alt }}" class="lazyload">
   @if(node.properties.alt)
     <figcaption>{{ node.properties.alt }}</figcaption>
   @endif
