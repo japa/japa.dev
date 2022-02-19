@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  lang="en"
+  x-data="{ disableScroll: false }"
+  @show-sidebar.window="disableScroll = true"
+  @hide-sidebar.window="disableScroll = false"
+  @show-header.window="disableScroll = true"
+  @hide-header.window="disableScroll = false"
+  :class="{ 'overflow-hidden': disableScroll }"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +17,7 @@
     @entryPointStyles('app')
     @entryPointScripts('app')
   </head>
-  <body class="font-display antialiased bg-gray-200 text-gray-900">
+  <body class="font-display antialiased bg-gray-200 text-gray-900" :class="{ 'overflow-hidden': disableScroll }">
     {{{ await $slots.main() }}}
   </body>
 </html>

@@ -2,12 +2,13 @@
   class="w-sidebar"
   layout-sidebar
   x-data="{ visible: false }"
-  @toogle-sidebar.window="visible = !visible"
+  @show-sidebar.window="visible = true"
+  @hide-sidebar.window="visible = false"
 >
   <div
-    class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] invisible lg:hidden"
-    :class="{ '!visible': visible }"
-    @click="visible = false"
+    class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] hidden lg:hidden"
+    :class="{ '!block': visible }"
+    @click="$dispatch('hide-sidebar')"
   ></div>
 
   <aside

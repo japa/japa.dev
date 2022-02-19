@@ -4,22 +4,59 @@
     layout-header
   >
     <div
-      class="flex items-center h-full px-8 justify-between h-header border-b border-gray-300 lg:hidden"
+      class="px-8 h-header border-b border-gray-300 lg:hidden"
     >
-      <div class="flex items-center space-x-3">
-        <button x-data="{}" class="text-gray-600" @click="$dispatch('toogle-sidebar')">
-          <svg width="24" height="24"><path d="M5 6h14M5 12h14M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
-        </button>
+      <div class="flex items-center h-full justify-between">
+        <div class="flex items-center space-x-3">
+          <button class="text-gray-600" x-data="{}" @click="$dispatch('show-sidebar')">
+            <svg width="24" height="24"><path d="M5 6h14M5 12h14M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          </button>
 
-        <a href="/">
-          @include('partials/logo')
-        </a>
+          <a href="/">
+            @include('partials/logo')
+          </a>
+        </div>
+
+        <div class="flex items-center">
+          <button class="text-gray-600" x-data="{}" @click="$dispatch('show-header')">
+            <svg width="24" height="24" fill="none" aria-hidden="true"><path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+        </div>
       </div>
 
-      <div class="flex items-center space-x-2">
-        <button class="text-gray-600">
-          <svg width="24" height="24" fill="none" aria-hidden="true"><path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        </button>
+      <div
+        x-data="{ visible: false }"
+        @show-header.window="visible = true"
+        @hide-header.window="visible = false"
+      >
+        <div
+          class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] hidden lg:hidden"
+          :class="{ '!block': visible }"
+          @click="$dispatch('hide-header')"
+        ></div>
+
+        <div
+          class="bg-white absolute px-6 py-6 shadow-xl top-0 right-0 mt-10 mr-10 w-1/2 z-50 rounded-md hidden lg:hidden"
+          :class="{ '!block': visible }"
+        >
+          <ul>
+            @each(link in links)
+              <li class="py-1">
+                <a
+                  up-target="body"
+                  up-preload
+                  href="{{ link.url }}"
+                  @click="$dispatch('hide-header')"
+                  class="text-gray-600 text-lg hover:text-gray-900 {{
+                    link.active ? 'persistent-up-current' : ''
+                  }}"
+                >
+                  {{ link.title }}
+                </a>
+              </li>
+            @end
+          </ul>
+        </div>
       </div>
     </div>
 
