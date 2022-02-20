@@ -112,31 +112,23 @@ executed after all the test
 ```
 
 ## Cleanup functions
-
 Japa allows you to return cleanup functions from your hooks. The sole purpose of a cleanup function is to clear the state created by the hook.
 
-In the following example, we use the `setup` hook to create a browser instance and assign it to the test context.
-
-Also, we return a cleanup function that Japa will call after the test to close the browser.
+For example: If you create database tables inside the `setup` hook, then you can use the cleanup function to delete those tables.
 
 :::languageSwitcher
 ```ts
 // title: ESM
 import { test } from '@japa/runner'
-import { chromium } from 'playwright'
 
-test.group('Maths.add', (group) => {
-  group.each.setup(async (t) => {
-    t.context.browser = await chromium.launch()
-
-    //👇 Cleanup function
-    return async () => {
-      await t.context.browser.close()
-    } 
+test.group('Users.create', (group) => {
+  group.each.setup(async () => {
+    await createTables()
+    // 👇 Cleanup function
+    return async () => await dropTables()
   })
 
-  test('visit google.com', ({ browser }) => {
-    // use browser
+  test('create a new user', () => {
   })
 })
 ```
@@ -144,28 +136,24 @@ test.group('Maths.add', (group) => {
 ```ts
 // title: CommonJS
 const { test } = require('@japa/runner')
-const { chromium } = require('playwright')
 
-test.group('Maths.add', (group) => {
-  group.each.setup(async (t) => {
-    t.context.browser = await chromium.launch()
-
-    //👇 Cleanup function
-    return async () => {
-      await t.context.browser.close()
-    } 
+test.group('Users.create', (group) => {
+  group.each.setup(async () => {
+    await createTables()
+    // 👇 Cleanup function
+    return async () => await dropTables()
   })
 
-  test('visit google.com', ({ browser }) => {
-    // use browser
+  test('create a new user', () => {
   })
 })
 ```
 :::
 
-**Wait, shouldn't I be using the teardown hook to close the browser?**
+**Wait, shouldn't I be using the `teardown` hook to drop tables?**
+If you are coming from other testing frameworks, then you might be used to of using `afterEach` or `teardown` hooks for cleaning up the state.
 
-Allow me to answer this question in the following screencast by making a small comparison between Jest and Japa lifecycle hooks.
+However, the `teardown`
 
 ## Test flow with hooks
 

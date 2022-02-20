@@ -40,7 +40,7 @@ Also, much community effort goes into creating plugins/extensions required by fr
 To conclude, I am not saying Jest or Vitest are technically inferior. It's just Node.js deserves its own first-class testing experience.
 
 ### Extensible
-Japa is extensible to its core. Not only you can create **plugins** and **reporters** for Japa, you can also extend the [Test](./underlying-test-class.md), [TestContext](./test-context.md), and [Group](./grouping-tests.md) classes to add additional behavior.
+Japa is extensible to its core. Not only you can create **plugins** and **reporters** for Japa, you can also extend the [Test](./underlying-test-class.md#extending-test-class), [TestContext](./test-context.md#adding-custom-properties-to-the-context), and [Group](./grouping-tests.md) classes to add additional behavior.
 
 ## Installation
 
