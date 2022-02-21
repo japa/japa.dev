@@ -22,7 +22,6 @@ import Content from 'App/Services/Content'
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.on('404').render('errors/404')
-Route.on('styleguide').render('styleguide')
 
 /**
  * Handled by content module
