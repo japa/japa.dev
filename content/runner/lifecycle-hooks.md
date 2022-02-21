@@ -114,7 +114,7 @@ executed after all the test
 ## Cleanup functions
 Japa allows you to return cleanup functions from your hooks. The sole purpose of a cleanup function is to clear the state created by the hook.
 
-For example: If you create database tables inside the `setup` hook, then you can use the cleanup function to delete those tables.
+For example, if you create database tables inside the `setup` hook, you can use the cleanup function to delete those tables.
 
 :::languageSwitcher
 ```ts
@@ -150,10 +150,55 @@ test.group('Users.create', (group) => {
 ```
 :::
 
-**Wait, shouldn't I be using the `teardown` hook to drop tables?**
-If you are coming from other testing frameworks, then you might be used to of using `afterEach` or `teardown` hooks for cleaning up the state.
+**Wait, shouldn't I use the `teardown` hook to drop tables?**\
+Teardown hooks in Japa are meant to run standalone functions after a test. Whereas the `cleanup` functions are intended to clean up the state created by the setup function.
 
-However, the `teardown`
+In the following example, the first hook raises an exception, and as a result, the second hook is never executed.
+
+Since there is no way for Japa to know which teardown hook belongs to which setup hook, it will run all of them, and also, the teardown will fail because we are trying to call the `close` method on **undefined variable `browser`**.
+
+```ts
+test.group('Users.create', (group) => {
+  let browser = null
+
+  group.each.setup(async () => {
+    throw new Error('This hook failed due to some reason')
+  })
+
+  group.each.setup(async () => {
+    browser = await chromium.launch()
+  })
+
+  group.each.teardown(async () => {
+    browser.close()
+  })
+
+  test('create a new user', () => {
+  })
+})
+```
+
+Now, let's rewrite the same code using the cleanup function. However, since the second hook is never executed, it does not return any cleanup function, and hence we do not attempt to close the browser.
+
+```ts
+test.group('Users.create', (group) => {
+  let browser = null
+
+  group.each.setup(async () => {
+    throw new Error('This hook failed due to some reason')
+  })
+
+  group.each.setup(async () => {
+    browser = await chromium.launch()
+    return () => browser.close()
+  })
+
+  test('create a new user', () => {
+  })
+})
+```
+
+As a general principle, you should always use cleanup functions when destroying the state created by the setup hook.
 
 ## Test flow with hooks
 
