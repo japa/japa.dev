@@ -52,7 +52,7 @@ npm init japa
 
 The installation process prompts you to configure the tests runner with additional packages.
 
-- **Assertion library** - Select between [@japa/assert]() or [@japa/expect]().
+- **Assertion library** - Select between [@japa/assert](./plugins/assert.md) or [@japa/expect](./plugins/expect.md).
 - **Tests reporter** - Select the reporter to display/store the tests progress.
 
 ## Writing the first test

@@ -41,7 +41,7 @@ configure({
 :::
 
 ## Creating a plugin
-Plugins are executed very early in the lifecycle of running the tests. They receive the user-defined config, the [runner]() instance, and an object of extensible classes.
+Plugins are executed very early in the lifecycle of running the tests. They receive the user-defined config, the [runner](../../core/runner.md) instance, and an object of extensible classes.
 
 Also, plugins are executed in the same order they are defined.
 
@@ -127,4 +127,4 @@ function myCustomPlugin() {
 }
 ```
 
-Please reference the [Test context]() and [Test]() documentation to learn more about Macros and Getters.
+Please reference the [Test context](../../core/test-context.md) and [Test](../../core//test.md) documentation to learn more about Macros and Getters.
