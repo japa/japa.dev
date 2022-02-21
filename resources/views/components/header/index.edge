@@ -1,6 +1,6 @@
 <div class="h-header lg:h-header">
   <header
-    class="h-header fixed top-0 right-0 left-0 z-40 bg-white border-b border-gray-300 lg:ml-sidebar"
+    class="h-header fixed top-0 right-0 left-0 z-40 bg-white border-b border-gray-300 lg:ml-sidebar-small xl:ml-sidebar"
     layout-header
   >
     <div
@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <nav class="px-8 h-full hidden lg:block">
+    <nav class="px-8 h-full hidden lg:block lg:px-12">
       <div class="flex items-center h-full">
         <ul class="flex items-center space-x-8 w-[65ch] mx-auto" x-data="prefetch">
           @each(link in links)

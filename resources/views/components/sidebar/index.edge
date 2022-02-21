@@ -1,5 +1,5 @@
 <div
-  class="w-sidebar"
+  class="w-sidebar-small xl:w-sidebar"
   layout-sidebar
   x-data="{ visible: false }"
   @show-sidebar.window="visible = true"
@@ -15,7 +15,7 @@
     class="fixed top-0 bottom-0 left-0 bg-gray-200 sidebar z-50"
     :class="{ 'visible': visible }"
   >
-    <div class="w-sidebar h-full">
+    <div class="w-sidebar-small xl:w-sidebar h-full">
       <header class="flex h-header items-center px-10">
         <a href="/">
           @include('partials/logo')

@@ -34,9 +34,10 @@ module.exports = {
         circle: 'circle',
       },
       spacing: {
-        sidebar: '322px',
-        header: '4rem',
-        toc: '280px',
+        'sidebar': '322px',
+        'sidebar-small': '280px',
+        'header': '4rem',
+        'toc': '280px',
       },
       height: {
         'screen-wo-header': 'calc(100% - 4rem)',

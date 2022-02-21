@@ -10,7 +10,7 @@
     @end
   @end
 
-  <section class="bg-white min-h-screen lg:shadow-xl lg:ml-sidebar relative">
+  <section class="bg-white min-h-screen lg:shadow-xl lg:ml-sidebar-small xl:ml-sidebar relative">
     @!header({
       links: Object.keys(zones).map((name) => {
         return {
@@ -20,7 +20,7 @@
         }
       }).concat([{ url: 'https://github.com/japa/runner', title: 'Github' }])
     })
-    <main class="flex px-8" up-main layout-main>
+    <main class="flex px-8 lg:px-12" up-main layout-main>
       @include('partials/markdown')
       @include('partials/toc')
     </main>
