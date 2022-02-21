@@ -1,8 +1,19 @@
-<div class="max-w-[65ch] w-full mx-auto py-8 lg:py-20">
+<div class="max-w-[65ch] w-full mx-auto py-8 lg:pt-20 lg:pb-12">
   @if(file.messages.length && app.env.get('NODE_ENV') !== 'production')
     {{ inspect(file.messages.map((message) => `${message.name} - ${message.reason}`)) }}
   @end
   <div class="markdown">
     @dimerTree(file.ast.children)~
+  </div>
+
+  {{ inspect(doc.path) }}
+
+  <div class="flex justify-between items-center border-t border-gray-300 mt-20 pt-8">
+    <div class="text-gray-600">
+      Brought to you by <a href="https://adonisjs.com" target="_blank" class="hover:underline"> AdonisJS </a>
+    </div>
+    <div class="text-gray-600">
+      <a href="{{ filePathToUrl(doc.path) }}" class="hover:underline"> Edit this page on Github </a>
+    </div>
   </div>
 </div>
