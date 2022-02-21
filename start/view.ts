@@ -19,6 +19,6 @@ View.global('image', (filePath: string) => {
 })
 
 View.global('filePathToUrl', (filePath: string) => {
-  const [, contentPath] = filePath.split('japa.dev/')
-  return `https://github.com/japa/japa.dev/tree/develop/${contentPath}`
+  const [, contentPath] = filePath.split('content/')
+  return `https://github.com/japa/japa.dev/tree/develop/content/${contentPath}`
 })
