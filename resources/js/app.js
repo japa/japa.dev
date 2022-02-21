@@ -8,7 +8,7 @@ import persist from '@alpinejs/persist'
 Alpine.plugin(persist)
 
 Alpine.store('languageSwitcher', {
-  value: Alpine.$persist(1),
+  value: Alpine.$persist(0),
 })
 
 Alpine.data('codegroup', function (store) {
