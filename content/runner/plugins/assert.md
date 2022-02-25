@@ -1160,6 +1160,22 @@ assert.notContainsSubset(
 | `needle` | `any` |
 | `message?` | `string` |
 
+## oneOf
+Assert the value is available in the provided list. This method only works with literal values. 
+
+- See [containsSubset](#containssubset) matching objects and arrays.
+
+```ts
+assert.oneOf('foo', ['foo', 'bar', 'baz']) // passes
+assert.oneOf('foo', ['bar', 'baz']) // fails
+```
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `any` |
+| `collection` | `any[]` |
+| `message?` | `string` |
+
 ## sealed/isSealed
 Assert the object is sealed.
 
