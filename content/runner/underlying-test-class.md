@@ -201,7 +201,7 @@ test('validate email')
 
 ## setup
 
-Define the setup hook for the test. [Learn more about hooks]().
+Define the setup hook for the test. [Learn more about hooks](./lifecycle-hooks.md).
 
 ```ts
 test('add two numbers', () => {

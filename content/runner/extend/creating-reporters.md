@@ -42,7 +42,7 @@ configure({
 :::
 
 ## Creating a reporter
-The reporter implementation is a JavaScript function that receives the [runner instance]() as the first argument and the [emitter instance]() as the second argument.
+The reporter implementation is a JavaScript function that receives the [runner instance](../../core/runner.md) as the first argument and the [emitter instance](../../core/emitter.md) as the second argument.
 
 You can listen for specific events to monitor the test's progress and process them as required.
 
@@ -70,7 +70,7 @@ configure({
 Let's continue with the `logReporter` implementation and listen for the events to display the test's progress.
 
 :::note
-Make sure to consult the [event emitter]() documentation to view all the available events and their data.
+Make sure to consult the [event emitter](../../core/emitter.md) documentation to view all the available events and their data.
 :::
 
 ```ts
