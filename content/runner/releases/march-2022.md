@@ -1,7 +1,7 @@
 ---
 title: March 2022 release
 description: This release introduces test suites, dynamic test titles, and a lot more
-ogImage: version-5.jpeg
+ogImage: march-2022.jpeg
 ---
 
 # Release - March 2022
