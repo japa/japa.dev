@@ -216,7 +216,7 @@
   @apply px-8 py-8;
 }
 .markdown figure > figcaption {
-  @apply bg-gray-200 border-t border-gray-300 px-4 py-6 text-center text-sm font-display;
+  @apply bg-gray-200 border-t border-gray-300 px-4 py-6 text-center text-sm font-display w-full;
 }
 
 /**

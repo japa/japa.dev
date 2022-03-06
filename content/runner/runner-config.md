@@ -19,9 +19,9 @@ import { configure, processCliArgs } from '@japa/runner'
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.${extension}'],
-    plugins: [${pluginsList}],
-    reporters: [${reportersList}],
+    files: ['tests/**/*.spec.js'],
+    plugins: [],
+    reporters: [],
     timeout: 2000,
   },
 })
@@ -35,9 +35,9 @@ const { configure, processCliArgs } = require('@japa/runner')
 configure({
   ...processCliArgs(process.argv.slice(2)),
   ...{
-    files: ['tests/**/*.spec.${extension}'],
-    plugins: [${pluginsList}],
-    reporters: [${reportersList}],
+    files: ['tests/**/*.spec.js'],
+    plugins: [],
+    reporters: [],
     timeout: 2000,
   },
 })
@@ -49,6 +49,11 @@ Following is the list of available properties.
 ```ts
 configure({
   files: ['tests/**/*.spec.js'],
+  suites: [{
+    name: 'unit',
+    files: ['tests/unit/**/*.spec.js'],
+    configure: () => {},
+  }],
   plugins: [assert()],
   reporters: [],
   filters: {
@@ -85,6 +90,29 @@ You can also implement a custom function to collect test files. The function mus
   }
 }
 ```
+
+## suites *(optional)*
+The `suites` property registers multiple test suites. You must use `files` or `suites` as both cannot be used together.
+
+- Every suite object must define a unique name.
+- The `files` property can be an array of glob patterns or a function that returns an array of files.
+- The optional `configure` method can be used configure the suite instance.
+
+```ts
+{
+  suites: [
+    {
+      name: 'unit',
+      files: ['tests/unit/**/*.spec.js'],
+      configure: (suite) => {
+        // configure suite
+      },
+    }
+  ],
+}
+```
+
+:a[Learn more about test suites]{href="/test-suites" class="cta"}
 
 ## plugins *(optional)*
 

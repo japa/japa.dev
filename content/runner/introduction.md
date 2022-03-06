@@ -15,6 +15,7 @@ Despite being a small and a simple tests runner, Japa has a ton of features you 
 
 - Support for [test groups](./grouping-tests.md), timeout, todo tests and [regression tests](./underlying-test-class.md#fails).
 - Support for [Datasets](./datasets.md).
+- Test [suites](./test-suites.md) to organize tests by their type.
 - Assertion libraries with support for [assertion planning](./assertion-planning.md).
 - Ability to [filter](./filtering-tests.md) and run specific or only failing tests.
 - Re-imagined [lifecycle hooks](./lifecycle-hooks.md).

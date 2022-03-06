@@ -121,6 +121,8 @@ test('add two numbers', () => {
 .retry(3)
 ```
 
+:img{src="retry-attempt-spec-reporter.png" class="boxed" alt="The spec reporter prefixes the test title with the current retry attempt"}
+
 ## waitForDone
 
 You can run asynchronous operations inside the test implementation function using `async/await`. For example:

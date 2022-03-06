@@ -1,10 +1,10 @@
 ---
-title: Upgrade to version 5
-description: Upgrade your existing Japa test suites to v5 in under 10mins.
+title: From `japa` to `@japa/runner`
+description: Upgrade your existing to the latest release of Japa
 ogImage: version-5.jpeg
 ---
 
-# Version 5.0
+# From `japa` to `@japa/runner`
 
 Japa has received a massive rewrite, and all the packages have been moved to the `@japa` npm scope. The existing package [japa](https://www.npmjs.com/package/japa) is replaced with [@japa/runner](https://npmjs.com/package/@japa/runner).
 

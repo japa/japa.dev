@@ -78,3 +78,7 @@ configure({
   plugins: [].concat(developmentPlugins)
 })
 ```
+
+Once this plugin is activated, it will print the following message in the terminal to notify you that only a subset of tests will run.
+
+![](run-failed-tests-active.png)

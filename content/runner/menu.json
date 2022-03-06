@@ -46,6 +46,11 @@
             "contentPath": "assertion-planning.md"
           },
           {
+            "title": "Test suites",
+            "permalink": "test-suites",
+            "contentPath": "test-suites.md"
+          },
+          {
             "title": "Filtering tests",
             "permalink": "filtering-tests",
             "contentPath": "filtering-tests.md"
@@ -111,7 +116,12 @@
         "name": "Releases",
         "docs": [
           {
-            "title": "Version 5",
+            "title": "March 2022",
+            "permalink": "releases/march-2022",
+            "contentPath": "releases/march-2022.md"
+          },
+          {
+            "title": "From japa to @japa/runner",
             "permalink": "releases/version-5",
             "contentPath": "releases/version-5.md"
           }

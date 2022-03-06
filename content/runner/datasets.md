@@ -92,3 +92,30 @@ The above approach has a couple of benefits.
 
 - TypeScript can properly infer the data type of the `with` method and use it to type-check the test callback.
 - The test visually reads better. **with(dataset).run(thisFunction)**.
+
+## Dynamic title for each test
+You can make use the interpolation to display values from the dataset within the test title. This is usually helpful to have a visual indicator for which row inside the dataset is getting tested.
+
+Let's continue with the existing email example and tweak the title as follows.
+
+```ts
+// highlight-start
+test('validate email - "{email}"')
+// highlight-end
+  .with([
+    // ...rows
+  ])
+  .run(({ assert }, row) => {
+    assert.equal(validateEmail(row.email), row.outcome)
+  })
+```
+
+![](dataset-interpolation.png)
+
+The dynamic values (aka interpolation) works by wrapping the property name inside single curly braces `{email}`.
+
+You can access the array current index using the special keyword `$index`. The index starts from 1 and not 0.
+
+```ts
+test('{$index} validate email - "{email}"')
+```
