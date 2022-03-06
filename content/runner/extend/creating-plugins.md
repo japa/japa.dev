@@ -127,4 +127,4 @@ function myCustomPlugin() {
 }
 ```
 
-Please reference the [Test context](../../core/test-context.md) and [Test](../../core//test.md) documentation to learn more about Macros and Getters.
+Please reference the [Test context](../../core/test-context.md) and [Test](../../core/test.md) documentation to learn more about Macros and Getters.
