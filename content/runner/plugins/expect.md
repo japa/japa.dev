@@ -64,18 +64,3 @@ test('add two numbers', ({ expect }) => {
 ```
 
 In Jest, the `expect` property is available globally. However, with Japa, we recommend you always read it from the Test context.
-
-## TypeScript types
-You can define the types for the `expect` property using [module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation).
-
-Create the `bin/japaTypes.ts` file if it does not already exist and copy/paste the following code snippet inside it.
-
-  ```ts
-  import { Expect } from '@japa/expect'
-
-  declare module '@japa/runner' {
-    interface TestContext {
-      expect: Expect
-    }
-  }
-  ```
