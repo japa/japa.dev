@@ -312,7 +312,11 @@ Once the serializer has been registered, all the cookies will be signed/unsigned
 ## Assertions
 You can validate the API response by directly calling the assertion methods on the response object.
 
-The assertions methods under the hood uses the `@japa/assert` or `@japa/expect` package (whichever you have installed). Also, the assertions made using the response object count against the planned assertions. For example:
+:::note
+The support for `@japa/expect` is on its way and will be released soon.
+:::
+
+The assertions methods only work when you are using the `@japa/assert` package as a plugin. Also, the assertions made using the response object count against the planned assertions. For example:
 
 ```ts
 test('get /users', async ({ client, assert }) => {
