@@ -55,7 +55,7 @@ configure({
 ```
 :::
 
-Once done. You can access the `expect` property on the [Test context](../test-context.md) as follows.
+Once done. You can access the `expect` property from the [Test context](../test-context.md) as follows.
 
 ```ts
 test('add two numbers', ({ expect }) => {

@@ -14,6 +14,7 @@
     "@alpinejs/persist": "^3.9.1",
     "@dimerapp/content": "^2.0.4",
     "@dimerapp/edge": "^2.0.1",
+    "@japa/errors-printer": "^1.3.4",
     "@symfony/webpack-encore": "^1.8.2",
     "adonis-preset-ts": "^2.1.0",
     "alpinejs": "^3.9.1",

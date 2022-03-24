@@ -94,6 +94,11 @@
             "title": "Run failed tests",
             "permalink": "plugins/run-failed-tests",
             "contentPath": "plugins/run-failed-tests.md"
+          },
+          {
+            "title": "API Client",
+            "permalink": "plugins/api-client",
+            "contentPath": "plugins/api-client.md"
           }
         ]
       },

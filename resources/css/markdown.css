@@ -121,7 +121,7 @@
   @apply px-8 relative;
 }
 .markdown .dimer-highlight .line.dim {
-  @apply opacity-40 transition-opacity;
+  @apply opacity-30 transition-opacity;
 }
 .markdown .dimer-highlight .line.highlight-delete {
   @apply border-l-4 border-red-500;
