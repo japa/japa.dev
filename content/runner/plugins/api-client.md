@@ -320,12 +320,15 @@ The assertions methods only work when you are using the `@japa/assert` package a
 
 ```ts
 test('get /users', async ({ client, assert }) => {
+  // highlight-start
   assert.plan(2)
+  // highlight-end
 
   const response = await client
     .post('/posts')
     .form({ title: 'Japa 101' })
 
+  // highlight-start
   // 1st assertion
   response.assertStatus(201)
 
@@ -333,10 +336,11 @@ test('get /users', async ({ client, assert }) => {
   response.assertBody({
     title: 'Japa 101'
   })
+  // highlight-end
 })
 ```
 
-You can find all the available assertions methods in the [Assertions API]() section.
+You can find all the available assertions methods in the [Assertions API](#assertions-api) section.
 
 ## Lifecycle Hooks
 Similar to the rest of the testing framework. You can also define lifecycle hooks executed before the request and after getting the response from the server.
@@ -390,7 +394,7 @@ test('get /users', async ({ client }) => {
 ```
 
 ## Request API
-Following are the available methods on the request class. You can get an instance of the request class by the HTTP request methods on the client object. For example:
+Following are the available methods on the request class. You can get an instance of the request class by calling the HTTP request methods on the client object. For example:
 
 ```ts
 const request = client.get('/')
@@ -893,3 +897,75 @@ declare module '@japa/api-client' {
   }
 }
 ```
+
+## Custom response parsers
+The `@japa/api-client` plugin automatically parses the response body for the following content types.
+
+- `text/*`
+- `image/*`
+- `application/json`
+- `application/x-www-form-urlencoded`
+- `multipart/form-data`
+
+However, you can also register custom parsers to process unsupported content types as follows.
+
+The parser is registered globally on the [ApiRequest](https://github.com/japa/api-client/blob/develop/src/Request/index.ts) class using the `addParser` method.
+
+```ts
+import { ApiRequest } from '@japa/api-client'
+
+ApiRequest.addParser('application/vnd.api+json', function (response, cb) {
+  response.setEncoding('utf-8')
+  response.text = ''
+
+  /**
+   * Concatenate chunks
+   */
+  response.on('data', (chunk) => (response.text += chunk))
+
+  /**
+   * Parse collected chunks as JSON
+   */
+  response.on('end', () => {
+    try {
+      const body = JSON.parse(response.text)
+      cb(null, body)
+    } catch (error) {
+      error.rawResponse = response.text || null
+      error.statusCode = response.statusCode
+      cb(error)
+    }
+  })
+
+  /**
+   * Report error (if any)
+   */
+  response.on('error', (error) => cb(error, null))
+})
+```
+
+- The `addParser` method accepts the content type as the first argument and the implementation callback as the second argument.
+- The callback receives the [Node.js ServerResponse](https://nodejs.org/api/http.html#class-httpserverresponse) and a callback.
+- You must invoke the callback either with an error or the parsed response body.
+
+## Custom request serializers
+Like the response parser, you can also register custom serializers to serialize the request body before sending it to the server.
+
+Following content types are handled automatically.
+
+- `application/json`
+- `multipart/form-data`
+- `application/x-www-form-urlencoded`
+
+You can register a custom serializer globally on the [ApiRequest](https://github.com/japa/api-client/blob/develop/src/Request/index.ts) class using the `addSerializer` method.
+
+```ts
+import { ApiRequest } from '@japa/api-client'
+
+ApiRequest.addSerializer('application/vnd.api+json', function (value) {
+  return JSON.stringify(value)
+})
+```
+
+- The `addSerializer` method accepts the content type as the first argument and its implementation callback as the second argument.
+- The callback values the request body set using `request.form` or `request.json`, and it must return a string.
