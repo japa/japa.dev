@@ -1,7 +1,7 @@
 ---
 title: API Client
-description: Assertion plugin built on top of Chai.js assert package.
-ogImage: assert-plugin.jpeg
+description: An API client to test the HTTP endpoints
+ogImage: api-client-plugin.jpeg
 ---
 
 # API Client
