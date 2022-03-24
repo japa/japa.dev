@@ -8,15 +8,16 @@
 |
 */
 
+import { URL } from 'url'
 import { normalize } from 'path'
 import View from '@ioc:Adonis/Core/View'
 
 View.global('icon', (filePath: string) => {
-  return normalize(View.GLOBALS.asset(`assets/icons/${filePath}`))
+  return new URL(View.GLOBALS.asset(`assets/icons/${filePath}`)).href
 })
 
 View.global('image', (filePath: string) => {
-  return normalize(View.GLOBALS.asset(`assets/images/${filePath}`))
+  return new URL(View.GLOBALS.asset(`assets/images/${filePath}`)).href
 })
 
 View.global('filePathToUrl', (filePath: string) => {
