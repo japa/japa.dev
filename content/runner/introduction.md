@@ -55,6 +55,7 @@ The installation process prompts you to configure the tests runner with addition
 
 - **Assertion library** - Select between [@japa/assert](./plugins/assert.md) or [@japa/expect](./plugins/expect.md).
 - **Tests reporter** - Select the reporter to display/store the tests progress.
+- **Additional plugins** - Select additional plugins you want to configure. You can learn about them in the [plugins section](./plugins/run-failed-tests.md) of the docs.
 
 ## Writing the first test
 
@@ -105,4 +106,4 @@ This is how it works under the hood.
 2. First, the `configure` method is called to configure the tests runner.
 3. Then the `run` method is called, which uses the configuration options and runs all the tests accordingly.
 
-Since the execution of tests is not abstracted behind a CLI. You can open the `bin/test.js` file and make any customizations you want.
+Since the execution of tests is not abstracted behind a CLI. You can open the `bin/test.js` file and make any customizations you want before running the tests.

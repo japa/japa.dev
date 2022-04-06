@@ -19,12 +19,14 @@ import { test } from '@japa/runner'
 test('add two numbers', () => {
   console.log('executed in the test')
 })
+// highlight-start
 .setup(() => {
   console.log('executed before the test')
 })
 .teardown(() => {
   console.log('executed after the test')
 })
+// highlight-end
 ```
 
 ```ts
@@ -199,6 +201,64 @@ test.group('Users.create', (group) => {
 ```
 
 As a general principle, you should always use cleanup functions when destroying the state created by the setup hook.
+
+## Test hooks parameters
+The test lifecycle hooks receives an instance of the [Test class](../core/test.md) as the only argument.
+
+```ts
+test.group((group) => {
+  // highlight-start
+  group.each.setup((test) => {
+  // highlight-end
+  })
+
+  // highlight-start
+  group.each.teardown((test) => {
+  // highlight-end
+  })
+})
+```
+
+The cleanup functions receives a total of two arguments. The first one is a boolean to know if the underlying test has failed and second is an instance of the test class.
+
+```ts
+test.group((group) => {
+  group.each.setup(() => {
+    // highlight-start
+    return (hasError, test) => {
+    }
+    // highlight-end
+  })
+})
+```
+
+## Group hooks parameters
+The group lifecycle hooks receives an instance of the [Test class](../core/group.md) as the only argument.
+
+```ts
+test.group((group) => {
+  group.setup((self) => {
+    console.log(self === group)
+  })
+
+  group.teardown((self) => {
+    console.log(self === group)
+  })
+})
+```
+
+The cleanup functions receives a total of two arguments. The first one is a boolean to know if the underlying test has failed and second is an instance of the group class.
+
+```ts
+test.group((group) => {
+  group.setup(() => {
+    // highlight-start
+    return (hasError, self) => {
+    }
+    // highlight-end
+  })
+})
+```
 
 ## Test flow with hooks
 
