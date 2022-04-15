@@ -19,5 +19,9 @@
   </head>
   <body class="font-display antialiased bg-gray-200 text-gray-900" :class="{ 'overflow-hidden': disableScroll }">
     {{{ await $slots.main() }}}
+
+    @if(env('ANALYTICS_TOKEN'))
+      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ env('ANALYTICS_TOKEN') }}"}'></script>
+    @end
   </body>
 </html>
