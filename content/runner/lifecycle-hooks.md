@@ -43,6 +43,7 @@ test('add two numbers', () => {
 .teardown(() => {
   console.log('executed after the test')
 })
+// highlight-end
 ```
 :::
 
