@@ -838,6 +838,13 @@ You can validate the response against an Open API schema using the `assertAgains
 response.assertAgainstApiSpec()
 ```
 
+### assertRedirectsTo(pathname)
+Assert the current HTTP request has been redirected to a given pathname. The pathname is matched using the strict equality check against the [response.redirects()](#redirects) output.
+
+```ts
+response.assertRedirectsTo('/posts/1')
+```
+
 ## Extending classes
 The following classes exposed by the `@japa/api-client` package are extensible using macros and getters.
 
