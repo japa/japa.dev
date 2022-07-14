@@ -1,12 +1,14 @@
 <div class="w-toc hidden xl:block">
   <div class="fixed right-0 top-0 bottom-0 mt-header" x-data="urlHashWatcher">
-    @if(file.toc)
-      <div class="toc-container">
+    <div class="toc-container">
+      @if(file.toc)
         <h3> On this page </h3>
         <nav>
           @dimerTree([file.toc])~
         </nav>
-      </div>
-    @end
+      @end
+
+      @include('partials/sponsors')
+    </div>
   </div>
 </div>
