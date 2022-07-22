@@ -36,12 +36,14 @@ const { test } = require('@japa/runner')
 test('add two numbers', () => {
   console.log('executed in the test')
 })
+// highlight-start
 .setup(() => {
   console.log('executed before the test')
 })
 .teardown(() => {
   console.log('executed after the test')
 })
+// highlight-end
 ```
 :::
 
