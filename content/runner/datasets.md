@@ -114,8 +114,8 @@ test('validate email - "{email}"')
 
 The dynamic values (aka interpolation) works by wrapping the property name inside single curly braces `{email}`.
 
-You can access the array current index using the special keyword `$index`. The index starts from 1 and not 0.
+You can access the array current index using the special keyword `$i`. The index starts from 1 and not 0.
 
 ```ts
-test('{$index} validate email - "{email}"')
+test('{$i} validate email - "{email}"')
 ```
