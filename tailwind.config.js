@@ -48,7 +48,7 @@ module.exports = {
     fontFamily: {
       display: ['Inter'],
       body: ['Inter'],
-      mono: ['Input-Mono'],
+      mono: ['Jetbrains Mono'],
     },
     extend: {
       lineHeight: {
