@@ -8,25 +8,28 @@ ogImage: underlying-test-class.jpeg
 
 Tests created using the `test` method are instances of the [Test class](https://github.com/japa/core/tree/develop/src/Test/index.ts). You can invoke the available class methods to configure the test further.
 
-This guide will go through all the methods and properties available in the test class.
+In this guide we will go through all the methods and properties available on the test class.
 
 ## skip
 
 Mark the test as skipped. You can either pass a boolean to the `skip` method or a function that is lazily evaluated to find if the test should be skipped or not.
 
 ```ts
-// skip the test
+// Skip the test
 test('add two numbers', () => {
 })
 .skip(true)
+```
 
-// skip when `CI` env var exists
+```ts
+// Skip conditionally
 test('add two numbers', () => {
 })
 .skip(!!process.env.CI)
+```
 
-// Use a function to compute at the time of
-// running the test
+```ts
+// Skip lazily
 test('add two numbers', () => {
 })
 .skip(() => {
@@ -39,7 +42,7 @@ The 2nd optional argument is the reason for skipping the test.
 ```ts
 test('add two numbers', () => {
 })
-.skip(true, 'Not running CI')
+.skip(true, 'Not running in CI')
 ```
 
 ## fails
@@ -56,24 +59,19 @@ test('add two numbers', ({ assert }) => {
 ```
 
 ## timeout
+Define the `timeout` for the test. By default, the [config.timeout](./runner-config.md#timeout-optional) value is used. However, you can override it directly on the test.
 
-Define the `timeout` for the test. All tests timeout after the milliseconds are defined for [config.timeout](./runner-config.md#timeout-optional). However, you can configure the timeout at the test level as well.
+In the following example, the test will be marked as failed if it does not complete within 6 seconds.
 
 ```ts
 // 6 seconds
 test('add two numbers', () => {
 })
 .timeout(6000)
-
-// disable timeout
-test('add two numbers', () => {
-})
-.timeout(0)
 ```
 
 ## disableTimeout
-
-A shorthand method to disable the timeout. It is the same as calling `timeout(0)`.
+Disable timeout for a given test.
 
 ```ts
 test('add two numbers', () => {
@@ -97,12 +95,16 @@ The method accepts an optional strategy for defining tags. The strategy can be e
 test('add two numbers', () => {
 })
 .tags(['@slow'])
+```
 
+```ts
 // Append to existing tags
 test('add two numbers', () => {
 })
 .tags(['@network'], 'append')
+```
 
+```ts
 // Prepend to existing tags
 test('add two numbers', () => {
 })
@@ -133,11 +135,11 @@ test('add two numbers', async () => {
 })
 ```
 
-However, you cannot use `async/await` in some situations, especially with **streams and events**. In those cases, you can tell the test to wait until the `done` method is called.
+However, there can be cases when you will not be able to use `async/await`, especially when dealing with **streams and events**.
 
-In the following example, the test will wait until the `done` method is called explicitly.
+Therefore, you can make use of the `waitForDone` method to instruct Japa to wait until an explicit call to the `done` method is made. For example:
 
-:::warn
+:::warning
 The test will timeout if the `done` method is never called.
 :::
 
@@ -161,7 +163,7 @@ test('add two numbers', (ctx, done) => {
 
 ## pin
 
-Pin the test. When one or more tests are pinned, we will execute only those tests and skip all others. [Learn more about pinned tests](./filtering-tests.md#pinning-tests).
+Pin the test. When one or more tests are pinned, Japa will execute only the pinned tests and skips all others. [Learn more about pinned tests](./filtering-tests.md#pinning-tests).
 
 ```ts
 test('add two numbers', () => {

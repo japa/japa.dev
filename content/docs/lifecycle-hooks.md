@@ -205,7 +205,7 @@ test.group('Users.create', (group) => {
 As a general principle, you should always use cleanup functions when destroying the state created by the setup hook.
 
 ## Test hooks parameters
-The test lifecycle hooks receives an instance of the [Test class](../core/test.md) as the only argument.
+The test lifecycle hooks receives an instance of the [Test class](https://github.com/japa/core/blob/develop/src/Test/index.ts) as the only argument.
 
 ```ts
 test.group((group) => {
@@ -235,7 +235,7 @@ test.group((group) => {
 ```
 
 ## Group hooks parameters
-The group lifecycle hooks receives an instance of the [Test class](../core/group.md) as the only argument.
+The group lifecycle hooks receives an instance of the [Group class](https://github.com/japa/core/blob/develop/src/Group/index.ts) as the only argument.
 
 ```ts
 test.group((group) => {

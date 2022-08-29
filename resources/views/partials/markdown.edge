@@ -1,4 +1,4 @@
-<div class="max-w-[65ch] w-full mx-auto py-8 lg:pt-20 lg:pb-12">
+<div class="md:max-w-[75ch] lg:max-w-[65ch] w-full mx-auto py-8 lg:pt-12 lg:pb-12">
   @if(file.messages.length && app.env.get('NODE_ENV') !== 'production')
     {{ inspect(file.messages.map((message) => `${message.name} - ${message.reason}`)) }}
   @end
@@ -6,11 +6,15 @@
     @dimerTree(file.ast.children)~
   </div>
 
-  <div class="flex justify-between items-center border-t border-gray-300 mt-20 pt-8">
-    <div class="text-gray-600">
+  @if(doc.url === '/sponsor')
+    @include('partials/all_sponsors')
+  @end
+
+  <div class="flex justify-between items-center border-t border-gray-300 mt-20 pt-8 dark:border-darkGray-200 doc_footer">
+    <div class="text-gray-600 dark:text-darkGray-600 text-md">
       Brought to you by <a href="https://adonisjs.com" target="_blank" class="hover:underline"> AdonisJS </a>
     </div>
-    <div class="text-gray-600">
+    <div class="text-gray-600 dark:text-darkGray-600 text-md">
       <a href="{{ filePathToUrl(doc.path) }}" class="hover:underline"> Edit this page on Github </a>
     </div>
   </div>

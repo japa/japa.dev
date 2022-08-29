@@ -1,29 +1,23 @@
 <div
-  class="w-sidebar-small xl:w-sidebar"
+  class="w-sidebar"
   layout-sidebar
   x-data="{ visible: false }"
   @show-sidebar.window="visible = true"
   @hide-sidebar.window="visible = false"
 >
   <div
-    class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] hidden lg:hidden"
-    :class="{ '!block': visible }"
+    class="bg-gray-900/70 top-0 bottom-0 left-0 right-0 fixed z-[42] sidebar-backdrop"
+    :class="{ 'active': visible }"
     @click="$dispatch('hide-sidebar')"
   ></div>
 
   <aside
-    class="fixed top-0 bottom-0 left-0 bg-gray-200 sidebar z-50"
+    class="fixed top-0 bottom-0 left-0 sidebar z-50 bg-white dark:bg-darkGray-50 lg:mt-header border-r border-gray-300 dark:border-darkGray-200"
     :class="{ 'visible': visible }"
   >
-    <div class="w-sidebar-small xl:w-sidebar h-full">
-      <header class="flex h-header items-center px-10">
-        <a href="/">
-          @include('partials/logo')
-        </a>
-      </header>
-
-      <div class="h-screen-wo-header flex flex-col mt-4 lg:mt-8">
-        <div class="px-10 pb-12 overflow-y-auto h-full">
+    <div class="w-sidebar h-full">
+      <div class="h-screen flex flex-col">
+        <div class="px-10 pb-12 pt-4 lg:pt-8 overflow-y-auto h-full" up-viewport>
           <nav x-data="prefetch">
             {{{ await $slots.main() }}}
           </nav>

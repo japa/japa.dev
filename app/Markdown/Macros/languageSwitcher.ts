@@ -33,7 +33,7 @@ export default function languageSwitcher(file: MarkdownFile) {
     node.data.hProperties = {
       dataTabs: JSON.stringify(tabNames),
       class: ['codegroup'],
-      alpineStore: 'languageSwitcher',
+      languageSwitcher: 'true',
     }
   })
 }

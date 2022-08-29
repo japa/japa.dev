@@ -1,6 +1,6 @@
-<div class="w-toc hidden xl:block">
-  <div class="fixed right-0 top-0 bottom-0 mt-header" x-data="urlHashWatcher">
-    <div class="toc-container">
+<div class="w-toc hidden bigger-desktop:block shrink-0">
+  <div class="fixed top-0 bottom-0 mt-header">
+    <div class="toc-container" x-data="urlHashWatcher">
       @if(file.toc)
         <h3> On this page </h3>
         <nav>
@@ -8,7 +8,9 @@
         </nav>
       @end
 
-      @include('partials/sponsors')
+      @if(!hideSponsors)
+        @include('partials/sponsors')
+      @end
     </div>
   </div>
 </div>

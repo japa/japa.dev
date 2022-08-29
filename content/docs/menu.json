@@ -11,6 +11,11 @@
             "contentPath": "introduction.md"
           },
           {
+            "title": "Installation and usage",
+            "permalink": "/usage",
+            "contentPath": "usage.md"
+          },
+          {
             "title": "Test Context",
             "permalink": "test-context",
             "contentPath": "test-context.md"
@@ -103,6 +108,16 @@
         ]
       },
       {
+        "name": "Integrations",
+        "docs": [
+          {
+            "title": "AdonisJS",
+            "permalink": "integrations/adonisjs",
+            "contentPath": "integrations/adonisjs.md"
+          }
+        ]
+      },
+      {
         "name": "Extend",
         "docs": [
           {
@@ -114,21 +129,6 @@
             "title": "Creating plugins",
             "permalink": "creating-plugins",
             "contentPath": "extend/creating-plugins.md"
-          }
-        ]
-      },
-      {
-        "name": "Releases",
-        "docs": [
-          {
-            "title": "March 2022",
-            "permalink": "releases/march-2022",
-            "contentPath": "releases/march-2022.md"
-          },
-          {
-            "title": "From japa to @japa/runner",
-            "permalink": "releases/version-5",
-            "contentPath": "releases/version-5.md"
           }
         ]
       }

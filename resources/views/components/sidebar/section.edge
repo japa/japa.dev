@@ -1,6 +1,6 @@
 <div>
   @if(title.toLowerCase() !== 'root')
-    <h3 class="text-gray-900 text-xl font-semibold"> {{ title }} </h3>
+    <h3 class="text-gray-900 dark:text-darkGray-900 text-xl font-semibold"> {{ title }} </h3>
   @end
 
   <div class="mb-8">
@@ -12,7 +12,7 @@
             up-preload
             up-focus="false"
             up-target="[layout-main]"
-            class="block px-4 -ml-4 py-1.5 px-4 text-gray-600 hover:text-gray-900"
+            class="block px-4 -ml-4 py-2 text-md px-4 text-gray-600 hover:text-gray-900 font-medium dark:text-darkGray-600 dark:hover:text-darkGray-900"
             @click="$dispatch('hide-sidebar')"
           >
             {{ link.title }}

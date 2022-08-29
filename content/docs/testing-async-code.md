@@ -10,7 +10,7 @@ Japa has first class support for testing asynchronous workflows including **Prom
 
 In this guide, we will learn how to test asynchronous code and explore various techniques to convert common async workflows to promises.
 
-## async/await and Promises
+## Async await
 Writing tests that use promises or async/await is the recommended approach. As soon as the test callback is finished, Japa will mark the test as passed. Likewise, the test will be marked as failed in case of an error.
 
 ```ts
@@ -27,7 +27,7 @@ test('verify email address', async () => {
 })
 ```
 
-## Using the `done` callback
+## Waiting for done method call
 
 If your test code relies on the **event emitter**, **callbacks**, or **timeouts**, then you can instruct Japa to wait for an explicit call to the `done` method.
 
@@ -67,13 +67,13 @@ test('make redis connection', async (ctx, done) => {
 ```
 
 
-## Strategies to use async/await most of the time
+## Strategies to promisify your codebase
 
 Even though you can write tests that rely on callbacks or events, we highly recommend you prefer `async/await` over any other async API. The `async/await` code reads linearly and is easy to reason. 
 
 Let us share some of the ways you can use to convert callbacks, events, or timeouts to promises.
 
-### Converting callbacks to promises
+### Callbacks to promises
 
 Node.js ships with a utility function `promisify` that you can use to convert callbacks into promises.
 
@@ -118,7 +118,7 @@ test('generate pdf', async (ctx) => {
 ```
 :::
 
-### Converting setTimeout to promise
+### Promisify setTimeout
 
 Most of the time, you use `setTimeout` to sleep between operations. Therefore, you can create a dedicated sleep method that resolves the promise after the timeout.
 
@@ -140,7 +140,7 @@ test('generate pdf', async (ctx) => {
 })
 ```
 
-### Converting event listeners to promises
+### Promisify event listeners
 
 You can also convert event listeners to promises using the [p-event](https://github.com/sindresorhus/p-event) package.
 
@@ -186,7 +186,7 @@ test('make redis connection', async (ctx) => {
 ```
 :::
 
-### Converting streams to promises
+### Promisify streams
 You can promisify streams using the [get-stream](https://github.com/sindresorhus/get-stream) npm package.
 
 :::languageSwitcher

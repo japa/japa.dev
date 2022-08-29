@@ -48,7 +48,7 @@ configure({
 - You must not use the `files` property when you are using `suites`.
 - Each suite must have a unique `name` and a `files` property to associate test files with the suite.
 
-## Running tests for a specific suite
+## Run selected suites
 You can run tests for a specific suite by specifying the suite name after the test file name.
 
 In the following example, only the unit tests will run.
@@ -66,7 +66,7 @@ node bin/test.js unit functional
 ## Lifecycle hooks
 Similar to tests and groups, you can also define lifecycle hooks for the suites. For example, you can use hooks to start the HTTP server before running the tests in the functional suite.
 
-The `configure` method in the suite configuration object receives an instance of the [Suite class](../core/suite.md), and you can use it to register the hooks.
+The `configure` method in the suite configuration object receives an instance of the [Suite class](https://github.com/japa/core/blob/develop/src/Suite/index.ts), and you can use it to register the hooks.
 
 ```ts
 configure({
@@ -89,7 +89,7 @@ configure({
 })
 ```
 
-## Tap into groups and tests
+## Configure suite groups and tests
 You can drill down the layers and configure groups/tests directly using the suite instance. Imagine a plugin adding extra functionality or lifecycle hooks on every test and group.
 
 :::note
@@ -110,7 +110,7 @@ configure(suite) {
 },
 ```
 
-## Running suites parallelly
+## Running suites in parallel
 You might be aware that Japa does not run tests parallelly. However, you can use the following tip to run suites parallelly.
 
 Start by installing the [concurrently](https://www.npmjs.com/package/concurrently) package from the npm registry.

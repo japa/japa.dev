@@ -1,0 +1,33 @@
+/ /docs 301
+/test-context /docs/test-context 301
+/testing-async-code /docs/testing-async-code 301
+/underlying-test-class /docs/underlying-test-class 301
+/lifecycle-hooks /docs/lifecycle-hooks 301
+/grouping-tests /docs/grouping-tests 301
+/datasets /docs/datasets 301
+/assertion-planning /docs/assertion-planning 301
+/test-suites /docs/test-suites 301
+/filtering-tests /docs/filtering-tests 301
+/runner-config /docs/runner-config 301
+/usage-with-typescript /docs/usage-with-typescript 301
+/coverage /docs/coverage 301
+
+/plugins/spec-reporter /docs/plugins/spec-reporter 301
+/plugins/assert /docs/plugins/assert 301
+/plugins/expect /docs/plugins/expect 301
+/plugins/run-failed-tests /docs/plugins/run-failed-tests 301
+/plugins/api-client /docs/plugins/api-client 301
+
+/creating-reporters /docs/creating-reporters 301
+/creating-plugins /docs/creating-plugins 301
+/releases/march-2022 /news 301
+/releases/version-5 /news 301
+
+/core/test /docs/underlying-test-class 301
+/core/group /docs/grouping-tests 301
+/core/suite /docs/test-suites 301
+/core/suite /docs/test-suites 301
+/core/runner /docs/creating-plugins 301
+/core/emitter /docs/creating-reporters 301
+/core/refiner /docs/filtering-tests 301
+/core/test-context /docs/test-context 301

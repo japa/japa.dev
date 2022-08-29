@@ -1,29 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "../fonts/Calibre/stylesheet.css";
-@import "../fonts/polysans/stylesheet.css";
-@import "../fonts/operatorMono/stylesheet.css";
 @import "./markdown.css";
 
 [layout-sidebar] li a.up-current {
-  @apply bg-gray-300 rounded-md text-gray-900;
+  @apply bg-gray-300 rounded-md text-gray-900 dark:text-darkGray-900 dark:bg-darkGray-300;
 }
 
-[layout-header] li a.up-current, [layout-header] li a.persistent-up-current {
-  @apply text-gray-900;
+[layout-header] li .up-current, [layout-header] li .persistent-up-current {
+  @apply text-gray-900 dark:text-darkGray-900;
 }
 
 .sidebar {
   transform: translateX(-110vw);
-  transition: transform .6s cubic-bezier(.16,1,.3,1), visibility 0s linear .6s;
+  transition: transform .2s cubic-bezier(.16,1,.3,1);
   @apply invisible lg:transform-none lg:z-[auto] lg:visible lg:transition-none;
 }
 
 .sidebar.visible {
   transform: translateX(0);
-  transition: transform .6s cubic-bezier(.16,1,.3,1);
+  transition: transform .2s cubic-bezier(.16,1,.3,1);
   visibility: visible;
   max-width: 90%;
+}
+
+.sidebar-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .1s ease-out;
+}
+
+.sidebar-backdrop.active {
+  opacity: 1;
+  pointer-events: inherit;
+  transition: opacity .1s ease-in;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%2372716d' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-position: right 4px center;
+  @apply pl-3 pr-6 py-1 text-gray-600 dark:text-darkGray-600;
+}
+
+.dark select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23aaa' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+}
+
+.nav_dropdown details[open] summary {
+  @apply text-gray-900 dark:text-darkGray-900;
+}
+
+.nav_dropdown details[open] summary svg {
+  @apply rotate-180 fill-gray-900 dark:fill-darkGray-900;
+}
+
+.nav_dropdown details[open] > div {
+  animation: slideIn .25s ease;
+}
+
+@keyframes slideIn {
+  0%    {opacity: 0; transform: translateY(-4px)}
+  100%  {opacity: 1; transform: translateY(0)}
 }

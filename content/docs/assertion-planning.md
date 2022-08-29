@@ -39,7 +39,7 @@ test('a false-positive test', async ({ assert }) => {
 })
 ```
 
-## Assertion planning with `@japa/assert`
+## Usage with @japa/assert
 The `@japa/assert` plugin allows for assertion planning using the `assert.plan` method.
 
 ```ts
@@ -58,7 +58,7 @@ If fewer or more assertions are made, then it will make the test fail with the f
 
 ![](chai-assertion-planning.png)
 
-## Assertion planning with `@japa/expect`
+## Usage with @japa/expect
 The `@japa/expect` plugin uses the Jest expect [expect.assertions](https://jestjs.io/docs/expect#expectassertionsnumber) method.
 
 ```ts

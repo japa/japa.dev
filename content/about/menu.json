@@ -1,0 +1,42 @@
+[
+  {
+    "name": "root",
+    "categories": [
+      {
+        "name": "Root",
+        "docs": [
+          {
+            "title": "News",
+            "permalink": "news",
+            "contentPath": "news.md"
+          },
+          {
+            "title": "Sponsor",
+            "permalink": "sponsor",
+            "contentPath": "sponsor.md"
+          },
+          {
+            "title": "FAQs",
+            "permalink": "faqs",
+            "contentPath": "faqs.md"
+          },
+          {
+            "title": "Team",
+            "permalink": "team",
+            "contentPath": "team.md"
+          },
+          {
+            "title": "Contribute",
+            "permalink": "contribute",
+            "contentPath": "contribute.md"
+          },
+          {
+            "title": "Code of conduct",
+            "permalink": "code-of-conduct",
+            "contentPath": "code-of-conduct.md"
+          }
+        ]
+      }
+    ]
+  }
+]

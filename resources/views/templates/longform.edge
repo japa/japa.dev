@@ -13,6 +13,7 @@
       },
       {
         title: 'About',
+        active: ['/faqs', '/contribute', '/code-of-conduct'].includes(doc.url),
         children: [
           {
             title: 'FAQs',
@@ -35,21 +36,21 @@
     ]
   })
 
-  @sidebar()
-    @each(group in groups)
-      @each(category in group.categories)
-        @!sidebar.section({
-          title: category.name,
-          links: category.docs
-        })
-      @end
-    @end
-  @end
-
-  <section class="relative lg:ml-sidebar">
+  <section class="relative">
     <main class="flex px-8 lg:px-12" up-main layout-main>
-      @include('partials/markdown')
-      @include('partials/toc')
+      @if(doc.url === '/news')
+        <div class="news_timeline one_size mx-auto relative max-w-3xl">
+          @include('partials/markdown')
+        </div>
+      @else
+        <div class="max-w-6xl w-full mx-auto flex justify-between">
+          <div class="pr-12">
+            @include('partials/markdown')
+          </div>
+          @set('hideSponsors', doc.url === '/sponsor')
+          @include('partials/toc')
+        </div>
+      @end
     </main>
   </section>
 @end

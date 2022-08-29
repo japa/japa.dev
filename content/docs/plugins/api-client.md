@@ -1,6 +1,6 @@
 ---
 title: API Client
-description: An API client to test the HTTP endpoints
+description: API client plugin is used to test HTTP endpoints. Optionally, you can also use OpenAPI schema to test JSON endpoints.
 ogImage: api-client-plugin.jpeg
 ---
 

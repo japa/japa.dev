@@ -27,7 +27,12 @@ Route.on('404').render('errors/404')
  * Handled by content module
  */
 Route.get('*', async ({ request, response }) => {
-  const { html, error } = await Content.render(request.url())
+  const url = request.url()
+  if (url === '/') {
+    return response.redirect('/docs')
+  }
+
+  const { html, error } = await Content.render(url)
 
   if (error && error.includes('Unable to lookup')) {
     return response.redirect('/404')

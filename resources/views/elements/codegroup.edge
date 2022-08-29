@@ -1,20 +1,18 @@
 @set('tabs', JSON.parse(node.properties.dataTabs))
-@set('alpineStore', node.properties.alpineStore)
-@set('alpineValueRef', alpineStore ? '$store.languageSwitcher.value' : 'activeTab')
+@set('alpineValueRef', node.properties.languageSwitcher ? '$store.global.selectedTab' : 'activeTab')
 
 <div
-  x-data="codegroup({{ alpineStore ? `'${alpineStore}'` : undefined }})"
+  x-data="codegroup()"
   class="codegroup"
 >
   <div class="codegroup-tabs">
     @each((tab, index) in tabs)
-      <a
-        href="#"
+      <button
         x-ref="tab-{{ index }}"
         x-effect="changeTab({{ alpineValueRef }})"
         :class="{ active: {{ index }} === {{ alpineValueRef }} }"
         @click.prevent="moveTo({{ index }})"
-      > {{ tab }} </a>
+      > {{ tab }} </button>
     @end
     <div x-ref="highlighter" class="highlighter"></div>
   </div>

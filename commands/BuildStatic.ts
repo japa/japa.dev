@@ -44,7 +44,8 @@ export default class BuildStatic extends BaseCommand {
 
     const { html, error } = await Content.render(doc.url)
     if (error) {
-      return this.logger.action('Create').failed(filePath, error)
+      this.logger.action('Create').failed(filePath, error)
+      return
     }
 
     await this.writeFile(filePath, html!)
@@ -80,5 +81,7 @@ export default class BuildStatic extends BaseCommand {
     }
 
     await this.createErrorPages()
+    await copy(this.application.makePath('_redirects'), this.application.publicPath('_redirects'))
+    this.logger.action('  Copy').succeeded('_redirects')
   }
 }

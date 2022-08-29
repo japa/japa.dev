@@ -8,10 +8,10 @@
 |
 */
 
+import { zones } from 'Config/markdown'
 import Content from 'App/Services/Content'
 import * as macros from 'App/Markdown/Macros'
 import dimerRenderer from 'App/Markdown/Renderer'
-import { zones, codeBlocksTheme } from 'Config/markdown'
 import processToc from 'App/Markdown/Processors/processToc'
 
 /**
@@ -29,9 +29,10 @@ zones.forEach(({ title, baseUrl, template, caption, menu, contentPath }) => {
     .baseUrl(baseUrl)
     .baseContentPath(contentPath)
     .template(template)
-    .useTheme(codeBlocksTheme)
+    .loadTheme('resources/themes/bio-dark.json')
     .before('compile', (file) => {
       macros.caption(file)
+      macros.announcement(file)
       macros.languageSwitcher(file)
     })
     .after('compile', (file) => {

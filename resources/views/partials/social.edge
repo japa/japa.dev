@@ -1,25 +1,27 @@
-<title>{{ file.frontmatter.title || doc.title }}</title>
-<meta name="title" content="{{ file.frontmatter.title || doc.title }}">
-@if(file.frontmatter.description)
-  <meta name="description" content="{{ file.frontmatter.description }}">
-@end
+@if(file || doc)
+  <title>{{ file.frontmatter.title || doc.title }}</title>
+  <meta name="title" content="{{ file.frontmatter.title || doc.title }}">
+  @if(file.frontmatter.description)
+    <meta name="description" content="{{ file.frontmatter.description }}">
+  @end
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://japa.dev">
-<meta property="og:title" content="{{ file.frontmatter.title || doc.title }}">
-@if(file.frontmatter.description)
-  <meta name="og:description" content="{{ file.frontmatter.description }}">
-@end
-@if(file.frontmatter.ogImage)
-  <meta property="og:image" content="{{ image(`${file.frontmatter.ogImage}`) }}">
-@end
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://japa.dev">
+  <meta property="og:title" content="{{ file.frontmatter.title || doc.title }}">
+  @if(file.frontmatter.description)
+    <meta name="og:description" content="{{ file.frontmatter.description }}">
+  @end
+  @if(file.frontmatter.ogImage)
+    <meta property="og:image" content="{{ image(`${file.frontmatter.ogImage}`) }}">
+  @end
 
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://japa.dev">
-<meta property="twitter:title" content="{{ file.frontmatter.title || doc.title }}">
-@if(file.frontmatter.description)
-  <meta name="twitter:description" content="{{ file.frontmatter.description }}">
-@end
-@if(file.frontmatter.ogImage)
-  <meta property="twitter:image" content="{{ image(`${file.frontmatter.ogImage}`) }}">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://japa.dev">
+  <meta property="twitter:title" content="{{ file.frontmatter.title || doc.title }}">
+  @if(file.frontmatter.description)
+    <meta name="twitter:description" content="{{ file.frontmatter.description }}">
+  @end
+  @if(file.frontmatter.ogImage)
+    <meta property="twitter:image" content="{{ image(`${file.frontmatter.ogImage}`) }}">
+  @end
 @end

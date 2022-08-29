@@ -7,20 +7,23 @@ import persist from '@alpinejs/persist'
 
 Alpine.plugin(persist)
 
-Alpine.store('languageSwitcher', {
-  value: Alpine.$persist(0),
+Alpine.store('global', {
+  selectedTab: Alpine.$persist(0),
+  themeColor: Alpine.$persist(
+    /**
+     * Starting with user system theme and then they can toggle as needed
+     */
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  ),
 })
 
-Alpine.data('codegroup', function (store) {
+Alpine.data('codegroup', function () {
   return {
-    store: store,
-    activeTab: store ? this.$store[store].value : 0,
+    activeTab: this.$store.global.selectedTab,
 
     moveTo(index) {
       this.activeTab = index
-      if (this.store) {
-        this.$store[this.store].value = index
-      }
+      this.$store.global.selectedTab = index
     },
 
     changeTab(index) {
@@ -32,17 +35,17 @@ Alpine.data('codegroup', function (store) {
     },
 
     init() {
-      this.changeTab(this.store ? this.$store[this.store].value : 0)
+      this.changeTab(this.$store.global.selectedTab)
     },
   }
 })
 
 Alpine.data('urlHashWatcher', function () {
   return {
-    findActiveLink(anchors) {
+    findActiveLink(anchors, hash) {
       anchors.forEach((anchor) => {
         anchor.classList.remove('active')
-        if (location.hash === anchor.hash) {
+        if (hash === anchor.hash) {
           anchor.classList.add('active')
         }
       })
@@ -50,10 +53,10 @@ Alpine.data('urlHashWatcher', function () {
 
     init() {
       const anchors = this.$el.querySelectorAll('a')
-      this.findActiveLink(anchors)
+      this.findActiveLink(anchors, location.hash)
 
       window.addEventListener('hashchange', () => {
-        this.findActiveLink(anchors)
+        this.findActiveLink(anchors, location.hash)
       })
     },
   }
@@ -65,6 +68,14 @@ Alpine.data('prefetch', function () {
       listen({
         el: this.$el,
       })
+    },
+  }
+})
+
+Alpine.data('darkModeSwitch', function () {
+  return {
+    toggle(mode) {
+      this.$store.global.themeColor = mode
     },
   }
 })

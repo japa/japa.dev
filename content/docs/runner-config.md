@@ -92,7 +92,7 @@ You can also implement a custom function to collect test files. The function mus
 ```
 
 ## suites *(optional)*
-The `suites` property registers multiple test suites. You must use `files` or `suites` as both cannot be used together.
+The `suites` property registers multiple test suites. You must use `files` or `suites` as both cannot be used together. [Learn more about test suites](./test-suites.md)
 
 - Every suite object must define a unique name.
 - The `files` property can be an array of glob patterns or a function that returns an array of files.
@@ -112,11 +112,9 @@ The `suites` property registers multiple test suites. You must use `files` or `s
 }
 ```
 
-:a[Learn more about test suites]{href="/test-suites" class="cta"}
-
 ## plugins *(optional)*
 
-The `plugins` property allows you to register multiple plugins. Every plugin is represented as a function and called when running the tests.
+The `plugins` property allows you to register multiple plugins. Every plugin is represented as a function and called when running the tests. [Learn more about plugins](./extend/creating-plugins.md)
 
 ```ts
 configure({
@@ -134,11 +132,9 @@ configure({
 })
 ```
 
-:a[Learn more about plugins]{href="/creating-plugins" class="cta"}
-
 ## reporters *(optional)*
 
-The `reporters` property allows you to register one or more tests reporters. Every plugin is represented as a function and receives the emitter instance to listen for events.
+The `reporters` property allows you to register one or more tests reporters. Every plugin is represented as a function and receives the emitter instance to listen for events. [Learn more about reporters](./extend/creating-reporters.md)
 
 ```ts
 configure({
@@ -156,11 +152,9 @@ configure({
 })
 ```
 
-:a[Learn more about reporter]{href="/creating-reporters" class="cta"}
-
 ## filters *(optional)*
 
-The `filters` property accepts an object of different filtering layers to cherry-pick and run specific tests.
+The `filters` property accepts an object of different filtering layers to cherry-pick and run specific tests. [Learn more about filtering tests](./filtering-tests.md)
 
 ```ts
 configure({
@@ -172,8 +166,6 @@ configure({
   }
 })
 ```
-
-:a[Learn more about filtering tests]{href="/filtering-tests" class="cta"}
 
 ## timeout *(optional)*
 > Computed using the `--timeout` CLI flag.
@@ -217,7 +209,7 @@ Japa imports the test files using the Node.js [dynamic import function](https://
 
 ## refiner *(optional)*
 
-The refiner object applies the filters and cherry-picks tests for execution. The default implementation relies on the [Refiner class](../core/refiner.md). However, you can also supply your refiner to customize the filter's logic.
+The refiner object applies the filters and cherry-picks tests for execution. The default implementation relies on the [Refiner class](https://github.com/japa/core/blob/develop/src/Refiner/index.ts). However, you can also supply your refiner to customize the filter's logic.
 
 ```ts
 {

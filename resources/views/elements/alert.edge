@@ -1,13 +1,19 @@
-@set('type', node.properties.className.includes('alert-note') ? 'note' : 'tip')
+@set('type', node.properties.className.find((cls) => cls.includes('alert-')))
 @set('classes', (node.properties.className || []).join(' '))
 
 <div class="{{ classes }}">
   <div class="icon">
-    @if(type === 'note')
-      @!icons.note()
+    @if(type === 'alert-note')
+      @svg('heroicons-outline:pencil', { class: 'w-6 h-6' })
+    @elseif(type === 'alert-warning')
+      @svg('heroicons-outline:exclamation', { class: 'w-6 h-6' })
+    @elseif(type === 'alert-announcement')
+      @svg('heroicons-outline:speakerphone', { class: 'w-6 h-6' })
     @else
-      @!icons.bulb()
+      @svg('heroicons-outline:light-bulb', { class: 'w-6 h-6' })
     @end
   </div>
+<div>
 @dimerTree(node.children)~
+</div>
 </div>

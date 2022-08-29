@@ -1,14 +1,12 @@
-@set('isCta', node.properties.className && node.properties.className.includes('cta'))
 @set('isExternal', node.properties.href.startsWith('http'))
 @set('classes', (node.properties.className || []).join(' '))
 
 <a
   href="{{ node.properties.href }}"
   class="{{ classes }}"
-  {{ isExternal ? 'target="_blank" rel="noopener"' : '' }}><span>
+  {{ isExternal ? 'target="_blank" rel="noopener"' : '' }}
+  {{ node.properties.ariaHidden ? 'aria-hidden=true' : '' }}
+  {{ node.properties.tabIndex ? `tabindex=${node.properties.tabIndex}` : '' }}
+>
 @dimerTree(node.children)~
-</span>
-@if(isCta)~
-@!icons.arrow()
-@end~
 </a>

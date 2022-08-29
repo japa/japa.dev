@@ -90,7 +90,7 @@ test.group('Maths.add', (group) => {
 
 ## Hooks
 
-You can register the `setup` and the `teardown` hooks on the group to run before and after the tests.
+You can register the `setup` and the `teardown` hooks on the group to run before and after the tests. [Learn more about hooks](./lifecycle-hooks.md)
 
 ```ts
 test.group('Maths.add', (group) => {
@@ -107,8 +107,6 @@ test.group('Maths.add', (group) => {
   })
 })
 ```
-
-:a[Learn more about hooks]{href="/lifecycle-hooks" class="cta"}
 
 ## Can I create nested groups?
 

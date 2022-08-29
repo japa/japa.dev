@@ -1,5 +1,5 @@
-import Core from '../content/core/menu.json'
-import Runner from '../content/runner/menu.json'
+import Docs from '../content/docs/menu.json'
+import About from '../content/about/menu.json'
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +16,6 @@ export const markdownLanguages = []
 
 /*
 |--------------------------------------------------------------------------
-| Theme used for codeblocks
-|--------------------------------------------------------------------------
-|
-| Themes used for codeblocks
-|
-*/
-export const codeBlocksTheme = 'one-dark-pro'
-
-/*
-|--------------------------------------------------------------------------
 | Content zones
 |--------------------------------------------------------------------------
 |
@@ -36,19 +26,17 @@ export const codeBlocksTheme = 'one-dark-pro'
 */
 export const zones = [
   {
-    title: 'Runner',
-    baseUrl: '/',
+    title: 'Docs',
+    baseUrl: '/docs',
     template: 'templates/docs',
-    contentPath: './content/runner',
-    menu: Runner,
-    caption: 'Use Japa runner to test your applications',
+    contentPath: './content/docs',
+    menu: Docs,
   },
   {
-    title: 'Core',
-    baseUrl: '/core',
-    template: 'templates/docs',
-    contentPath: './content/core',
-    menu: Core,
-    caption: 'Use Japa core to create your own tests runner',
+    title: 'About',
+    baseUrl: '/',
+    template: 'templates/longform',
+    contentPath: './content/about',
+    menu: About,
   },
 ]

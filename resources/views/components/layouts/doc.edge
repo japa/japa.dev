@@ -6,7 +6,7 @@
   @hide-sidebar.window="disableScroll = false"
   @show-header.window="disableScroll = true"
   @hide-header.window="disableScroll = false"
-  :class="{ 'overflow-hidden': disableScroll }"
+  :class="{ 'overflow-hidden': disableScroll, dark: $store.global.themeColor === 'dark' }"
 >
   <head>
     <meta charset="UTF-8" />
@@ -14,14 +14,18 @@
     @include('partials/social')
     @include('partials/icons')
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/pjf0ika.css">
+
     @entryPointStyles('app')
     @entryPointScripts('app')
   </head>
-  <body class="font-display antialiased bg-gray-200 text-gray-900" :class="{ 'overflow-hidden': disableScroll }">
+  <body
+    class="font-display antialiased text-gray-900 dark:text-darkGray-900 bg-white dark:bg-darkGray-50"
+    :class="{ 'overflow-hidden': disableScroll }"
+  >
     {{{ await $slots.main() }}}
-
-    @if(env('ANALYTICS_TOKEN'))
-      <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ env('ANALYTICS_TOKEN') }}"}'></script>
-    @end
   </body>
 </html>
