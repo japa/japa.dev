@@ -2,7 +2,7 @@
   <header class="h-header" layout-header>
     <div class="h-header flex justify-between items-center px-8">
       <div class="flex">
-        @unless(hideSidebarToggler)
+        @if(hideSidebarToggler)
           <button class="text-gray-600 lg:hidden mr-4" x-data="{}" @click="$dispatch('show-sidebar')">
             <svg width="24" height="24"><path d="M5 6h14M5 12h14M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
           </button>
@@ -19,7 +19,7 @@
           <svg width="24" height="24" fill="none" aria-hidden="true"><path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </button>
 
-        <div>
+        <div class="relative">
           <div
             x-data="{ visible: false }"
             @show-header.window="visible = true"
@@ -32,25 +32,43 @@
             ></div>
 
             <div
-              class="bg-white dark:bg-darkGray-300 absolute px-6 py-6 shadow-xl top-0 right-0 mt-10 mr-10 w-1/2 z-50 rounded-md hidden lg:hidden"
+              class="bg-white dark:bg-darkGray-300 absolute px-6 py-6 shadow-xl top-0 right-0 w-52 z-50 rounded-md hidden lg:hidden"
               :class="{ '!block': visible }"
             >
-              <ul>
+              <ul up-nav>
                 @each(link in links)
-                  <li class="py-1">
-                    <a
-                      up-target="body"
-                      up-preload
-                      href="{{ link.url }}"
-                      up-alias="{{ link.upAlias }}"
-                      @click="$dispatch('hide-header')"
-                      class="text-gray-600 dark:text-darkGray-600 text-lg hover:text-gray-900 dark:hover:text-darkGray-900 {{
-                        link.active ? 'persistent-up-current' : ''
-                      }}"
-                    >
-                      {{ link.title }}
-                    </a>
-                  </li>
+                  @if(link.children)
+                    @each(child in link.children)
+                      <li class="py-1">
+                        <a
+                          up-target="body"
+                          up-preload
+                          href="{{ child.url }}"
+                          @click="$dispatch('hide-header')"
+                          class="text-gray-600 dark:text-darkGray-600 text-lg hover:text-gray-900 dark:hover:text-darkGray-900 {{
+                            child.active ? 'persistent-up-current' : ''
+                          }}"
+                        >
+                          {{ child.title }}
+                        </a>
+                      </li>
+                    @end
+                  @else
+                    <li class="py-1">
+                      <a
+                        up-target="body"
+                        up-preload
+                        href="{{ link.url }}"
+                        up-alias="{{ link.upAlias }}"
+                        @click="$dispatch('hide-header')"
+                        class="text-gray-600 dark:text-darkGray-600 text-lg hover:text-gray-900 dark:hover:text-darkGray-900 {{
+                          link.active ? 'persistent-up-current' : ''
+                        }}"
+                      >
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  @end
                 @end
 
                 <li class="py-1">
@@ -64,13 +82,18 @@
                 </li>
               </ul>
 
-              <div class="mt-8 flex space-x-2 items-center">
-                <label for="appearance" class="text-gray-600 dark:text-darkGray-600">Appearance</label>
+              <div class="mt-8">
+                <label
+                  for="appearance"
+                  class="text-gray-600 dark:text-darkGray-600 text-sm font-medium block mb-2"
+                >
+                  Appearance
+                </label>
                 <select
                   id="appearance"
                   name="appearance"
                   x-data="darkModeSwitch"
-                  class="bg-gray-300 dark:bg-darkGray-100 rounded-md"
+                  class="bg-gray-300 dark:bg-darkGray-100 rounded-md w-full"
                   @change="(e) => toggle(e.target.value)"
                 >
                   <option

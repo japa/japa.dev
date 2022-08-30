@@ -29,10 +29,10 @@ Route.on('404').render('errors/404')
 Route.get('*', async ({ request, response }) => {
   const url = request.url()
   if (url === '/') {
-    return response.redirect('/docs')
+    return response.redirect().toPath('/docs')
   }
 
-  const { html, error } = await Content.render(url)
+  const { html, error } = await Content.render(url.replace(/\/$/, ''))
 
   if (error && error.includes('Unable to lookup')) {
     return response.redirect('/404')

@@ -1,6 +1,6 @@
 @layouts.doc()
   @!header({
-    hideSidebarToggler: true,
+    hideSidebarToggler: false,
     links: [
       {
         title: 'Docs',
@@ -39,12 +39,12 @@
   <section class="relative">
     <main class="flex px-8 lg:px-12" up-main layout-main>
       @if(doc.url === '/news')
-        <div class="news_timeline one_size mx-auto relative max-w-3xl">
+        <div class="news_timeline one_size mx-auto relative max-w-full lg:max-w-3xl">
           @include('partials/markdown')
         </div>
       @else
         <div class="max-w-6xl w-full mx-auto flex justify-between">
-          <div class="pr-12">
+          <div class="lg:pr-12">
             @include('partials/markdown')
           </div>
           @set('hideSponsors', doc.url === '/sponsor')

@@ -166,7 +166,7 @@
   @apply relative bg-darkGray-800 rounded-md overflow-hidden;
 }
 .markdown .codegroup-tabs {
-  @apply flex px-8 scroll-pl-8 relative overflow-x-scroll py-6 -mx-2;
+  @apply flex px-8 scroll-pl-8 relative overflow-x-auto py-6 -mx-2;
 }
 .markdown .codegroup .dimer-highlight {
   @apply pt-0 mb-0;
@@ -228,10 +228,10 @@
 .markdown figure {
   @apply max-w-full overflow-hidden min-w-min w-fit;
 }
-.markdown figure {
+.markdown figure.boxed {
   @apply border-4 border-gray-300 rounded-md flex flex-col items-center dark:border-darkGray-200;
 }
-.markdown figure img {
+.markdown figure.boxed img {
   @apply px-8 py-8;
 }
 .markdown figure > figcaption {
@@ -386,31 +386,15 @@
  * ------------------------------------------------------
  */
 .news_timeline .timeline_item {
-  @apply flex items-start space-x-9;
+  @apply border-b border-gray-300 dark:border-darkGray-200 pb-6 pt-10 lg:border-none lg:flex lg:py-0 lg:flex-row lg:items-start lg:space-x-9 last-of-type:border-none first-of-type:pt-0;
 }
 
 .news_timeline .timeline_item .news_datetime {
-  @apply pt-9 w-28 text-right;
+  @apply lg:pt-9 lg:w-28 lg:text-right;
 }
 
 .news_timeline .timeline_item .news_content {
-  @apply relative py-8 pl-8 flex-1;
-}
-
-.news_timeline .timeline_item .news_content:before {
-  @apply absolute left-0 w-[1px] bg-gray-300 dark:bg-darkGray-200 top-0 bottom-0;
-  content: '';
-}
-
-.news_timeline .timeline_item .news_content:after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9'%3E%3Ccircle cx='4.5' cy='4.5' r='4.5' stroke='%23e7e5e0' stroke-width='3' fill='%23fff'%3E%3C/circle%3E%3C/svg%3E");
-
-  @apply absolute left-0 top-0 w-4 h-4 rounded-full mt-[37px] -ml-[7.5px];
-  content: ' ';
-}
-
-.dark .news_timeline .timeline_item .news_content:after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9'%3E%3Ccircle cx='4.5' cy='4.5' r='4.5' stroke='%23343434' stroke-width='3' fill='%23202021'%3E%3C/circle%3E%3C/svg%3E");
+  @apply relative pt-3 lg:py-8 lg:pl-8 lg:flex-1;
 }
 
 .news_timeline .news_content h2 {
@@ -433,14 +417,37 @@
   @apply sr-only;
 }
 
-.news_timeline .news_datetime dd {
-  @apply whitespace-nowrap;
+@media (min-width: 1024px) {
+  .news_timeline .news_datetime dd {
+    @apply whitespace-nowrap;
+  }
+
+  .news_timeline .timeline_item .news_content:before {
+    @apply absolute left-0 w-[1px] bg-gray-300 dark:bg-darkGray-200 top-0 bottom-0;
+    content: '';
+  }
+
+  .news_timeline .timeline_item .news_content:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9'%3E%3Ccircle cx='4.5' cy='4.5' r='4.5' stroke='%23e7e5e0' stroke-width='3' fill='%23fff'%3E%3C/circle%3E%3C/svg%3E");
+
+    @apply absolute left-0 top-0 w-4 h-4 rounded-full mt-[37px] -ml-[7.5px];
+    content: ' ';
+  }
+
+  .dark .news_timeline .timeline_item .news_content:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 9'%3E%3Ccircle cx='4.5' cy='4.5' r='4.5' stroke='%23343434' stroke-width='3' fill='%23202021'%3E%3C/circle%3E%3C/svg%3E");
+  }
 }
 
 .one_size .lg\:max-w-\[65ch\] {
   max-width: 100%;
 }
 
+/**
+ * ------------------------------------------------------
+ *  Sponsors page list
+ * ------------------------------------------------------
+ */
 .sponsors_wrapper {
   @apply mt-10;
 }
@@ -462,11 +469,11 @@
 }
 
 .sponsor_item a {
-  @apply px-4 py-8 flex justify-center bg-gray-50 dark:bg-darkGray-300 h-full items-center;
+  @apply lg:px-4 py-8 flex justify-center bg-gray-50 dark:bg-darkGray-300 h-full items-center;
 }
 
 .all_sponsors .sponsor_item a {
-  @apply px-12 py-10;
+  @apply lg:px-12 lg:py-10;
 }
 
 .all_sponsors .sponsors_list {
@@ -481,22 +488,23 @@
   @apply rounded-lg block;
 }
 
-.markdown .features {
-  @apply flex flex-wrap;
-}
-
+/**
+ * ------------------------------------------------------
+ *  Features list
+ * ------------------------------------------------------
+ */
 .markdown .feature {
   @apply mb-4 w-full pr-3;
 }
 
 .markdown .feature .feature_content {
-  @apply bg-none border border-gray-300 dark:border-darkGray-200 rounded-lg h-full flex items-start;
+  @apply bg-none border border-gray-300 dark:border-darkGray-200 rounded-lg h-full lg:flex items-start;
   color: inherit;
   transition: background 200ms ease;
 }
 
 .feature_content .feature_title {
-  @apply px-6 w-24 flex justify-center pt-8;
+  @apply px-6 pt-4 lg:w-24 lg:flex lg:justify-center lg:pt-8;
 }
 
 .feature_content .feature_title svg {
@@ -504,7 +512,7 @@
 }
 
 .feature_content .feature_body {
-  @apply border-l border-gray-300 dark:border-darkGray-300 px-6 pt-8 pb-4;
+  @apply border-l border-gray-300 dark:border-darkGray-300 px-6 pt-4 lg:pt-8 pb-4;
 }
 
 .markdown .feature .feature_content:hover {
