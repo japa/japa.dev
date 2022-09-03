@@ -9,6 +9,47 @@ Stay up to date with everything you need to know about Japa. Official releases, 
   <div class="news_datetime">
     <dl>
       <dt> Date </dt>
+      <dd> <time datetime="2022-05-04">September 02, 2022</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## Improvements to filtering layer
+
+  The `@japa/runner` version `2.1.0` brings improvements to the filtering layer of the tests runner. It improves performance since the parent layers do not run when all the children are filtered out.
+
+  For example: If you apply a filter that disables all the tests within a group, that group will not execute its hooks. Earlier it was not the case.
+
+  [View release notes](https://github.com/japa/runner/releases/tag/v2.1.0)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
+      <dd> <time datetime="2022-05-04">September 02, 2022</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## Launch official VSCode extension
+
+  Julien from the core team created the VSCode extension to run individual tests and all tests inside a file directly from your code editor.
+
+  [Download Extension](https://marketplace.visualstudio.com/items?itemName=jripouteau.japa-vscode)\
+  [Support Julien on Github](https://github.com/sponsors/julien-R44)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
       <dd> <time datetime="2022-05-04">May 04, 2022</time> </dd>
     </dl>
   </div>

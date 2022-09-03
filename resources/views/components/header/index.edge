@@ -41,8 +41,7 @@
                     @each(child in link.children)
                       <li class="py-1">
                         <a
-                          up-target="body"
-                          up-preload
+                          {{ child.target ? `target=${child.target}` : 'up-target=body up-preload' }}
                           href="{{ child.url }}"
                           @click="$dispatch('hide-header')"
                           class="text-gray-600 dark:text-darkGray-600 text-lg hover:text-gray-900 dark:hover:text-darkGray-900 {{
@@ -137,8 +136,7 @@
                         @each(child in link.children)
                           <li>
                             <a
-                              up-target="body"
-                              up-preload
+                              {{ child.target ? `target=${child.target}` : 'up-target=body up-preload' }}
                               href="{{ child.url }}"
                               class="py-1.5 px-4 block text-gray-600 dark:text-darkGray-600 font-medium hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900 whitespace-nowrap {{
                                 child.active ? 'persistent-up-current' : ''

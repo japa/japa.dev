@@ -390,7 +390,7 @@
 }
 
 .news_timeline .timeline_item .news_datetime {
-  @apply lg:pt-9 lg:w-28 lg:text-right;
+  @apply lg:pt-9 lg:w-32 lg:text-right;
 }
 
 .news_timeline .timeline_item .news_content {
