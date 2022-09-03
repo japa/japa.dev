@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import "./markdown.css";
 
+html.dark {
+  color-scheme: dark;
+}
+
 [layout-sidebar] li a.up-current {
   @apply bg-gray-300 rounded-md text-gray-900 dark:text-darkGray-900 dark:bg-darkGray-300;
 }
