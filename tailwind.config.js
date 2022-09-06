@@ -41,6 +41,7 @@ module.exports = {
         200: '#343434',
         300: '#2e2e30',
         600: '#aaa',
+        700: '#777',
         800: '#1c1c1c',
         900: '#e7e7e7',
       },
@@ -72,6 +73,7 @@ module.exports = {
       boxShadow: {
         xl: '0 12px 32px rgba(0, 0, 0, .1), 0 2px 6px rgba(0, 0, 0, .08)',
         lg: '0px 2px 4px rgba(44, 43, 42, 0.1)',
+        search: 'inset 0 0 0 1px #ffffff1f',
       },
       transitionProperty: {
         left: 'left',

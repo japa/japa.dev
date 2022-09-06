@@ -1,7 +1,7 @@
 <div class="sticky top-0 z-40 bg-white dark:bg-darkGray-100 border-b border-gray-300 dark:border-darkGray-200 h-header" up-fixed="top">
   <header class="h-header" layout-header>
     <div class="h-header flex justify-between items-center px-8">
-      <div class="flex">
+      <div class="flex w-sidebar">
         @if(hideSidebarToggler)
           <button class="text-gray-600 lg:hidden mr-4" x-data="{}" @click="$dispatch('show-sidebar')">
             <svg width="24" height="24"><path d="M5 6h14M5 12h14M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
@@ -12,6 +12,10 @@
           <span class="sr-only">Japa.dev home page</span>
           @include('partials/logo')
         </a>
+      </div>
+
+      <div class="ml-auto lg:ml-0 lg:flex-1">
+        @!search()
       </div>
 
       <div class="flex lg:hidden">
@@ -80,36 +84,6 @@
                   </a>
                 </li>
               </ul>
-
-              <div class="mt-8">
-                <label
-                  for="appearance"
-                  class="text-gray-600 dark:text-darkGray-600 text-sm font-medium block mb-2"
-                >
-                  Appearance
-                </label>
-                <select
-                  id="appearance"
-                  name="appearance"
-                  x-data="darkModeSwitch"
-                  class="bg-gray-300 dark:bg-darkGray-100 rounded-md w-full"
-                  @change="(e) => toggle(e.target.value)"
-                >
-                  <option
-                    value="light"
-                    :selected="$store.global.themeColor === 'light'"
-                  >
-                    Light
-                  </option>
-
-                  <option
-                    value="dark"
-                    :selected="$store.global.themeColor === 'dark'"
-                  >
-                    Dark
-                  </option>
-                </select>
-              </div>
             </div>
           </div>
         </div>
@@ -169,29 +143,13 @@
           <span class="bg-gray-300 dark:bg-darkGray-200 w-[2px] h-[20px] block"></span>
 
           <ul class="flex items-center space-x-4 ml-6">
-            <li x-data="darkModeSwitch">
-              <button
-                @click.prevent="toggle($store.global.themeColor === 'dark' ? 'light' : 'dark')"
-                class="text-gray-600 dark:text-darkGray-600 font-medium text-md hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900 mt-[7px]"
-              >
-                @svg('heroicons-outline:sun', {
-                  class: 'w-6 h-6',
-                  'x-show': "$store.global.themeColor === 'light'"
-                })
-
-                @svg('heroicons-outline:moon', {
-                  class: 'w-6 h-6',
-                  'x-show': "$store.global.themeColor === 'dark'"
-                })
-              </button>
-            </li>
             <li>
               <a
                 href="https://github.com/japa/runner"
                 target="_blank"
                 class="text-gray-600 dark:text-darkGray-600 font-medium text-md hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900"
               >
-                <svg class="h-5 w-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>GitHub</title><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path></svg>
+                <svg class="h-6 w-6" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>GitHub</title><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48l-.01-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85l-.01 2.75c0 .26.18.58.69.48A10 10 0 0 0 10 0"></path></svg>
               </a>
             </li>
           </ul>

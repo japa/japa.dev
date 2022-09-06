@@ -3,18 +3,13 @@ import 'lazysizes'
 import 'unpoly'
 import Alpine from 'alpinejs'
 import { listen } from 'quicklink'
+import docsearch from '@docsearch/js'
 import persist from '@alpinejs/persist'
 
 Alpine.plugin(persist)
 
 Alpine.store('global', {
   selectedTab: Alpine.$persist(0),
-  themeColor: Alpine.$persist(
-    /**
-     * Starting with user system theme and then they can toggle as needed
-     */
-    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  ),
 })
 
 Alpine.data('codegroup', function () {
@@ -72,10 +67,18 @@ Alpine.data('prefetch', function () {
   }
 })
 
-Alpine.data('darkModeSwitch', function () {
+Alpine.data('search', function () {
   return {
-    toggle(mode) {
-      this.$store.global.themeColor = mode
+    init() {
+      docsearch({
+        container: this.$el,
+        appId: 'JK0LZ5Z477',
+        // appId: 'R2IYF7ETH7',
+        indexName: 'japa',
+        // indexName: 'docsearch',
+        apiKey: 'd21459d1420e545dd59b186ea41329ce',
+        // apiKey: '599cec31baffa4868cae4e79f180729b',
+      })
     },
   }
 })

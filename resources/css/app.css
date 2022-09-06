@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@docsearch/css";
 @import "./markdown.css";
+@import "./docsearch.css";
 
 html.dark {
   color-scheme: dark;
