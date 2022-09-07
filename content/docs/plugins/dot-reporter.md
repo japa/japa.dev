@@ -23,7 +23,7 @@ And register it as a reporter within the `bin/test.js` file.
 ```ts
 // title: ESM
 // highlight-start
-import { dotReporter } from '@japa/spec-reporter'
+import { dotReporter } from '@japa/dot-reporter'
 // highlight-end
 import { configure, processCliArgs } from '@japa/runner'
 
@@ -41,7 +41,7 @@ configure({
 ```ts
 // title: CommonJS
 // highlight-start
-const { dotRepoter } = require('@japa/spec-reporter')
+const { dotRepoter } = require('@japa/dot-reporter')
 // highlight-end
 const { configure, processCliArgs } = require('@japa/runner')
 
