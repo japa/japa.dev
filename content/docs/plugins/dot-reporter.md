@@ -5,7 +5,7 @@ description: Minimalist reporter for Japa
 
 # Dot reporter
 
-Reporters in Japa are responsible for displaying/saving the progress of tests. The dot reporter is a minimalist reporter that displays a dot for each passing test and an cross for each failing test.
+Reporters in Japa are responsible for displaying/saving the progress of tests. The dot reporter is a minimalist reporter that displays a dot for each passing test and a cross for each failing test.
 
 ![](dot-reporter.png)
 
