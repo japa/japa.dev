@@ -86,6 +86,11 @@
             "contentPath": "plugins/spec-reporter.md"
           },
           {
+            "title": "Dot reporter",
+            "permalink": "plugins/dot-reporter",
+            "contentPath": "plugins/dot-reporter.md"
+          },
+          {
             "title": "Assert",
             "permalink": "plugins/assert",
             "contentPath": "plugins/assert.md"
