@@ -81,16 +81,6 @@
         "name": "Plugins",
         "docs": [
           {
-            "title": "Spec reporter",
-            "permalink": "plugins/spec-reporter",
-            "contentPath": "plugins/spec-reporter.md"
-          },
-          {
-            "title": "Dot reporter",
-            "permalink": "plugins/dot-reporter",
-            "contentPath": "plugins/dot-reporter.md"
-          },
-          {
             "title": "Assert",
             "permalink": "plugins/assert",
             "contentPath": "plugins/assert.md"
@@ -109,6 +99,21 @@
             "title": "API Client",
             "permalink": "plugins/api-client",
             "contentPath": "plugins/api-client.md"
+          }
+        ]
+      },
+      {
+        "name": "Reporters",
+        "docs": [
+          {
+            "title": "Spec reporter",
+            "permalink": "plugins/spec-reporter",
+            "contentPath": "plugins/spec-reporter.md"
+          },
+          {
+            "title": "Dot reporter",
+            "permalink": "plugins/dot-reporter",
+            "contentPath": "plugins/dot-reporter.md"
           }
         ]
       },

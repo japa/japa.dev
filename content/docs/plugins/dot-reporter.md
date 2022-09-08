@@ -7,7 +7,7 @@ description: Minimalist reporter for Japa
 
 Reporters in Japa are responsible for displaying/saving the progress of tests. The dot reporter is a minimalist reporter that displays a dot for each passing test and an cross for each failing test.
 
-![](https://raw.githubusercontent.com/japa/dot-reporter/develop/assets/reporter.png)
+![](dot-reporter.png)
 
 ## Installation and setup
 Install the package from the npm registry as follows.
