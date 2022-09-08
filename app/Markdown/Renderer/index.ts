@@ -14,6 +14,13 @@ export default new Renderer().use((node) => {
   }
 
   /**
+   * Render video using "elements/video.edge" file
+   */
+  if (node.tagName === 'source') {
+    return ['elements/video-source', { node }]
+  }
+
+  /**
    * Render anchor tags using "elements/a.edge" file
    */
   if (node.tagName === 'a') {

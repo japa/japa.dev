@@ -22,8 +22,8 @@ Content.cache('markup')
 /**
  * Registering zones with the `@dimerapp/content` module.
  */
-zones.forEach(({ title, baseUrl, template, caption, menu, contentPath }) => {
-  const zone = Content.zone(title, { caption })
+zones.forEach(({ title, baseUrl, template, menu, contentPath }) => {
+  const zone = Content.zone(title)
 
   zone
     .baseUrl(baseUrl)

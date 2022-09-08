@@ -1,0 +1,5 @@
+@set(
+  'src',
+  node.properties.src.startsWith('http') ? node.properties.src : image(node.properties.src)
+)
+<source src="{{ src }}" type="{{ node.properties.type }}" {{ node.properties.controls ? 'controls' : '' }}>
