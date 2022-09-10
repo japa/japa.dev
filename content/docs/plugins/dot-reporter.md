@@ -41,7 +41,7 @@ configure({
 ```ts
 // title: CommonJS
 // highlight-start
-const { dotRepoter } = require('@japa/dot-reporter')
+const { dotReporter } = require('@japa/dot-reporter')
 // highlight-end
 const { configure, processCliArgs } = require('@japa/runner')
 
@@ -50,7 +50,7 @@ configure({
   ...{
     files: ['tests/**/*.spec.js']
     // highlight-start
-    reporters: [dotRepoter()]
+    reporters: [dotReporter()]
     // highlight-end
   }
 })
