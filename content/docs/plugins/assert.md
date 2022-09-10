@@ -69,7 +69,7 @@ Using this plugin, you can test HTTP responses against one or more open API sche
 ```ts
 const config = {
   openApi: {
-    schema: [join(__dirname, '..', './api-schema.json')]
+    schemas: [join(__dirname, '..', './api-schema.json')]
   }
 }
 
