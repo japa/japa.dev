@@ -1,7 +1,7 @@
 ---
 title: Expect types
 description: The expect types plugin allows you to write assertions for the static TypeScript types. Think of them as additional guards to ensure that during refactoring you are not messing up with the types a method returns or accepts.
-ogImage: expect-types-plugin.jpeg
+ogImage: expect-types-plugin.png
 ---
 
 # Expect types
