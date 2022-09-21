@@ -330,7 +330,7 @@
  * ------------------------------------------------------
  */
 .toc-container {
-  @apply h-full w-toc overflow-y-auto px-8 py-4 font-body my-12;
+  @apply h-full w-toc overflow-y-auto px-8 py-4 font-body;
 }
 .toc-container h3, .toc-container .sponsors_wrapper h3 {
   @apply font-display font-semibold mb-2 text-md text-sm;
@@ -449,7 +449,7 @@
  * ------------------------------------------------------
  */
 .sponsors_wrapper {
-  @apply mt-10;
+  @apply my-10;
 }
 
 .sponsors_wrapper h3 {

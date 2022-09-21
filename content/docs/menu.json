@@ -91,6 +91,11 @@
             "contentPath": "plugins/expect.md"
           },
           {
+            "title": "Expect types",
+            "permalink": "plugins/expect-type",
+            "contentPath": "plugins/expect-type.md"
+          },
+          {
             "title": "Run failed tests",
             "permalink": "plugins/run-failed-tests",
             "contentPath": "plugins/run-failed-tests.md"
