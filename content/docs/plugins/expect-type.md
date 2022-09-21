@@ -1,3 +1,9 @@
+---
+title: Expect types
+description: The expect types plugin allows you to write assertions for the static TypeScript types. Think of them as additional guards to ensure that during refactoring you are not messing up with the types a method returns or accepts.
+ogImage: expect-types-plugin.jpeg
+---
+
 # Expect types
 
 The `@japa/expect-types` plugin allows you to write an assertion for the TypeScript types. However, the plugin has no runtime behavior, and you must type-check your project for assertions to run.
