@@ -9,7 +9,45 @@ Stay up to date with everything you need to know about Japa. Official releases, 
   <div class="news_datetime">
     <dl>
       <dt> Date </dt>
-      <dd> <time datetime="2022-05-04">September 02, 2022</time> </dd>
+      <dd> <time datetime="2022-09-21">September 21, 2022</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## New plugin - `@japa/expect-type`
+
+  The `expect-type` plugin allows you to write assertions for the static TypeScript types. Think of them as additional guards to ensure that during refactoring you are not messing up with the types a method returns or accepts.
+
+  [Plugin documentation](../docs/plugins/expect-type.md)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
+      <dd> <time datetime="2022-09-08">September 08, 2022</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## New reporter - `@japa/dot-reporter`
+
+  The dot reporter is a minimalist reporter that displays a dot for each passing test and a cross for each failing test. You might consider using the dot reporter in a CI workflow to keep the output clean.
+
+  [Reporter documentation](../docs/plugins/dot-reporter.md)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
+      <dd> <time datetime="2022-09-02">September 02, 2022</time> </dd>
     </dl>
   </div>
 
@@ -30,7 +68,7 @@ Stay up to date with everything you need to know about Japa. Official releases, 
   <div class="news_datetime">
     <dl>
       <dt> Date </dt>
-      <dd> <time datetime="2022-05-04">September 02, 2022</time> </dd>
+      <dd> <time datetime="2022-09-02">September 02, 2022</time> </dd>
     </dl>
   </div>
 
