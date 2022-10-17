@@ -9,6 +9,27 @@ Stay up to date with everything you need to know about Japa. Official releases, 
   <div class="news_datetime">
     <dl>
       <dt> Date </dt>
+      <dd> <time datetime="2022-10-17">October 17, 2022</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## Improvements in reporters
+
+  - Spec reporter now prefixes the pinned tests with the `PINNED` label for better visual feedback.
+  - The base reporter now displays the tests summary in compact mode.
+
+  [Base reporter release notes](https://github.com/japa/base-reporter/releases/tag/v1.1.0) \
+  [Spec reporter release notes](https://github.com/japa/spec-reporter/releases/tag/v1.3.2)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
       <dd> <time datetime="2022-09-21">September 21, 2022</time> </dd>
     </dl>
   </div>

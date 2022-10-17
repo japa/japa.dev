@@ -7,7 +7,7 @@ description: View detailed progress of tests in the terminal.
 
 Reporters in Japa are responsible for displaying/saving the progress of tests. The spec reporter displays a detailed report of all the tests in the terminal.
 
-![](https://raw.githubusercontent.com/japa/spec-reporter/develop/assets/spec-reporter-output.png)
+![](spec-reporter-output.png)
 
 ## Installation and setup
 Install the package from the npm registry as follows.

@@ -90,6 +90,10 @@ test.group('Maths.add', (group) => {
 ```
 :::
 
+Pinned tests are labelled by the spec reporter for better visual feedback.
+
+![](pinned.png)
+
 You can also pin all the tests inside a group using the `group.tap` method. 
 
 ```ts
