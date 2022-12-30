@@ -113,7 +113,7 @@ test.group('Maths.add', (group) => {
 
 ## Test tags
 
-Tagging tests are another to filter and run tests that have one or more matching tags. 
+Tagging tests are another way to filter and run tests that have one or more matching tags. 
 
 Usually, you will have to identify the tags early in the process of writing tests. For example, you can tag all the tests that request third-party services with the service name and later only run/ignore those tags.
 
