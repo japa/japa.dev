@@ -18,7 +18,7 @@ It has out of the box support for:
 - Support for registering custom body serializers and parsers.
 
 :::note
-The plugin is built on top of [superagent](https://visionmedia.github.io/superagent/). However, it is worth noting that it is not a thin wrapper, and therefore the API is somewhat different.
+The plugin is built on top of [superagent](https://ladjs.github.io/superagent/). However, it is worth noting that it is not a thin wrapper, and therefore the API is somewhat different.
 :::
 
 ## Setup
