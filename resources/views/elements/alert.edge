@@ -4,16 +4,12 @@
 <div class="{{ classes }}">
   <div class="icon">
     @if(type === 'alert-note')
-      @svg('heroicons-outline:pencil', { class: 'w-6 h-6' })
+      @svg('heroicons-outline:information-circle', { class: 'w-5 h-5' })
     @elseif(type === 'alert-warning')
-      @svg('heroicons-outline:exclamation', { class: 'w-6 h-6' })
-    @elseif(type === 'alert-announcement')
-      @svg('heroicons-outline:speakerphone', { class: 'w-6 h-6' })
-    @else
-      @svg('heroicons-outline:light-bulb', { class: 'w-6 h-6' })
+      @svg('heroicons-outline:bell-alert', { class: 'w-5 h-5' })
     @end
   </div>
-<div>
+<div class="text-md">
 @dimerTree(node.children)~
 </div>
 </div>

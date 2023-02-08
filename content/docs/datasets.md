@@ -115,10 +115,13 @@ test('validate email - "{email}"')
 The dynamic values (aka interpolation) works by wrapping the property name inside single curly braces `{email}`.
 
 - You can access the array current index using the special keyword `$i`. The index starts from 1 and not 0.
+
   ```ts
   test('{$i} validate email - "{email}"')
   ```
+
 - If the dataset array contains only literal values, then you can access them using the special keyword `$self`.
+
   ```ts
   test('validate email - "{$self}"')
     .with([

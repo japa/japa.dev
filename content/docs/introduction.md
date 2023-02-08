@@ -160,7 +160,7 @@ Most of the core APIs of Japa are extensible.
 - Extend [test context](./test-context.md#extending-context) with custom properties.
 - Develop custom [plugins](./extend/creating-plugins.md) and [reporters](./extend/creating-reporters.md).
 
-## Official VSCode extension
-You can run Japa tests directly within your code editor using our [official VSCode extension](https://marketplace.visualstudio.com/items?itemName=jripouteau.japa-vscode).
+## VSCode extension
+Run Japa tests within VSCode using keyboard shortcuts or code lenses. [Download extension](https://marketplace.visualstudio.com/items?itemName=jripouteau.japa-vscode)
 
 ::video{url="japa-vscode.mp4" controls}

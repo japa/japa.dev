@@ -27,7 +27,7 @@ test('verify email address', async () => {
 })
 ```
 
-## Waiting for done method call
+## Waiting for `done` method call
 
 If your test code relies on the **event emitter**, **callbacks**, or **timeouts**, then you can instruct Japa to wait for an explicit call to the `done` method.
 

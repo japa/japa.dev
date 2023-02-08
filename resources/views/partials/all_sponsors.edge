@@ -5,38 +5,7 @@
     <div class="sponsors_list">
       <div class="sponsor_item">
         <a href="https://cleavr.io/adonis/?utm_source=adonisjs" target="_blank" title="Cleavr">
-          <img
-            src="https://adonisjs.com/assets/images/cleavr.35c0e821.svg"
-            alt="Cleavr"
-            style="width: 65%;"
-          >
-        </a>
-      </div>
-      <div class="sponsor_item">
-        <a href="https://cavai.com" target="_blank" title="Cavai">
-          <img
-            src="https://adonisjs.com/assets/images/cavai.ea64eafe.png"
-            alt="Cavai"
-            style="width: 50%;"
-          >
-        </a>
-      </div>
-      <div class="sponsor_item">
-        <a href="https://open-bootcamp.com/?utm_source=adonisjs" target="_blank" title="Open Bootcamp">
-          <img
-            src="https://adonisjs.com/assets/images/open-bootcamp.df868261.svg"
-            alt="Open Bootcamp"
-            style="width: 65%;"
-          >
-        </a>
-      </div>
-      <div class="sponsor_item">
-        <a href="https://ably.com/?utm_source=adonisjs" target="_blank" title="Ably">
-          <img
-            src="https://adonisjs.com/assets/images/ably.7e295eef.svg"
-            style="width: 50%;"
-            alt="Ably"
-          >
+          <img src="{{ image('cleavr.35c0e821.svg') }}" alt="Cleavr.io">
         </a>
       </div>
     </div>
@@ -85,6 +54,18 @@
       @each(sponsor in sponsors.backers)
         <a href="{{ sponsor.profileUrl }}" class="sponsor_item" target="_blank" rel="noopener" title="{{ sponsor.name }}">
           <img src="{{ sponsor.avatarUrl }}" alt="{{ sponsor.name }}">
+        </a>
+      @end
+    </div>
+  </div>
+
+  <div class="sponsors_wrapper">
+    <h3> Previous sponsors </h3>
+
+    <div class="sponsors_list_wide">
+      @each(sponsor in sponsors.previous)
+        <a href="{{ sponsor.profileUrl }}" class="sponsor_item" target="_blank" rel="noopener" title="{{ sponsor.name }}">
+          <img src="{{ sponsor.avatarUrl }}" alt="{{ sponsor.name }}" width="100%">
         </a>
       @end
     </div>

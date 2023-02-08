@@ -8,7 +8,7 @@
  * ------------------------------------------------------
  */
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5 {
-  @apply font-display font-semibold text-gray-900 leading-normal tracking-tight relative scroll-mt-header dark:text-darkGray-900;
+  @apply font-display font-medium text-gray-900 leading-normal relative scroll-mt-header dark:text-darkGray-900;
 }
 .markdown h1 {
   @apply text-prose-6xl mb-5;
@@ -23,7 +23,7 @@
   @apply text-prose-4xl;
 }
 .markdown h2 em {
-  @apply text-xl not-italic font-semibold tracking-normal relative top-[-3px] text-gray-800 dark:text-darkGray-600;
+  @apply text-xl not-italic font-medium relative top-[-3px] text-gray-800 dark:text-darkGray-600;
 }
 .markdown h3 {
   @apply text-prose-3xl mb-3 mt-12;
@@ -84,13 +84,13 @@
  * ------------------------------------------------------
  */
 .markdown table {
-  @apply min-w-full border-collapse table-auto;
+  @apply min-w-full border-collapse table-auto rounded-md;
 }
 .markdown table tr th, .markdown table tr td {
-  @apply border border-gray-300 text-left px-3 py-2 dark:border-darkGray-200;
+  @apply border border-gray-800 text-left px-3 py-2 dark:border-darkGray-200;
 }
 .markdown table tr th {
-  @apply font-semibold bg-gray-200 dark:bg-darkGray-300;
+  @apply font-medium bg-gray-200 dark:bg-darkGray-800;
 }
 
 /**
@@ -108,12 +108,12 @@
 .markdown .dimer-highlight pre {
   @apply subpixel-antialiased;
 }
-.markdown .dimer-highlight pre code{
+.markdown .dimer-highlight pre code {
   @apply leading-relaxed text-prose-pre;
 }
 
 .markdown .dimer-highlight {
-  @apply relative bg-darkGray-800 rounded-md py-6 overflow-x-auto;
+  @apply relative bg-darkGray-800 rounded-md py-6 overflow-x-auto border border-darkGray-200;
 }
 
 /**
@@ -151,7 +151,7 @@
  * ------------------------------------------------------
  */
 .markdown .dimer-highlight .codeblock-title {
-  @apply text-gray-300 bg-translucent py-1.5 px-4 rounded-xl inline-block font-mono text-sm font-semibold mb-4 mx-8;
+  @apply text-gray-300 bg-darkGray-200 py-1.5 px-4 rounded-xl inline-block font-mono text-sm font-medium mb-4 mx-8;
 }
 .markdown .dimer-highlight .ctc-action {
   @apply absolute right-0 mr-6 text-gray-600 mt-2 hover:text-gray-300 z-20 transition-colors hidden lg:block;
@@ -163,19 +163,19 @@
  * ------------------------------------------------------
  */
 .markdown .codegroup {
-  @apply relative bg-darkGray-800 rounded-md overflow-hidden;
+  @apply relative bg-darkGray-800 rounded-md overflow-hidden border border-darkGray-200;
 }
 .markdown .codegroup-tabs {
   @apply flex px-8 scroll-pl-8 relative overflow-x-auto py-6 -mx-2;
 }
 .markdown .codegroup .dimer-highlight {
-  @apply pt-0 mb-0;
+  @apply pt-0 mb-0 border-none;
 }
 .markdown .codegroup-tabs .highlighter {
   @apply absolute bg-darkGray-300 z-10 rounded-xl transition-left;
 }
 .markdown .codegroup-tabs button {
-  @apply text-gray-100 rounded-xl font-mono text-sm font-semibold no-underline py-1.5 px-4 whitespace-nowrap relative z-20 transition-colors hover:text-gray-300;
+  @apply text-gray-100 rounded-xl font-mono text-sm font-medium no-underline py-1.5 px-4 whitespace-nowrap relative z-20 transition-colors hover:text-gray-300;
 }
 .markdown .codegroup-tabs button.active {
   @apply text-gray-300;
@@ -187,37 +187,39 @@
  * ------------------------------------------------------
  */
 .markdown .alert {
-  @apply border-2 rounded-md pr-3 pl-6 py-4 relative flex items-start space-x-4;
+  @apply rounded-md pr-6 pl-4 py-4 relative flex items-baseline space-x-2 bg-darkGray-800 text-darkGray-900 border-l-4;
 }
-.markdown .alert .icon {
-  @apply rounded-md px-1 py-1;
+
+.markdown .alert code {
+  @apply text-md;
 }
+
+.markdown .alert h4 {
+  @apply text-base;
+}
+
+.markdown .alert h4 a[aria-hidden="true"] {
+  @apply hidden;
+}
+
 .markdown .alert *:last-child {
   @apply mb-0;
 }
-.markdown .alert.alert-tip {
-  @apply border-green-500;
-}
-.markdown .alert.alert-tip .icon {
-  @apply bg-green-500 text-white;
-}
+
 .markdown .alert.alert-note {
-  @apply border-brand dark:border-brandDark;
+  @apply border-brandDark;
 }
+
 .markdown .alert.alert-note .icon {
-  @apply bg-brand text-white dark:bg-brandDark;
+  @apply relative top-[5px];
 }
+
 .markdown .alert.alert-warning {
-  @apply border-amber-500 dark:border-amberDark-500;
+  border-color: rgb(255, 139, 62);
 }
+
 .markdown .alert.alert-warning .icon {
-  @apply bg-amber-500 dark:bg-amberDark-500 text-white;
-}
-.markdown .alert.alert-announcement {
-  @apply border-plum-500 dark:border-plumDark-500;
-}
-.markdown .alert.alert-announcement .icon {
-  @apply bg-plum-500 dark:bg-plumDark-500 text-white;
+  @apply relative top-[5px];
 }
 
 /**
@@ -271,7 +273,7 @@
 }
 .markdown ol li::marker {
   content: counter(ol-counter) ".";
-  @apply text-brand font-semibold text-lg dark:text-brandDark;
+  @apply text-brand font-medium text-lg dark:text-brandDark;
 }
 .markdown ol li ol {
   @apply mb-0 mt-3 list-circle;
@@ -284,14 +286,14 @@
  */
 .markdown a {
   @apply text-brand dark:text-brandDark;
-  background-image: linear-gradient(to bottom, transparent 50%, #5a45ff 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, config('brand') 50%);
   background-position: 0 93%;
   background-repeat: repeat-x;
   background-size: 100% 0.15rem;
   text-shadow: 0.1rem 0 #fff, 0.15rem 0 #fff, -0.1rem 0 #fff, -0.15rem 0 #fff;
 }
 .markdown strong {
-  @apply font-semibold dark:text-darkGray-900;
+  @apply font-medium dark:text-darkGray-900;
 }
 
 /**
@@ -300,7 +302,7 @@
  * ------------------------------------------------------
  */
 .markdown .caption {
-  @apply relative pr-3 pl-10 py-3 font-semibold;
+  @apply relative pr-3 pl-10 py-3 font-medium;
 }
 .markdown .caption > *:last-child {
   @apply mb-0;
@@ -330,17 +332,17 @@
  * ------------------------------------------------------
  */
 .toc-container {
-  @apply h-full w-toc overflow-y-auto px-8 py-4 font-body;
+  @apply h-full w-toc overflow-y-auto pl-8 py-4 font-body;
 }
 .toc-container h3, .toc-container .sponsors_wrapper h3 {
-  @apply font-display font-semibold mb-2 text-md text-sm;
+  @apply font-display font-medium mb-2 text-md text-sm;
 }
 .toc-container em {
   font-style: normal;
 }
 
 .toc-container nav ul a {
-  @apply text-gray-600 dark:text-darkGray-600 text-sm;
+  @apply text-gray-600 dark:text-darkGray-600 text-sm block;
 }
 .toc-container nav ul a:hover, .toc-container nav ul a.active {
   @apply text-gray-900 dark:text-darkGray-900;
@@ -353,7 +355,7 @@
  * Nested list
  */
 .toc-container nav ul li ul {
-  @apply pl-2.5 ml-1 my-1;
+  @apply pl-2.5 my-1;
 }
 .toc-container nav ul li {
   @apply py-0.5;
@@ -363,7 +365,7 @@
  * Top-level links
  */
 .toc-container nav > ul > li {
-  @apply py-1;
+  @apply py-2 border-b border-dashed border-darkGray-300;
 }
 
 /**
@@ -372,8 +374,12 @@
  * ------------------------------------------------------
  */
 .dark .markdown a {
-  background-image: linear-gradient(to bottom, transparent 50%, #9385ff 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, theme('colors.brandDark') 50%);
   text-shadow: 0.1rem 0 #202021, 0.15rem 0 #202021, -0.1rem 0 #202021, -0.15rem 0 #202021;
+}
+
+.dark .markdown a code {
+  @apply text-brandDark;
 }
 
 .dark .markdown h2 a[aria-hidden="true"] .icon.icon-link, .dark .markdown h3 a[aria-hidden="true"] .icon.icon-link, .dark .markdown h4 a[aria-hidden="true"] .icon.icon-link {
@@ -461,7 +467,7 @@
 }
 
 .sponsor_item {
-  @apply w-1/2 p-px;
+  @apply w-full p-px;
 }
 
 .sponsors_list_wide .sponsor_item {
@@ -469,7 +475,7 @@
 }
 
 .sponsor_item a {
-  @apply lg:px-4 py-8 flex justify-center bg-gray-50 dark:bg-darkGray-300 h-full items-center;
+  @apply lg:px-4 py-8 flex justify-center bg-gray-50 dark:bg-darkGray-800 h-full items-center;
 }
 
 .all_sponsors .sponsor_item a {
@@ -481,7 +487,7 @@
 }
 
 .dark .sponsor_item a img {
-  @apply grayscale invert;
+  max-width: 55%;
 }
 
 .sponsors_list_wide .sponsor_item img {

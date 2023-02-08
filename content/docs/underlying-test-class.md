@@ -140,7 +140,11 @@ However, there can be cases when you will not be able to use `async/await`, espe
 Therefore, you can make use of the `waitForDone` method to instruct Japa to wait until an explicit call to the `done` method is made. For example:
 
 :::warning
+
+#### Important
+
 The test will timeout if the `done` method is never called.
+
 :::
 
 ```ts

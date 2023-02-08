@@ -21,7 +21,7 @@ npm init japa@latest
 The installation process prompts you to configure the test runner with the following options.
 
 - **Tests reporter** - Select the reporter to display/store the tests progress.
-- **Assertion library** - Select between [@japa/assert](./plugins/assert.md) or [@japa/expect](./plugins/expect.md).
+- **Assertion library** - Select between [`@japa/assert`](./plugins/assert.md) or [`@japa/expect`](./plugins/expect.md).
 - **Additional plugins** - Select additional plugins you want to configure. You can learn about them in the [plugins section](./plugins/run-failed-tests.md) of the docs.
 - **Project type** - Select the project type for which you want to generate the configuration files.
 

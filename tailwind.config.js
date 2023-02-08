@@ -7,24 +7,12 @@ module.exports = {
       transparent: 'transparent',
       translucent: 'rgba(255, 255, 255, 0.16)',
       brand: '#5a45ff',
-      brandDark: '#9385ff',
+      brandDark: 'rgb(82, 169, 255)',
       green: {
         500: '#2dd4bf',
       },
       red: {
         500: '#fb7185',
-      },
-      plum: {
-        500: '#ab4aba',
-      },
-      plumDark: {
-        500: '#883894',
-      },
-      amber: {
-        500: '#ffb224',
-      },
-      amberDark: {
-        500: '#824e00',
       },
       gray: {
         50: '#f5f5f4',
@@ -36,20 +24,20 @@ module.exports = {
         900: '#1a1a19',
       },
       darkGray: {
-        50: '#202021',
-        100: 'rgba(28,28,28,.9)',
-        200: '#343434',
+        50: 'rgb(21, 23, 24)',
+        100: 'rgb(26, 29, 30)',
+        200: 'rgba(253,252,253,.05)',
         300: '#2e2e30',
-        600: '#aaa',
+        600: 'rgb(155, 161, 166)',
         700: '#777',
-        800: '#1c1c1c',
-        900: '#e7e7e7',
+        800: 'rgb(26, 29, 30)',
+        900: 'rgb(236, 237, 238)',
       },
     },
     fontFamily: {
-      display: ['Inter'],
+      display: ['Familjen Grotesk'],
       body: ['Inter'],
-      mono: ['Jetbrains Mono'],
+      mono: ['Source Code Pro'],
     },
     extend: {
       lineHeight: {
@@ -65,7 +53,7 @@ module.exports = {
         'sidebar': '322px',
         'sidebar-small': '280px',
         'header': '4rem',
-        'toc': '320px',
+        'toc': '260px',
       },
       height: {
         'screen-wo-header': 'calc(100% - 4rem)',

@@ -9,7 +9,9 @@ ogImage: coverage.jpeg
 Japa does not need any special treatment to collect the code coverage metrics. You can rely on the existing tools like [nyc](https://www.npmjs.com/package/nyc) and [c8](https://github.com/bcoe/c8) for the same.
 
 :::note
+
 Please consult the documentation of the respective tools to view all the available options.
+
 :::
 
 ## Using c8

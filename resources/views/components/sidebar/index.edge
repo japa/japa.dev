@@ -18,7 +18,7 @@
     <div class="w-sidebar h-full">
       <div class="h-screen flex flex-col">
         <div class="px-10 pb-12 pt-4 lg:pt-8 overflow-y-auto h-full" up-viewport>
-          <nav x-data="prefetch">
+          <nav x-data="prefetch" class="font-body">
             {{{ await $slots.main() }}}
           </nav>
         </div>

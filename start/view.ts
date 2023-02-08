@@ -21,11 +21,15 @@ View.global(
   'sponsors',
   sponsors.reduce(
     (result, sponsor) => {
-      sponsor.sponsor['profileUrl'] = `https://github.com/${sponsor.sponsor.login}`
-      sponsor.sponsor.name = sponsor.sponsor.name || sponsor.sponsor.login
+      if (sponsor.privacyLevel === 'PRIVATE') {
+        return result
+      }
 
-      if (sponsor.isOneTime) {
-        result.backers.push(sponsor.sponsor)
+      sponsor.sponsor['profileUrl'] = `https://github.com/${sponsor.sponsor.login}`
+      sponsor.sponsor.name = sponsor.sponsor.name || sponsor.sponsor.login || null
+
+      if (sponsor.monthlyDollars === -1 || sponsor.isOneTime) {
+        result.previous.push(sponsor.sponsor)
         return result
       }
 
@@ -52,11 +56,13 @@ View.global(
       silver: [],
       sponsors: [],
       backers: [],
+      previous: [],
     } as {
       gold: any[]
       silver: any[]
       sponsors: any[]
       backers: any[]
+      previous: any[]
     }
   )
 )
