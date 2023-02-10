@@ -91,6 +91,16 @@
             "contentPath": "plugins/expect.md"
           },
           {
+            "title": "API Client",
+            "permalink": "plugins/api-client",
+            "contentPath": "plugins/api-client.md"
+          },
+          {
+            "title": "File system",
+            "permalink": "plugins/file-system",
+            "contentPath": "plugins/file_system.md"
+          },
+          {
             "title": "Expect types",
             "permalink": "plugins/expect-type",
             "contentPath": "plugins/expect-type.md"
@@ -99,11 +109,6 @@
             "title": "Run failed tests",
             "permalink": "plugins/run-failed-tests",
             "contentPath": "plugins/run-failed-tests.md"
-          },
-          {
-            "title": "API Client",
-            "permalink": "plugins/api-client",
-            "contentPath": "plugins/api-client.md"
           }
         ]
       },

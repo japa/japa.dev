@@ -87,10 +87,18 @@
   @apply min-w-full border-collapse table-auto rounded-md;
 }
 .markdown table tr th, .markdown table tr td {
-  @apply border border-gray-800 text-left px-3 py-2 dark:border-darkGray-200;
+  @apply border border-gray-800 text-left px-3 py-2 dark:border-darkGray-200 text-md;
 }
 .markdown table tr th {
   @apply font-medium bg-gray-200 dark:bg-darkGray-800;
+}
+
+.markdown .dimer-highlight + table {
+  @apply -mt-10 top-[-4px] relative;
+}
+
+.markdown table tr td code {
+  @apply text-prose-pre;
 }
 
 /**
