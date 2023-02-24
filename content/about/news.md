@@ -9,6 +9,47 @@ Stay up to date with everything you need to know about Japa. Official releases, 
   <div class="news_datetime">
     <dl>
       <dt> Date </dt>
+      <dd> <time datetime="2023-02-24">February 24, 2023</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## New plugin - `@japa/browser-client`
+
+  The `@japa/browser-client` plugin is built on top of Playwright, and you can use it for writing
+  end-to-end browser tests using it.
+
+  [Plugin documentation](../docs/plugins/browser-client.md)\
+  [Github repo](https://github.com/japa/browser-client)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
+      <dd> <time datetime="2023-02-10">February 10, 2023</time> </dd>
+    </dl>
+  </div>
+
+  <div class="news_content">
+
+  ## New plugin - `@japa/file-system`
+
+  The `@japa/file-system` plugin is a thin wrapper over the fs module for easier file system management during tests. The plugin also extends the assert plugin to write assertions for the file system.
+
+  [Plugin documentation](../docs/plugins/file_system.md)\
+  [Github repo](https://github.com/japa/file-system)
+
+  </div>
+</div>
+
+<div class="timeline_item">
+  <div class="news_datetime">
+    <dl>
+      <dt> Date </dt>
       <dd> <time datetime="2022-10-17">October 17, 2022</time> </dd>
     </dl>
   </div>

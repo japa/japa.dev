@@ -58,7 +58,7 @@ Japa comes with all the tools you need to test your backend applications. Be it 
     </div>
   </div>
 
-  <!-- <div class="feature">
+  <div class="feature">
     <div class="feature_content">
       <div class="feature_title">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -70,10 +70,18 @@ Japa comes with all the tools you need to test your backend applications. Be it 
       </div>
       <div class="feature_body">
         <h4> Browser testing using Playwright </h4>
-        <p> Suites serve as an organization layer for your tests. For example, a suite for unit tests and another for functional tests.</p>
+        <p>
+          The browser client of Japa is built on top of Playwright and you can use it to write end-to-end browser tests.
+        </p>
+        <ul>
+          <li>Automatic management of browser and browser context.</li>
+          <li>Class based pages and interactions to de-compose tests into small testable units.</li>
+          <li>Web first assertions.</li>
+          <li>Control headless mode, debugging, and enable tracing using command-line flags</li>
+        </ul>
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div class="feature">
     <div class="feature_content">

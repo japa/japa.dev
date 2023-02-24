@@ -96,6 +96,11 @@
             "contentPath": "plugins/api-client.md"
           },
           {
+            "title": "Browser Client",
+            "permalink": "plugins/browser-client",
+            "contentPath": "plugins/browser-client.md"
+          },
+          {
             "title": "File system",
             "permalink": "plugins/file-system",
             "contentPath": "plugins/file_system.md"

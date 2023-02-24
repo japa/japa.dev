@@ -1,10 +1,10 @@
 ---
-title: API Client
+title: API client
 description: API client plugin is used to test HTTP endpoints. Optionally, you can also use OpenAPI schema to test JSON endpoints.
 ogImage: api-client-plugin.jpeg
 ---
 
-# API Client
+# API client
 
 The API client plugin of Japa makes it super simple to test your API endpoints over HTTP. You can use it to test any HTTP endpoint that returns JSON, XML, HTML, or even plain text.
 

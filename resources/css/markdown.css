@@ -28,6 +28,9 @@
 .markdown h3 {
   @apply text-prose-3xl mb-3 mt-12;
 }
+.markdown h2 + h3 {
+  @apply -mt-2;
+}
 .markdown h3 code {
   @apply text-prose-3xl;
 }
