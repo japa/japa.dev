@@ -143,6 +143,46 @@
           <span class="bg-gray-300 dark:bg-darkGray-200 w-[2px] h-[20px] block"></span>
 
           <ul class="flex items-center space-x-4 ml-6">
+            <li class="relative nav_dropdown" x-data="darkModeToggle">
+              <details x-ref="dropdown">
+                <summary class="flex space-x-1 items-center cursor-pointer text-gray-600 dark:text-darkGray-600 font-medium tracking-[0.3px]">
+                  @svg('heroicons-outline:sun', {
+                    class: 'w-6 h-6 fill-gray-600 dark:fill-darkGray-600 mt-[3px]'
+                  })
+                </summary>
+
+                <div class="bg-white dark:bg-darkGray-800 absolute py-4 shadow-xl top-0 right-0 mt-10 z-50 rounded-md">
+                  <ul>
+                    <li>
+                      <a
+                        href="#"
+                        x-on:click="toggle('dark')"
+                        class="py-1.5 px-4 block text-gray-600 dark:text-darkGray-600 font-medium hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900 whitespace-nowrap tracking-[0.3px]"
+                        :class="isActive('dark') && 'text-gray-900 dark:text-darkGray-900'"
+                      >
+                        Dark
+                      </a>
+                      <a
+                        href="#"
+                        x-on:click="toggle('light')"
+                        class="py-1.5 px-4 block text-gray-600 dark:text-darkGray-600 font-medium hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900 whitespace-nowrap tracking-[0.3px]"
+                        :class="isActive('light') && 'text-gray-900 dark:text-darkGray-900'"
+                      >
+                        Light
+                      </a>
+                      <a
+                        href="#"
+                        x-on:click="toggle('system')"
+                        class="py-1.5 px-4 block text-gray-600 dark:text-darkGray-600 font-medium hover:text-gray-900 hover:text-gray-900 dark:hover:text-darkGray-900 whitespace-nowrap tracking-[0.3px]"
+                        :class="isActive('system') && 'text-gray-900 dark:text-darkGray-900'"
+                      >
+                        System
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </details>
+            </li>
             <li>
               <a
                 href="https://github.com/japa/runner"

@@ -6,7 +6,7 @@
   @hide-sidebar.window="disableScroll = false"
   @show-header.window="disableScroll = true"
   @hide-header.window="disableScroll = false"
-  class="dark"
+  class=""
 >
   <head>
     <meta charset="UTF-8" />
@@ -27,7 +27,7 @@
     @entryPointScripts('app')
   </head>
   <body
-    class="font-display antialiased text-gray-900 dark:text-darkGray-900 bg-white dark:bg-darkGray-50"
+    class="font-display antialiased text-gray-900 dark:text-darkGray-900 bg-white dark:bg-darkGray-50 transition"
     :class="{ 'overflow-hidden': disableScroll }"
   >
     {{{ await $slots.main() }}}

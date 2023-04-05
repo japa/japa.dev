@@ -83,4 +83,41 @@ Alpine.data('search', function () {
   }
 })
 
+Alpine.data('darkModeToggle', function () {
+  return {
+    currentMode: localStorage.getItem('theme') || 'system',
+
+    init() {
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    },
+
+    toggle(mode) {
+      event.preventDefault()
+
+      document.documentElement.classList.remove('dark')
+
+      if (mode !== 'system') {
+        document.documentElement.classList.add(mode)
+        localStorage.theme = mode
+      } else {
+        localStorage.removeItem('theme')
+      }
+
+      this.$refs.dropdown.removeAttribute('open')
+      this.currentMode = mode
+    },
+
+    isActive(mode) {
+      return this.currentMode === mode
+    },
+  }
+})
+
 Alpine.start()
