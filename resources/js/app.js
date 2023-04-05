@@ -85,18 +85,7 @@ Alpine.data('search', function () {
 
 Alpine.data('darkModeToggle', function () {
   return {
-    currentMode: localStorage.getItem('theme') || 'system',
-
-    init() {
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
-    },
+    currentMode: localStorage.getItem('_x_themeColor') || 'system',
 
     toggle(mode) {
       event.preventDefault()
@@ -105,9 +94,9 @@ Alpine.data('darkModeToggle', function () {
 
       if (mode !== 'system') {
         document.documentElement.classList.add(mode)
-        localStorage.theme = mode
+        localStorage._x_themeColor = mode
       } else {
-        localStorage.removeItem('theme')
+        localStorage.removeItem('_x_themeColor')
       }
 
       this.$refs.dropdown.removeAttribute('open')

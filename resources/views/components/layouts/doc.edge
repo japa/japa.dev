@@ -15,7 +15,10 @@
     @include('partials/icons')
 
     <script>
-      const theme = localStorage.getItem('_x_themeColor') || window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      let theme = localStorage.getItem('_x_themeColor');
+      if (!theme) {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
       document.documentElement.classList.add(theme)
     </script>
 
