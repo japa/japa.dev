@@ -114,6 +114,11 @@
             "title": "Run failed tests",
             "permalink": "plugins/run-failed-tests",
             "contentPath": "plugins/run-failed-tests.md"
+          },
+          {
+            "title": "Snapshot",
+            "permalink": "plugins/snapshot",
+            "contentPath": "plugins/snapshot.md"
           }
         ]
       },
