@@ -3,9 +3,10 @@ title: Snapshot
 description: Snapshot testing plugin for Japa
 ---
 
-# Snapshot 
+# Snapshot
 
 The snapshot plugin allows you to write snapshot tests for your application. You can install the plugin from the npm packages registry as follows.
+Note that you will need at least `@japa/expect` or `@japa/assert` since the plugin extends them with 2 new matchers.
 
 ```sh
 npm i -D @japa/snapshot
@@ -27,9 +28,9 @@ configure({
   ...{
     files: ['tests/**/*.spec.js'],
     // highlight-start
-    plugins: [snapshot()]
+    plugins: [snapshot()],
     // highlight-end
-  }
+  },
 })
 ```
 
@@ -46,22 +47,26 @@ configure({
   ...{
     files: ['tests/**/*.spec.js'],
     // highlight-start
-    plugins: [snapshot()]
+    plugins: [snapshot()],
     // highlight-end
-  }
+  },
 })
 ```
 
 :::
 
 ## Basic usage
-Once the plugin has been registered, you can access the `snapshot` property from the [test context](../test-context.md). The `snapshot` property exposes two new matchers `toMatchSnapshot` and `toMatchInlineSnapshot` : 
 
+Once the plugin has been registered, you can access the `snapshot` property from the [test context](../test-context.md). The `snapshot` property exposes two new matchers `toMatchSnapshot` and `toMatchInlineSnapshot` :
 
 ```ts
 // title: tests/my-test.spec.ts
-test('match snapshot', async ({ snapshot }) => {
-  snapshot.expect('1').toMatchSnapshot()
+test('match snapshot', async ({ assert, expect }) => {
+  // with @japa/assert
+  assert.snapshot('1').match()
+
+  // with @japa/expect
+  expect('1').toMatchSnapshot()
 })
 ```
 
@@ -77,8 +82,12 @@ exports['match snapshot 1'] = `"1"`
 You can also use inline snapshots to write the snapshot value inline with the test:
 
 ```ts
-test('match snapshot', async ({ snapshot }) => {
-  snapshot.expect('1').toMatchInlineSnapshot()
+test('match snapshot', async ({ expect, assert }) => {
+  // with @japa/assert
+  assert.snapshot('1').matchInline()
+
+  // with @japa/expect
+  expect('1').toMatchInlineSnapshot()
 })
 ```
 
@@ -86,8 +95,12 @@ The above test, after it first run, will append the snapshot value to the test f
 
 ```ts
 // title: tests/my-test.spec.ts
-test('match snapshot', async ({ snapshot }) => {
-  snapshot.expect('1').toMatchInlineSnapshot(`"1"`)
+test('match snapshot', async ({ expect, assert }) => {
+  // with @japa/assert
+  assert.snapshot('1').matchInline('"1"')
+
+  // with @japa/expect
+  expect('1').toMatchInlineSnapshot('"1"')
 })
 ```
 
@@ -103,10 +116,10 @@ npm run test -- -u
 
 The `snapshot` plugin exposes the following options:
 
-| Option | Description 
-|--------|------------
-| `prettyFormatOptions` | The options to pass to the [pretty-format](https://www.npmjs.com/package/pretty-format) package. This is used to format the snapshot value.
-| `resolveSnapshotPath` | A callback to resolve the location of the snapshot file. By default, the snapshot file is created inside the `__snapshots__` directory next to the test file.
+| Option                | Description                                                                                                                                                   |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prettyFormatOptions` | The options to pass to the [pretty-format](https://www.npmjs.com/package/pretty-format) package. This is used to format the snapshot value.                   |
+| `resolveSnapshotPath` | A callback to resolve the location of the snapshot file. By default, the snapshot file is created inside the `__snapshots__` directory next to the test file. |
 
 You can pass the options to the plugin as follows:
 
@@ -119,7 +132,7 @@ configure({
       snapshot({
         resolveSnapshotPath: (testPath) => {
           /**
-           * This will create a snapshot file next to your 
+           * This will create a snapshot file next to your
            * test file.
            */
           return testPath.replace('.spec.ts', '.spec.ts.cjs')
@@ -132,4 +145,3 @@ configure({
   }
 })
 ```
-
