@@ -77,6 +77,12 @@ The above test will create a snapshot file with the following content:
 exports['match snapshot 1'] = `"1"`
 ```
 
+:::note
+Note the `1` at the end of the export name. This is a sequential number that is used to uniquely identify each snapshot, in case you have multiple snapshots inside the same test.
+
+That means if you re-order your snapshots assertions, you will have to update your snapshots with the `--update-snapshots` flag.
+:::
+
 ## Inline snapshots
 
 You can also use inline snapshots to write the snapshot value inline with the test:
