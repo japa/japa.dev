@@ -291,7 +291,7 @@ test.group('Make files', (group) => {
 Create a file at a given location. The missing directories will be created automatically.
 
 ```ts
-test('read rc file', async ({ fs }) => {
+test('write rc file', async ({ fs }) => {
   await fs.write('rc.json', JSON.stringify({
     foo: 'bar'
   }))
@@ -303,6 +303,23 @@ test('read rc file', async ({ fs }) => {
 | `filePath` | `String` |
 | `contents` | `String` |
 | `options` | `WriteFileOptions` |
+
+### createJson
+Same as `create`, but writes the contents as JSON.
+
+```ts
+test('read rc file', async ({ fs }) => {
+  await fs.createJson('rc.json', {
+    foo: 'bar'
+  })
+})
+```
+
+| Argument | Type |
+|---------|---------|
+| `filePath` | `String` |
+| `contents` | `Object` |
+| `options` | `JsonOutputOptions` |
 
 ### remove
 Remove a file or a directory by its location.
@@ -361,6 +378,18 @@ test('read rc file', async ({ fs }) => {
 | Argument | Type |
 |---------|---------|
 | `filePath` | `String` |
+
+### contentsJson
+Parse the contents of a file as JSON and return it as an object.
+
+```ts
+test('read package.json file', async ({ fs }) => {
+  const contents = await fs.contentsJson('package.json')
+
+  console.log(contents.devDependencies)
+})
+```
+
 
 ### stats
 Get [`fs.Stats`](https://nodejs.org/api/fs.html#class-fsstats) for a file by its location.
