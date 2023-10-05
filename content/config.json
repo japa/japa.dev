@@ -1,0 +1,30 @@
+{
+  "links": {
+    "home": {
+      "title": "Japa.dev",
+      "href": "/"
+    },
+    "github": {
+      "title": "Japa on Github",
+      "href": "https://github.com/japa/runner"
+    }
+  },
+  "sponsors_sources": [
+    "https://raw.githubusercontent.com/thetutlage/static/main/sponsorkit/sponsors.json"
+  ],
+  "search": {
+    "appId": "JK0LZ5Z477",
+    "indexName": "japa",
+    "apiKey": "d21459d1420e545dd59b186ea41329ce"
+  },
+  "advertising_sponsors": [
+    {
+      "link": "",
+      "logo": "",
+      "logo_dark": "",
+      "logo_styles": ""
+    }
+  ],
+  "fileEditBaseUrl": "https://github.com/japa/japa.dev/blob/next",
+  "copyright": "Japa.dev"
+}

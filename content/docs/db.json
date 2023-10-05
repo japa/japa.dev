@@ -1,0 +1,152 @@
+[
+  {
+    "permalink": "introduction",
+    "title": "Introduction",
+    "contentPath": "./guides/introduction.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "installation",
+    "title": "Installation and usage",
+    "contentPath": "./guides/installation_and_usage.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "testing-async-code",
+    "title": "Testing asynchronous code",
+    "contentPath": "./guides/testing_async_code.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "grouping-tests",
+    "title": "Grouping tests",
+    "contentPath": "./guides/grouping_tests.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "lifecycle-hooks",
+    "title": "Lifecycle hooks",
+    "contentPath": "./guides/lifecycle_hooks.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "datasets",
+    "title": "Datasets",
+    "contentPath": "./guides/datasets.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "test-resources",
+    "title": "Test resources",
+    "contentPath": "./guides/test_resources.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "exceptions",
+    "title": "Exceptions",
+    "contentPath": "./guides/exceptions.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "test-suites",
+    "title": "Test suites",
+    "contentPath": "./guides/test_suites.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "filtering-tests",
+    "title": "Filtering tests",
+    "contentPath": "./guides/filtering_tests.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "skipping-tests",
+    "title": "Skipping tests",
+    "contentPath": "./guides/skipping_tests.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "test-reporters",
+    "title": "Test reporters",
+    "contentPath": "./guides/test_reporters.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "coverage",
+    "title": "Coverage",
+    "contentPath": "./guides/coverage.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "plugins/assert",
+    "title": "Assert",
+    "contentPath": "./plugins/assert.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/expect",
+    "title": "Expect",
+    "contentPath": "./plugins/expect.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/api-client",
+    "title": "API client",
+    "contentPath": "./plugins/api_client.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/browser-client",
+    "title": "Browser client",
+    "contentPath": "./plugins/browser_client.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/file-system",
+    "title": "File system",
+    "contentPath": "./plugins/file_system.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/expect-type",
+    "title": "Expect types",
+    "contentPath": "./plugins/expect_type.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "plugins/snapshot",
+    "title": "Snapshot",
+    "contentPath": "./plugins/snapshot.md",
+    "category": "Plugins"
+  },
+  {
+    "permalink": "reference/test",
+    "title": "Test",
+    "contentPath": "./reference/test.md",
+    "category": "Reference"
+  },
+  {
+    "permalink": "reference/test-context",
+    "title": "Test context",
+    "contentPath": "./reference/test_context.md",
+    "category": "Reference"
+  },
+  {
+    "permalink": "reference/runner-config",
+    "title": "Runner config",
+    "contentPath": "./reference/runner_config.md",
+    "category": "Reference"
+  },
+  {
+    "permalink": "reference/plugins",
+    "title": "Plugins",
+    "contentPath": "./reference/plugins.md",
+    "category": "Reference"
+  },
+  {
+    "permalink": "uprade-guide",
+    "title": "Upgrade guide",
+    "contentPath": "./upgrade-guide.md",
+    "category": "More"
+  }
+]

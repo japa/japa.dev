@@ -1,0 +1,72 @@
+@import 'unpoly';
+@import '@docsearch/css';
+
+/* Gray colors */
+@import '@radix-ui/colors/mauve.css';
+@import '@radix-ui/colors/mauve-alpha.css';
+@import '@radix-ui/colors/mauve-dark.css';
+@import '@radix-ui/colors/mauve-dark-alpha.css';
+
+/* Accent colors */
+@import '@radix-ui/colors/crimson.css';
+@import '@radix-ui/colors/crimson-alpha.css';
+@import '@radix-ui/colors/crimson-dark.css';
+@import '@radix-ui/colors/crimson-dark-alpha.css';
+
+/* Interface colors */
+@import '@radix-ui/colors/orange-alpha.css';
+@import '@radix-ui/colors/iris-alpha.css';
+@import '@radix-ui/colors/orange-dark-alpha.css';
+@import '@radix-ui/colors/iris-dark-alpha.css';
+
+/**
+ * Dimer doc theme styles
+ */
+@import '@dimerapp/docs-theme/styles';
+
+:root {
+  --logo-width: 132px;
+
+  --progress-bar-color: var(--crimson-a11);
+  --sidebar-active-link-bg-color: var(--crimson-a6);
+  --sidebar-active-link-text-color: var(--crimson-12);
+  --aside-active-link-text-color: var(--crimson-11);
+  --pre-tabs-active-border-color: var(--crimson-10);
+
+  --note-icon-color: var(--crimson-a11);
+  --code-bg-color: var(--crimson-a3);
+  --code-text-color: var(--crimson-a11);
+  --code-highlight-border-color: var(--crimson-11);
+  --sidebar-loading-link-bg-color: var(--crimson-a3);
+  --docsearch-primary-color: var(--crimson-9);
+}
+
+html.dark {
+  --progress-bar-color: var(--crimson-a11);
+  --sidebar-active-link-bg-color: var(--crimson-a5);
+  --sidebar-active-link-text-color: var(--crimson-12);
+  --aside-active-link-text-color: var(--crimson-11);
+  --pre-tabs-active-border-color: var(--crimson-a10);
+
+  --note-icon-color: var(--crimson-a11);
+  --code-bg-color: var(--crimson-a3);
+  --code-text-color: var(--crimson-a11);
+  --code-highlight-border-color: var(--crimson-a8);
+  --sidebar-loading-link-bg-color: var(--crimson-a7);
+  --docsearch-primary-color: var(--crimson-9);
+}
+
+.markdown .media_box {
+  padding: 2rem;
+  border: 4px solid var(--mauve-4);
+  border-radius: 4px;
+  margin: var(--prose-elements-margin) 0;
+}
+
+.markdown .media_box figure, .markdown .media_box p {
+  margin: 0;
+}
+
+.markdown ul li ul {
+  margin: 0px;
+}
