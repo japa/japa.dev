@@ -1,1 +1,11 @@
 / /docs/introduction
+/docs/usage /docs/installation
+/docs/test-context /docs/reference/test-context
+/docs/underlying-test-class /docs/reference/test
+/docs/assertion-planning /docs/plugins/assert
+/docs/runner-config /docs/reference/runner-config
+/docs/usage-with-typescript /docs/installation
+/docs/plugins/spec-reporter /docs/test-reporters
+/docs/plugins/dot-reporter /docs/test-reporters
+/docs/creating-reporters /docs/test-reporters
+/docs/creating-plugins /docs/reference/plugins
