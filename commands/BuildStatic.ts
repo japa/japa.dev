@@ -31,7 +31,7 @@ export default class BuildStatic extends BaseCommand {
    * Write file to the disk
    */
   private async writeFile(filePath: string, html: string) {
-    await outputFile(this.application.publicPath(filePath), html)
+    await outputFile(this.application.makePath('dist', filePath), html)
     this.logger.action('Create').succeeded(filePath)
   }
 

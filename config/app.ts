@@ -246,7 +246,7 @@ export const assets: AssetsManagerConfig = {
   | files
   |
   */
-  publicPath: Application.publicPath('assets'),
+  publicPath: Application.makePath('dist/assets'),
 
   /*
   |--------------------------------------------------------------------------
