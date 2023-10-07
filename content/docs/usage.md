@@ -12,7 +12,7 @@ Japa will use the `process.cwd()` (current working directory) path to create the
 :::
 
 ```sh
-npm init japa@latest@1.2.0
+npm init japa@1.2.2
 
 # CREATE: bin/test.js
 # CREATE: tests/maths.spec.js (Optional)
