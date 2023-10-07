@@ -81,7 +81,10 @@ export default class BuildStatic extends BaseCommand {
     }
 
     await this.createErrorPages()
-    await copy(this.application.makePath('_redirects'), this.application.publicPath('_redirects'))
+    await copy(
+      this.application.makePath('_redirects'),
+      this.application.makePath('dist/_redirects')
+    )
     this.logger.action('  Copy').succeeded('_redirects')
   }
 }
