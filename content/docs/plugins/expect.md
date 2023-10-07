@@ -11,7 +11,7 @@ The `@japa/expect` plugin is a wrapper on top of [jest-expect](https://jestjs.io
 Suppose you have not configured the plugin during the initial setup. Then, you can install it from the npm registry as follows.
 
 ```sh
-npm i -D @japa/expect
+npm i -D @japa/expect@2.0.2
 ```
 
 And register it as a plugin within the `bin/test.js` file.

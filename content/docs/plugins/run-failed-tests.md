@@ -22,7 +22,7 @@ The `runFailedTests` function uses the [test title filter](../filtering-tests.md
 You can install the package from npm registry as follows.
 
 ```sh
-npm i -D @japa/run-failed-tests
+npm i -D @japa/run-failed-tests@1.1.1
 ```
 
 And register it as a plugin within the `bin/test.js` file.

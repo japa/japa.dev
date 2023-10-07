@@ -9,7 +9,7 @@ The snapshot plugin allows you to write snapshot tests for your application. You
 Note that you will need at least `@japa/expect` or `@japa/assert` since the plugin extends them with 2 new matchers.
 
 ```sh
-npm i -D @japa/snapshot
+npm i -D @japa/snapshot@1.0.1-3
 ```
 
 The next step is registering the plugin inside the `plugins` array.

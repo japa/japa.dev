@@ -18,10 +18,10 @@ The browser client plugin has peer dependencies on the [`@japa/assert`](./assert
 
 ```sh
 # Install if not installed
-npm i -D @japa/assert playwright
+npm i -D @japa/assert@1.4.1 playwright
 
 # Install browser client
-npm i -D @japa/browser-client
+npm i -D @japa/browser-client@1.2.0
 ```
 
 Register the plugin inside the `bin/test.js` file.

@@ -13,7 +13,7 @@ Reporters in Japa are responsible for displaying/saving the progress of tests. T
 Install the package from the npm registry as follows.
 
 ```sh
-npm i -D @japa/dot-reporter
+npm i -D @japa/dot-reporter@1.1.1
 ```
 
 And register it as a reporter within the `bin/test.js` file.

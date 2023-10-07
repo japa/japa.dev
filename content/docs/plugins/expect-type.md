@@ -11,7 +11,7 @@ The `@japa/expect-types` plugin allows you to write an assertion for the TypeScr
 You can install the package from the npm registry as follows.
 
 ```sh
-npm i -D @japa/expect-type
+npm i -D @japa/expect-type@1.0.3
 ```
 
 And register it as a plugin within the `bin/test.js` file.

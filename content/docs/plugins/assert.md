@@ -11,7 +11,7 @@ The Assert plugin of Japa is built on top of [Chai.js assert](https://www.chaijs
 Suppose you have not configured the plugin during the initial setup. Then, you can install it from the npm registry as follows.
 
 ```sh
-npm i -D @japa/assert
+npm i -D @japa/assert@1.4.1
 ```
 
 And register it as a plugin within the `bin/test.js` file.

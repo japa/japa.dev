@@ -8,7 +8,7 @@ description: The file system plugin can be used to write assertions for the file
 The file system plugin allows you to easily manage files and directories during tests and write assertions against them. You can install the plugin from the npm packages registry as follows.
 
 ```sh
-npm i -D @japa/file-system
+npm i -D @japa/file-system@1.1.0
 ```
 
 The next step is registering the plugin inside the `plugins` array.

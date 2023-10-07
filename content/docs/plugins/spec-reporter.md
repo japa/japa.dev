@@ -13,7 +13,7 @@ Reporters in Japa are responsible for displaying/saving the progress of tests. T
 Install the package from the npm registry as follows.
 
 ```sh
-npm i -D @japa/spec-reporter
+npm i -D @japa/spec-reporter@1.3.3
 ```
 
 And register it as a reporter within the `bin/test.js` file.

@@ -25,10 +25,10 @@ The plugin is built on top of [superagent](https://ladjs.github.io/superagent/).
 Install the package from the npm registry as follows.
 
 ```sh
-npm i -D @japa/api-client
+npm i -D @japa/api-client@1.4.4
 
 # yarn
-yarn add -D @japa/api-client
+yarn add -D @japa/api-client@1.4.4
 ```
 
 And register it as a plugin within the `bin/test.js` file.
