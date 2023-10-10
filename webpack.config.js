@@ -31,7 +31,7 @@ Encore.setOutputPath('./dist/assets')
 |
 */
 if (Encore.isProduction()) {
-  Encore.setPublicPath('https://japa.dev/assets')
+  Encore.setPublicPath('https://v2.japa.dev/assets')
   Encore.setManifestKeyPrefix('assets/')
 } else {
   Encore.setPublicPath('/assets')
