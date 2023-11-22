@@ -90,6 +90,20 @@ See also: [Test suites](../guides/test_suites.md)
 }
 ```
 
+## exclude (optional)
+Define an array of glob patterns to exclude when scanning for test files or suite files. By default, we ignore files from `node_modules`, `.git`, and the `coverage` directories. However, you may define custom glob patterns as well.
+
+```ts
+{
+  files: '**/*.spec.js',
+  exclude: [
+    'node_modules/**',
+    'bower_components/**',
+    'jspm_packages/**'
+  ]
+}
+```
+
 ## plugins (optional)
 
 The `plugins` property allows you to register multiple plugins.
