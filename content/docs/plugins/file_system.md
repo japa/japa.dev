@@ -139,10 +139,27 @@ test('make controller', ({ assert, fs }) => {
 })
 ```
 
+You may pass an array of substrings to check if all the mentioned values are part of the file contents.
+
+```ts
+test('make controller', ({ assert, fs }) => {
+  await makeController(fs.basePath, 'users') 
+ 
+  await assert.fileContains(
+    'controllers/users_controller.ts',
+    [
+      'export default class UsersController {',
+      'async index() {', // should have index method
+      'async store() {', // should have store method
+    ]
+  )
+})
+```
+
 | Argument | Type |
 |---------|---------|
 | `filePath` | `String` |
-| `substring` | `String` \| `Regexp` |
+| `substring` | `String` \| `String[]` \| `Regexp` |
 
 ### fileSameAs
 Assert the contents of the file match the contents of another file.
@@ -380,3 +397,16 @@ test('copy files', async ({ fs }) => {
 | Argument | Type |
 |---------|---------|
 | `filePath` | `String` |
+
+### mkdir
+Create a directory recursively inside the root of the file system.
+
+```ts
+test('copy files', async ({ fs }) => {
+  await fs.mkdir('make/controller')
+})
+```
+
+| Argument | Type |
+|---------|---------|
+| `dirPath` | `String` |
