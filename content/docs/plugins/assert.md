@@ -224,22 +224,22 @@ await assert.rejects(() => {
 | `regExp` | `string` \| `RegExp` |
 | `message?` | `string` |
 
-## doesNotRejects
+## doesNotReject
 Assert the function does not reject the promise. Optionally, you can assert the rejection is not from a specific class or has a particular message.
 
 ```ts
-await assert.doesNotRejects(async () => {
+await assert.doesNotReject(async () => {
   throw new Error('foo')
 }, HttpError) // passes: Error !== HttpError
 
-await assert.doesNotRejects(
+await assert.doesNotReject(
   async () => {
     throw new HttpError('Resource not found')
   }, 
   'Server not available'
 ) // passes: Resource not found !== Server not available
 
-await assert.doesNotRejects(async () => {
+await assert.doesNotReject(async () => {
   return 'foo'
 }) // passes
 ```
@@ -295,18 +295,18 @@ assert.throws(foo, 'failed') // fails
 | `regExp` | `string` \| `RegExp` |
 | `message?` | `string` |
 
-## doesNotThrows
+## doesNotThrow
 Expect the function not to throw an exception. Optionally, you can assert
 the exception is not from a particular class or has a specific message.
 
-- See [doesNotRejects](#doesnotrejects) for async function calls.
+- See [doesNotReject](#doesnotreject) for async function calls.
 
 ```ts
 function foo() { throw new Error('blow up') }
 
-assert.doesNotThrows(foo) // fails
-assert.doesNotThrows(foo, 'failed') // passes
-assert.doesNotThrows(() => {}) // passes
+assert.doesNotThrow(foo) // fails
+assert.doesNotThrow(foo, 'failed') // passes
+assert.doesNotThrow(() => {}) // passes
 ```
 
 | Name | Type |
