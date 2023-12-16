@@ -83,7 +83,7 @@ configure({
 Once the setup is completed, you can write tests inside the `tests/browser` directory. 
 
 ```ts
-// title: tests/browser/visit_japa.js
+// title: tests/browser/visit_japa.spec.js
 import { test } from '@japa/runner'
 
 test('has docs for browser client', async ({ visit }) => {
