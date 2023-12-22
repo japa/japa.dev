@@ -83,7 +83,7 @@ configure({
 Once the setup is completed, you can write tests inside the `tests/browser` directory. 
 
 ```ts
-// title: tests/browser/visit_japa.js
+// title: tests/browser/visit_japa.spec.js
 import { test } from '@japa/runner'
 
 test('has docs for browser client', async ({ visit }) => {
@@ -145,7 +145,7 @@ page
 
 <dd>
 
-Reference to the [Playwright's Page object](https://playwright.dev/docs/api/class-page). You can get an instance of it either using the `visit` method or the `browserContext.newPage` method.
+Reference to the [Playwright's Page class](https://playwright.dev/docs/api/class-page). You can get an instance of it either using the `visit` method or the `browserContext.newPage` method.
 
 </dd>
 
@@ -157,7 +157,7 @@ browserContext
 
 <dd>
 
-Reference to the [Playwright's Context object](https://playwright.dev/docs/api/class-browsercontext). An isolated instance of `browserContext` is shared with every test.
+Reference to the [Playwright's Context class](https://playwright.dev/docs/api/class-browsercontext). An isolated instance of `browserContext` is shared with every test.
 
 </dd>
 
@@ -169,7 +169,7 @@ browser
 
 <dd>
 
-Reference to the [Playwright's Browser object](https://playwright.dev/docs/api/class-browser).
+Reference to the [Playwright's Browser class](https://playwright.dev/docs/api/class-browser).
 
 </dd>
 
