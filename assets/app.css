@@ -27,38 +27,66 @@
 :root {
   --logo-width: 132px;
 
-  --progress-bar-color: var(--crimson-a11);
-  --sidebar-active-link-bg-color: var(--crimson-a6);
-  --sidebar-active-link-text-color: var(--crimson-12);
-  --aside-active-link-text-color: var(--crimson-11);
-  --pre-tabs-active-border-color: var(--crimson-10);
+  --accent-1: var(--crimson-1);
+  --accent-2: var(--crimson-2);
+  --accent-3: var(--crimson-3);
+  --accent-4: var(--crimson-4);
+  --accent-5: var(--crimson-5);
+  --accent-6: var(--crimson-6);
+  --accent-7: var(--crimson-7);
+  --accent-8: var(--crimson-8);
+  --accent-9: var(--crimson-9);
+  --accent-10: var(--crimson-10);
+  --accent-11: var(--crimson-11);
+  --accent-12: var(--crimson-12);
 
-  --note-icon-color: var(--crimson-a11);
-  --code-bg-color: var(--crimson-a3);
-  --code-text-color: var(--crimson-a11);
-  --code-highlight-border-color: var(--crimson-11);
-  --sidebar-loading-link-bg-color: var(--crimson-a3);
-  --docsearch-primary-color: var(--crimson-9);
+  --accent-a1: var(--crimson-a1);
+  --accent-a2: var(--crimson-a2);
+  --accent-a3: var(--crimson-a3);
+  --accent-a4: var(--crimson-a4);
+  --accent-a5: var(--crimson-a5);
+  --accent-a6: var(--crimson-a6);
+  --accent-a7: var(--crimson-a7);
+  --accent-a8: var(--crimson-a8);
+  --accent-a9: var(--crimson-a9);
+  --accent-a10: var(--crimson-a10);
+  --accent-a11: var(--crimson-a11);
+  --accent-a12: var(--crimson-a12);
+
+  --sidebar-active-link-text-color: var(--crimson-12);
 }
 
 html.dark {
-  --progress-bar-color: var(--crimson-a11);
-  --sidebar-active-link-bg-color: var(--crimson-a5);
-  --sidebar-active-link-text-color: var(--crimson-12);
-  --aside-active-link-text-color: var(--crimson-11);
-  --pre-tabs-active-border-color: var(--crimson-a10);
+  --accent-1: var(--crimson-1);
+  --accent-2: var(--crimson-2);
+  --accent-3: var(--crimson-3);
+  --accent-4: var(--crimson-4);
+  --accent-5: var(--crimson-5);
+  --accent-6: var(--crimson-6);
+  --accent-7: var(--crimson-7);
+  --accent-8: var(--crimson-8);
+  --accent-9: var(--crimson-9);
+  --accent-10: var(--crimson-10);
+  --accent-11: var(--crimson-11);
+  --accent-12: var(--crimson-12);
 
-  --note-icon-color: var(--crimson-a11);
-  --code-bg-color: var(--crimson-a3);
-  --code-text-color: var(--crimson-a11);
-  --code-highlight-border-color: var(--crimson-a8);
-  --sidebar-loading-link-bg-color: var(--crimson-a7);
-  --docsearch-primary-color: var(--crimson-9);
+  --accent-a1: var(--crimson-a1);
+  --accent-a2: var(--crimson-a2);
+  --accent-a3: var(--crimson-a3);
+  --accent-a4: var(--crimson-a4);
+  --accent-a5: var(--crimson-a5);
+  --accent-a6: var(--crimson-a6);
+  --accent-a7: var(--crimson-a7);
+  --accent-a8: var(--crimson-a8);
+  --accent-a9: var(--crimson-a9);
+  --accent-a10: var(--crimson-a10);
+  --accent-a11: var(--crimson-a11);
+  --accent-a12: var(--crimson-a12);
 }
 
 .markdown .media_box {
   padding: 2rem;
-  border: 4px solid var(--mauve-4);
+  border: 4px solid var(--neutral-gray-4);
   border-radius: 4px;
   margin: var(--prose-elements-margin) 0;
 }

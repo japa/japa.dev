@@ -50,8 +50,8 @@ async function exportHTML() {
   }
 }
 
-const app = new Ignitor(APP_ROOT, { importer: IMPORTER })
-  .tap(app => {
+const application = new Ignitor(APP_ROOT, { importer: IMPORTER })
+  .tap((app) => {
     app.initiating(() => {
       app.useConfig({
         appUrl: process.env.APP_URL || '',
@@ -63,7 +63,7 @@ const app = new Ignitor(APP_ROOT, { importer: IMPORTER })
           default: 'app',
           loggers: {
             app: {
-              enabled: true
+              enabled: true,
             },
           },
         },
@@ -73,6 +73,6 @@ const app = new Ignitor(APP_ROOT, { importer: IMPORTER })
   })
   .createApp('console')
 
-await app.init()
-await app.boot()
-await app.start(exportHTML)
+await application.init()
+await application.boot()
+await application.start(exportHTML)
