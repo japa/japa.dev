@@ -91,7 +91,8 @@ html.dark {
   margin: var(--prose-elements-margin) 0;
 }
 
-.markdown .media_box figure, .markdown .media_box p {
+.markdown .media_box figure,
+.markdown .media_box p {
   margin: 0;
 }
 
