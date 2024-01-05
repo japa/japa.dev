@@ -762,6 +762,15 @@ response.assertBodyContains({
 })
 ```
 
+### assertBodyNotContains
+Assert the response body doesn't contain the subset of the expected value. This method allows you to only match against a subset and not the exact value.
+
+```ts
+response.assertBodyNotContains({
+  id: 1,
+})
+```
+
 ### assertTextIncludes
 Assert the response text includes the expected sub-string. 
 
