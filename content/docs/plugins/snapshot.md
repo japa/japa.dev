@@ -32,6 +32,13 @@ configure({
 })
 ```
 
+:::note
+
+If you are using `ts-node`, then make sure to use the `--enable-source-maps` flag when running tests. This will ensure that the snapshot plugin can correctly generate the snapshots. See [this issue](https://github.com/TypeStrong/ts-node/issues/2006) for more details.
+
+:::
+
+
 ## Basic usage
 
 Once the plugin has been registered, you can use the `toMatchSnapshot` and `toMatchInlineSnapshot` methods for writing assertions.
