@@ -161,6 +161,29 @@ test('make controller', ({ assert, fs }) => {
 | `filePath` | `String` |
 | `substring` | `String` \| `String[]` \| `Regexp` |
 
+### fileNotContains
+Assert the file contents does not contain one of the unexpected values. The unexpected values can be a substring or an array of substrings.
+
+```ts
+test('make controller', ({ assert, fs }) => {
+  await makeController(fs.basePath, 'users') 
+ 
+  await assert.fileNotContains(
+    'controllers/users_controller.ts',
+    [
+      'export default class UsersController {',
+      'async destroy() {', // should not have destroy method
+      'async update() {', // should not have update method
+    ]
+  )
+})
+```
+
+| Argument | Type |
+|---------|---------|
+| `filePath` | `String` |
+| `substring` | `String` \| `String[]` \|
+
 ### fileSameAs
 Assert the contents of the file match the contents of another file.
 
@@ -358,6 +381,19 @@ Returns the contents of a file as a string
 ```ts
 test('read rc file', async ({ fs }) => {
   const contents = await fs.contents('rc.json')
+})
+```
+
+| Argument | Type |
+|---------|---------|
+| `filePath` | `String` |
+
+### dump
+Dump file contents to the stdout for debugging
+
+```ts
+test('read rc file', async ({ fs }) => {
+  await fs.dump('rc.json')
 })
 ```
 
