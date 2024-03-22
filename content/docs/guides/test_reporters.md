@@ -77,7 +77,7 @@ You can create and register custom test reporters with Japa. A test reporter mus
 
 Let's start by creating a reporter class. You can implement the following methods to listen for different events emitted during the test lifecycle.
 
-See also: [BaseReporter source code](https://github.com/japa/runner/blob/next/modules/core/reporters/base.ts)
+See also: [BaseReporter source code](https://github.com/japa/runner/blob/develop/modules/core/reporters/base.ts)
 
 ```ts
 import { BaseReporter } from '@japa/runner/core'

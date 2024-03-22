@@ -1,6 +1,6 @@
 # Test class
 
-Tests created using the `test` method are instances of the [Test class](https://github.com/japa/runner/blob/next/modules/core/main.ts#L57). You can invoke the following available class methods to configure the test further.
+Tests created using the `test` method are instances of the [Test class](https://github.com/japa/runner/blob/develop/modules/core/main.ts#L57). You can invoke the following available class methods to configure the test further.
 
 In this guide, we will go through all the methods and properties available on the test class.
 
