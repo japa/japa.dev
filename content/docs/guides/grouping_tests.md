@@ -2,7 +2,7 @@
 
 You may group a collection of tests using the `test.group` method. 
 
-The `test.group` method accepts the group title as the first parameter and a callback function as the second parameter. The callback function receives an instance of the [TestGroup](https://github.com/japa/core/blob/next/src/group/main.ts) class.
+The `test.group` method accepts the group title as the first parameter and a callback function as the second parameter. The callback function receives an instance of the [TestGroup](https://github.com/japa/core/blob/develop/src/group/main.ts) class.
 
 ```ts
 import { test } from '@japa/runner'

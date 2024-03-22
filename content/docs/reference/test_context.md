@@ -1,5 +1,5 @@
 # Test context
-An instance of the [TestContext](https://github.com/japa/runner/blob/next/modules/core/main.ts#L38) class is shared with all the tests and the test hooks. Japa creates an isolated instance of `TestContext` for every test. Therefore, you can add custom properties without worrying about it leaking to other tests.
+An instance of the [TestContext](https://github.com/japa/runner/blob/develop/modules/core/main.ts#L38) class is shared with all the tests and the test hooks. Japa creates an isolated instance of `TestContext` for every test. Therefore, you can add custom properties without worrying about it leaking to other tests.
 
 Based on your installed plugins, you may access different properties via the `ctx` object.
 

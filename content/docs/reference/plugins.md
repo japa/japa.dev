@@ -26,9 +26,9 @@ emitter
 
 <dd>
 
-Reference to the [Emitter class](https://github.com/japa/core/blob/next/src/emitter.ts#L16). The emitter is responsible for emitting events reporting the progress of tests.
+Reference to the [Emitter class](https://github.com/japa/core/blob/develop/src/emitter.ts#L16). The emitter is responsible for emitting events reporting the progress of tests.
 
-Here's the [complete list](https://github.com/japa/core/blob/next/src/types.ts#L243) of emitted events.
+Here's the [complete list](https://github.com/japa/core/blob/develop/src/types.ts#L243) of emitted events.
 
 </dd>
 
@@ -40,7 +40,7 @@ runner
 
 <dd>
 
-Reference to an instance of the [Runner class](https://github.com/japa/core/blob/next/src/runner.ts#L32). The Runner class is responsible for executing the tests and also exposes API to register suites, reporters, and get the tests summary. 
+Reference to an instance of the [Runner class](https://github.com/japa/core/blob/develop/src/runner.ts#L32). The Runner class is responsible for executing the tests and also exposes API to register suites, reporters, and get the tests summary. 
 
 </dd>
 
