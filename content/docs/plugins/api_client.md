@@ -518,7 +518,7 @@ request.dumpBody()
 ```
 
 ### trustLocalhost
-Trust insecure SSL connections for localhost. You can learn about this method directly from the [superagent docs](https://visionmedia.github.io/superagent/#ignoring-brokeninsecure-https-on-localhost)
+Trust insecure SSL connections for localhost. You can learn about this method directly from the [superagent docs](https://ladjs.github.io/superagent/#ignoring-brokeninsecure-https-on-localhost)
 
 ```ts
 request.trustLocalhost()
@@ -528,7 +528,7 @@ request.trustLocalhost(false)
 ```
 
 ### TLS options
-The following methods to configure the TLS settings work similarly to [superagent](https://visionmedia.github.io/superagent/#tls-options).
+The following methods to configure the TLS settings work similarly to [superagent](https://ladjs.github.io/superagent/#tls-options).
 
 - `ca`: Set the CA certificate(s) to trust
 - `cert`: Set the client certificate chain(s)
