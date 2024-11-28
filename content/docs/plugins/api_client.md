@@ -792,6 +792,188 @@ Assert the current HTTP request has been redirected to a given pathname. The pat
 response.assertRedirectsTo('/posts/1')
 ```
 
+### assertOk
+Assert that response has an ok (`200`) status
+
+```ts
+response.assertOk()
+```
+
+### assertCreated
+Assert that response has a created (`201`) status
+
+```ts
+response.assertCreated()
+```
+
+### assertAccepted
+Assert that response has an accepted (`202`) status
+
+```ts
+response.assertAccepted()
+```
+
+### assertNoContent
+Assert that response has a no content (`204`) status
+
+```ts
+response.assertNoContent()
+```
+
+### assertMovedPermanently
+Assert that response has a moved permanently (`301`) status
+
+```ts
+response.assertMovedPermanently()
+```
+
+### assertFound
+Assert that response has a found (`302`) status
+
+```ts
+response.assertFound()
+```
+
+### assertBadRequest
+Assert that response has a bad request (`400`) status
+
+```ts
+response.assertBadRequest()
+```
+
+### assertUnauthorized
+Assert that response has an unauthorized (`401`) status
+
+```ts
+response.assertUnauthorized()
+```
+
+### assertPaymentRequired
+Assert that response has a payment required (`402`) status
+
+```ts
+response.assertPaymentRequired()
+```
+
+### assertForbidden
+Assert that response has a forbidden (`403`) status
+
+```ts
+response.assertForbidden()
+```
+
+### assertNotFound
+Assert that response has a not found (`404`) status
+
+```ts
+response.assertNotFound()
+```
+
+### assertMethodNotAllowed
+Assert that response has a method not allowed (`405`) status
+
+```ts
+response.assertMethodNotAllowed()
+```
+
+### assertNotAcceptable
+Assert that response has a not acceptable (`406`) status
+
+```ts
+response.assertNotAcceptable()
+```
+
+### asserRequestTimeout
+Assert that response has a request timeout (`408`) status
+
+```ts
+response.assertRequestTimeout()
+```
+
+### assertConflict
+Assert that response has a conflict (`409`) status
+
+```ts
+response.assertConflict()
+```
+
+### assertGone
+Assert that response has a gone (`410`) status
+
+```ts
+response.assertGone()
+```
+
+### assertLengthRequired
+Assert that response has a length required (`411`) status
+
+```ts
+response.assertLengthRequired()
+```
+
+### assertPreconditionFailed
+Assert that response has a precondition failed (`412`) status
+
+```ts
+response.assertPreconditionFailed()
+```
+
+### assertPayloadTooLarge
+Assert that response has a payload too large (`413`) status
+
+```ts
+response.assertPayloadTooLarge()
+```
+
+### assertURITooLong
+Assert that response has an URI too long (`414`) status
+
+```ts
+response.assertURITooLong()
+```
+
+### assertUnsupportedMediaType
+Assert that response has an unsupported media type (`415`) status
+
+```ts
+response.assertUnsupportedMediaType()
+```
+
+### assertRangeNotSatisfiable
+Assert that response has a range not satisfiable (`416`) status
+
+```ts
+response.assertRangeNotSatisfiable()
+```
+
+### assertImATeapot
+Assert that response has an im a teapot (`418`) status
+
+```ts
+response.assertImATeapot()
+```
+
+### assertUnprocessableEntity
+Assert that response has an unprocessable entity (`422`) status
+
+```ts
+response.assertUnprocessableEntity()
+```
+
+### assertLocked
+Assert that response has a locked (`423`) status
+
+```ts
+response.assertLocked()
+```
+
+### assertTooManyRequests
+Assert that response has a too many requests (`429`) status
+
+```ts
+response.assertTooManyRequests()
+```
+
 ## Extending classes
 The following classes exposed by the `@japa/api-client` package are extensible using macros and getters.
 
