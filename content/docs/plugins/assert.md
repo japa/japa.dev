@@ -63,40 +63,6 @@ test('add two numbers', ({ assert }) => {
 })
 ```
 
-## Open API testing
-Using this plugin, you can test HTTP responses against one or more open API schemas. Just make sure to register the path to schema files when using the plugin.
-
-```ts
-const config = {
-  openApi: {
-    schemas: [join(__dirname, '..', './api-schema.json')]
-  }
-}
-
-configure({
-  plugins: [
-    assert(config) // 👈 register config
-  ]
-})
-```
-
-Once done, you can test response objects from `axios`, `superagent`, `supertest`, `request`, and `light-my-request` libraries using the following method.
-
-```ts
-test('get /users', async ({ assert }) => {
-  const response = await supertest(baseUrl).get('/')
-  assert.isValidApiResponse(response)
-})
-```
-
-The response is validated as follows:
-
-- An error is raised if the request path is not documented in the API schema file.
-- An error is raised if the response status code is not documented in the API schema file.
-- An error is raised if the body properties are not the same as expected by the schema. Use the `required` array to validate required response properties.
-- The response status code is used to find the body schema for validation.
-- Response headers are also validated against the expected headers mentioned inside the API schema file.
-
 ## assert
 
 Assert an expression to be truthy. Then, optionally define the error message.

@@ -91,6 +91,11 @@
             "contentPath": "plugins/expect.md"
           },
           {
+            "title": "OpenAPI Assertions",
+            "permalink": "plugins/openapi-assertions",
+            "contentPath": "plugins/openapi-assertions.md"
+          },
+          {
             "title": "API Client",
             "permalink": "plugins/api-client",
             "contentPath": "plugins/api-client.md"
