@@ -84,6 +84,12 @@
     "category": "Plugins"
   },
   {
+    "permalink": "plugins/openapi-assertions",
+    "title": "OpenAPI Assertions",
+    "contentPath": "./plugins/openapi-assertions.md",
+    "category": "Plugins"
+  },
+  {
     "permalink": "plugins/expect",
     "title": "Expect",
     "contentPath": "./plugins/expect.md",
