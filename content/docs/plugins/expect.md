@@ -63,4 +63,10 @@ test('add two numbers', ({ expect }) => {
 })
 ```
 
-In Jest, the `expect` property is available globally. However, with Japa, we recommend you always read it from the Test context.
+In Jest, the `expect` property is available globally. However, with Japa, we recommend you always read it from the Test context. If you're getting an error saying `expect` is not available from `TestContext`, make sure you included the bin folder in your `tsconfig.json` file:
+
+```json
+{
+  "include": ["bin", "src", "tests"]
+}
+```
