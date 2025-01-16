@@ -15,9 +15,9 @@
 
 /* Interface colors */
 @import '@radix-ui/colors/orange-alpha.css';
-@import '@radix-ui/colors/iris-alpha.css';
+@import '@radix-ui/colors/purple-alpha.css';
 @import '@radix-ui/colors/orange-dark-alpha.css';
-@import '@radix-ui/colors/iris-dark-alpha.css';
+@import '@radix-ui/colors/purple-dark-alpha.css';
 
 /**
  * Dimer doc theme styles
@@ -54,6 +54,8 @@
   --accent-a12: var(--crimson-a12);
 
   --sidebar-active-link-text-color: var(--crimson-12);
+  --caption-info-bg-color: var(--purple-a10);
+  --caption-info-border-color: var(--purple-a11);
 }
 
 html.dark {
@@ -82,6 +84,9 @@ html.dark {
   --accent-a10: var(--crimson-a10);
   --accent-a11: var(--crimson-a11);
   --accent-a12: var(--crimson-a12);
+
+  --caption-info-bg-color: var(--purple-a10);
+  --caption-info-border-color: var(--purple-a11);
 }
 
 .markdown .media_box {

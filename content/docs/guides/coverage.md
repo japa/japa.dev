@@ -5,9 +5,7 @@ You may use pre-exiting industry standard tools like [nyc](https://www.npmjs.com
 Following are the examples of using both `c8` and `nyc` with Japa. Also, make sure to consult the documentation of respective tools for advanced usage.
 
 
-:::caption{for="info"}
-**Using c8**
-:::
+## Using c8
 
 ```sh
 npm i -D c8
@@ -25,9 +23,7 @@ npm i -D c8
 npm test
 ```
 
-:::caption{for="info"}
-**Using nyc**
-:::
+## Using nyc
 
 ```sh
 npm i -D nyc

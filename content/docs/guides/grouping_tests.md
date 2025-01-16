@@ -112,6 +112,10 @@ The same level of organization can be achieved through nested files and folders.
 
 Another use-case for nested groups is to use layers of lifecycle hooks and avoid duplication at all costs. For example, creating some state in a top-level group so that you do not have to redefine it in every group.
 
+:::caption{for="error"}
+[**Avoid Nesting when you're Testing**](https://kentcdodds.com/blog/avoid-nesting-when-youre-testing)
+:::
+
 ```ts
 let user
 

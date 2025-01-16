@@ -10,3 +10,5 @@
 /docs/plugins/dot-reporter /docs/test-reporters
 /docs/creating-reporters /docs/test-reporters
 /docs/creating-plugins /docs/reference/plugins
+/docs/test-resources /docs/test-macros
+/docs/uprade-guide /docs/releases

@@ -1,4 +1,4 @@
-# Lifecycle Hooks
+# Lifecycle hooks
 
 Lifecycle hooks are the actions you can run before/after a test or a group. Hooks in Japa are registered using the `setup` and the `teardown` methods.
 

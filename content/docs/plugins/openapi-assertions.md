@@ -1,6 +1,6 @@
 # OpenAPI Assertions
 
-Using this plugin, you can test HTTP responses against one or more OpenAPI specifications. Just make sure to register the path to schema files when using the plugin.
+This plugin allows you to test HTTP responses against one or more OpenAPI specifications. When using it, make sure to register the path to schema files.
 
 ## Setup
 
@@ -8,12 +8,13 @@ Install the package from the npm registry as follows.
 
 ```sh
 npm i -D @japa/openapi-assertions
-
-# yarn
-yarn add -D @japa/openapi-assertions
 ```
 
 And register it as a plugin within the `bin/test.js` file.
+
+:::note
+The OpenAPI assertions rely on the `@japa/assert` package as a peer dependency. Therefore, install and configure the `@japa/assert` package.
+:::
 
 ```ts
 // title: ESM
@@ -41,7 +42,7 @@ configure({
 
 ## Testing API Responses
 
-You can test response objects from `axios`, `superagent`, `supertest`, `request`, and `light-my-request` libraries using the following method.
+The following method allows you to test response objects from the `axios`, `superagent`, `superset`, `request`, and `light-my-request` libraries.
 
 ```ts
 test('get /users', async ({ assert }) => {
@@ -60,4 +61,4 @@ The response is validated as follows:
 
 ## Migrating from `@japa/assert` v3.0.0
 
-To migrate from the OpenAPI testing in `@japa/assert` version 3.0.0, you need to install and configure the plugin as above. No other changes should be necessary.
+To migrate from the OpenAPI testing in `@japa/assert` version 3.0.0, you must install and configure the plugin as above. No other changes should be necessary.

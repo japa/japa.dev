@@ -13,6 +13,7 @@ By default, the following reporters are registered inside the `list` array, and 
 - [`spec`](#the-spec-reporter)
 - [`dot`](#the-dot-reporter)
 - [`ndjson`](#the-ndjson-reporter)
+- [`github`](#the-github-reporter)
 
 The defaults will be removed if you define the `reporters` property inside the configuration block. So, make sure to register and activate the reporters you want to use when configuring them manually.
 
@@ -29,6 +30,7 @@ configure({
       reporters.spec(),
       reporters.ndjson(),
       reporters.dot(),
+      reporters.github(),
     ],
   }
 })
@@ -68,6 +70,46 @@ The `dot` reporter displays the test output only using the icons and without tit
 The `ndjson` reporter outputs each event as a valid JSON string to the terminal. The JSON output is an excellent fit for programmatic use cases.
 
 ![](./ndjson_reporter.png)
+
+## The `github` reporter
+
+The `github` reporter reports errors as annotations when running tests as part of Github actions. 
+
+![](./gh_annotations.png)
+
+You can view individual errors by clicking on the annotation and Github will take you to the source file and display the error as follows.
+
+![](./gh_inline_error.png)
+
+The reporter is activated automatically in the Github actions environment. However, if you have overridden the `reporters` property inside the config, then you must enable it manually.
+
+```ts
+import { configure } from '@japa/runner'
+import * as reporters from '@japa/runner/reporters'
+
+// highlight-start
+/**
+ * The following code is only needed when you have decided to
+ * override the "reporters" property in the config file.
+ */
+const activated = ['spec']
+if (process.env.GITHUB_ACTIONS === 'true') {
+  activated.push('github')
+}
+// highlight-end
+
+configure({
+  reporters: {
+    activated,
+    list: [
+      reporters.spec(),
+      reporters.ndjson(),
+      reporters.dot(),
+      reporters.github(),
+    ],
+  }
+})
+```
 
 ## Creating a custom reporter
 

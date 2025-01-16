@@ -121,7 +121,7 @@ cleanup
 
 <dd>
 
-The `cleanup` function can define a cleanup hook from within the test callback. [Learn more](../guides/test_resources.md#solution-2---test-resources).
+The `cleanup` function can define a cleanup hook from within the test callback. [Learn more](../guides/test_macros.md).
 
 </dd>
 

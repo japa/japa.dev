@@ -6,7 +6,7 @@ Unlike other testing frameworks born out of the frontend ecosystem, Japa focuses
 
 :::note
 
-Japa installation size is **9 times smaller than Vitest and 5 times smaller than Jest**. 
+Japa installation size is **11 times smaller than Vitest and 7 times smaller than Jest**. 
 
 While smaller bundle size should not be a factor for choosing a framework, it does indicate the frontend first test runners bundles dependencies that are not relevant when developing strictly for Node.js.
 
@@ -36,7 +36,7 @@ node bin/tests.js
 bun bin/tests.js
 
 # TypeScript and TS Node
-node --loader=ts-node/esm bin/tests.js
+node --import ts-node-maintained/register/esm bin/test.ts
 
 # TypeScript with TSX
 npx tsx bin/tests.js
@@ -55,6 +55,7 @@ Japa ticks almost every checkbox to provide a **great testing experience**, ship
 - Coverage reporting using nyc and c8.
 - Ability to pin and run only selected tests.
 - Organize tests inside multiple test suites and groups.
+- Bail mode
 
 </div>
 

@@ -36,9 +36,9 @@
     "category": "Guides"
   },
   {
-    "permalink": "test-resources",
-    "title": "Test resources",
-    "contentPath": "./guides/test_resources.md",
+    "permalink": "test-macros",
+    "title": "Test macros",
+    "contentPath": "./guides/test_macros.md",
     "category": "Guides"
   },
   {
@@ -63,6 +63,12 @@
     "permalink": "skipping-tests",
     "title": "Skipping tests",
     "contentPath": "./guides/skipping_tests.md",
+    "category": "Guides"
+  },
+  {
+    "permalink": "bail-mode",
+    "title": "Bail mode",
+    "contentPath": "./guides/bail_mode.md",
     "category": "Guides"
   },
   {
@@ -150,9 +156,9 @@
     "category": "Reference"
   },
   {
-    "permalink": "uprade-guide",
-    "title": "Upgrade guide",
-    "contentPath": "./upgrade-guide.md",
+    "permalink": "releases",
+    "title": "Releases",
+    "contentPath": "./releases.md",
     "category": "More"
   }
 ]
