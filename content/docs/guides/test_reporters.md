@@ -182,7 +182,7 @@ Once all the tests have been executed, you can access the test summary within th
 ```ts
 class MyCustomReporter extends BaseReporter {
   async end() {
-    const summary = await this.runner.getSummary()
+    const summary = this.runner.getSummary()
     console.log(summary)
   }
 }
@@ -306,7 +306,7 @@ You may use the `this.printSummary` method to print the summary to the terminal 
 ```ts
 class MyCustomReporter extends BaseReporter {
   async end() {
-    const summary = await this.runner.getSummary()
+    const summary = this.runner.getSummary()
     await this.printSummary(summary)
   }
 }
