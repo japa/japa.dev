@@ -9,20 +9,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ file.frontmatter.title }}</title>
+    <title>{{ file.frontmatter.title }} ({{ file.frontmatter.category }}) | Japa Documentation</title>
     @if(file.frontmatter.summary)
       <meta name="description" content="{{ file.frontmatter.summary }}">
     @end
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ app.config.get('appUrl') }}">
-    <meta property="og:title" content="{{ file.frontmatter.title }}">
+    <meta property="og:title" content="{{ file.frontmatter.title }} ({{ file.frontmatter.category }}) | Japa Documentation">
     @if(file.frontmatter.summary)
       <meta name="og:description" content="{{ file.frontmatter.summary }}">
     @end
 
     <meta property="twitter:url" content="{{ app.config.get('appUrl') }}">
-    <meta property="twitter:title" content="{{ file.frontmatter.title }}">
+    <meta property="twitter:title" content="{{ file.frontmatter.title }} ({{ file.frontmatter.category }}) | Japa Documentation">
     @if(file.frontmatter.summary)
       <meta name="twitter:description" content="{{ file.frontmatter.summary }}">
     @end
