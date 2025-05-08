@@ -977,8 +977,8 @@ response.assertTooManyRequests()
 ## Extending classes
 The following classes exposed by the `@japa/api-client` package are extensible using macros and getters.
 
-- [ApiRequest](https://github.com/japa/api-client/blob/develop/src/Request/index.ts)
-- [ApiResponse](https://github.com/japa/api-client/blob/develop/src/Response/index.ts)
+- [ApiRequest](https://github.com/japa/api-client/blob/3.x/src/request.ts)
+- [ApiResponse](https://github.com/japa/api-client/blob/3.x/src/response.ts)
 
 :::note
 You can write the code for extending the classes within the `bin/test.js` file or create a new file and import it inside the `bin/test.js` file.
@@ -1045,7 +1045,7 @@ The `@japa/api-client` plugin automatically parses the response body for the fol
 
 However, you can also register custom parsers to process unsupported content types.
 
-The parser is registered globally on the [ApiRequest](https://github.com/japa/api-client/blob/develop/src/Request/index.ts) class using the `addParser` method.
+The parser is registered globally on the [ApiRequest](https://github.com/japa/api-client/blob/3.x/src/request.ts) class using the `addParser` method.
 
 ```ts
 import { ApiRequest } from '@japa/api-client'
@@ -1093,7 +1093,7 @@ The following content types are handled automatically.
 - `multipart/form-data`
 - `application/x-www-form-urlencoded`
 
-You can register a custom serializer globally on the [ApiRequest](https://github.com/japa/api-client/blob/develop/src/Request/index.ts) class using the `addSerializer` method.
+You can register a custom serializer globally on the [ApiRequest](https://github.com/japa/api-client/blob/3.x/src/request.ts) class using the `addSerializer` method.
 
 ```ts
 import { ApiRequest } from '@japa/api-client'
