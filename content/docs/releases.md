@@ -2,6 +2,10 @@
 
 | Package | Release date | Notes |
 |------------|---------|------------|
+| `create-japa` | July 21, 2025 | [Update TypeScript setup to use Node.js native TS support](https://github.com/japa/create-japa/releases/tag/v2.2.0) |
+| `@japa/assert` | July 21, 2025 | [Use chai inbuilt containSubset method](https://github.com/japa/assert/releases/tag/v4.1.0) |
+| `@japa/runner` | July 21, 2025 | [Add getActiveTestOrFail method and return group from test.group method](https://github.com/japa/runner/releases/tag/v4.3.0) |
+| `@japa/expect` | May 15, 2025 | [Always reset expect assertion counter after test is over](https://github.com/japa/expect/releases/tag/v3.0.4) |
 | `@japa/plugin-adonisjs` | Jan 12, 2025 | [Remove startRepl method in favor of repl.start](https://github.com/japa/plugin-adonisjs/releases/tag/v4.0.0) |
 | `@japa/api-client` | Jan 12, 2025 | [Do not throw error for status code >= 500](https://github.com/japa/api-client/releases/tag/v3.0.0) |
 | `@japa/runner` | Jan 9, 2025 | [Add Github annotations reporter](https://github.com/japa/runner/releases/tag/v4.1.0) |

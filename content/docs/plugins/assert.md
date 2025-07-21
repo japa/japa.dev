@@ -1075,16 +1075,16 @@ assert.notSameDeepOrderedMembers(
 | `set2` | `any[]` |
 | `message?` | `string` |
 
-## containsSubset
+## containSubset
 Assert an array or an object to contain a subset of the expected value. Useful for testing API responses.
 
 ```ts
-assert.containsSubset(
+assert.containSubset(
   { id: 1, created_at: Date },
   { id: 1 }
 ) // passes
 
-assert.containsSubset(
+assert.containSubset(
   [
     { id: 1, created_at: Date },
     { id: 2, created_at: Date }
@@ -1099,12 +1099,12 @@ assert.containsSubset(
 | `needle` | `any` |
 | `message?` | `string` |
 
-## notContainsSubset
+## doesNotContainSubset
 Assert an array or an object not to contain a subset of the expected
 value.
 
 ```ts
-assert.notContainsSubset(
+assert.doesNotContainSubset(
   { id: 1, created_at: Date },
   { email: 'foo@bar.com' }
 ) // passes
@@ -1119,7 +1119,7 @@ assert.notContainsSubset(
 ## oneOf
 Assert the value is available in the provided list. This method only works with literal values. 
 
-- See [containsSubset](#containssubset) matching objects and arrays.
+- See [containSubset](#containsubset) matching objects and arrays.
 
 ```ts
 assert.oneOf('foo', ['foo', 'bar', 'baz']) // passes

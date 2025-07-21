@@ -35,11 +35,11 @@ node bin/tests.js
 # Bun
 bun bin/tests.js
 
-# TypeScript and TS Node
-node --import ts-node-maintained/register/esm bin/test.ts
+# TypeScript with native Node.js support
+node bin/test.ts
 
-# TypeScript with TSX
-npx tsx bin/tests.js
+# TypeScript with ts-exec (install the package separately)
+npx @poppinss/ts-exec bin/tests.js
 ```
 
 ## What else does Japa have to offer?
