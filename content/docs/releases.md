@@ -2,6 +2,7 @@
 
 | Package | Release date | Notes |
 |------------|---------|------------|
+| `@japa/runner` | August 12, 2025 | [Add support for listing pinned tests and fail test suite when there are pinned tests](https://github.com/japa/runner/releases/tag/v4.4.0) |
 | `create-japa` | July 21, 2025 | [Update TypeScript setup to use Node.js native TS support](https://github.com/japa/create-japa/releases/tag/v2.2.0) |
 | `@japa/assert` | July 21, 2025 | [Use chai inbuilt containSubset method](https://github.com/japa/assert/releases/tag/v4.1.0) |
 | `@japa/runner` | July 21, 2025 | [Add getActiveTestOrFail method and return group from test.group method](https://github.com/japa/runner/releases/tag/v4.3.0) |

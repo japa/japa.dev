@@ -192,6 +192,35 @@ node bin/test.js
 
 ![](./pinned_tests.png)
 
+### Listing pinned tests
+
+You view the list of all the pinned tests using the `--list-pinned` CLI flag. The output will contain the test title and the its source code location.
+
+```sh
+node bin/test.js --list-pinned
+```
+
+![](./list_pinned_tests.png)
+
+### Fail when there are pinned tests
+
+Executing only pinned tests within a CI environment may lead to incomplete test coverage, as it is generally recommended to run the entire test suite. The `disallowPinnedTests` plugin enforces this practice by preventing pinned tests from executing in CI.
+
+The plugin is pre-bundled in the `@japa/runner` package, and you may use it as follows.
+
+```ts
+// title: bin/test.js
+import { configure } from '@japa/runner'
+import { disallowPinnedTests } from '@japa/runner/plugins'
+
+configure({
+  files: ['tests/**/*.spec.js'],
+  plugins: [disallowPinnedTests({
+    disallow: !!process.env.CI
+  })]
+})
+```
+
 ## Running failed tests
 
 You can run failed tests using the `--failed` CLI flag. The CLI flag will execute tests that failed during the last run. It will run all the tests if there are no failing tests.
