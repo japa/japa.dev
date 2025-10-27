@@ -104,3 +104,19 @@ html.dark {
 .markdown ul li ul {
   margin: 0px;
 }
+
+.dark_mode {
+  display: none;
+}
+.dark .dark_mode {
+  display: block;
+}
+.dark .light_mode {
+  display: none;
+}
+
+.cards_grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
