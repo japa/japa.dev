@@ -331,6 +331,118 @@ test('get /users', async ({ client }) => {
 })
 ```
 
+## Type-safe routes
+The API client plugin supports type-safe routes through TypeScript's module augmentation. This allows you to get full type checking for route parameters, request body, query string, and response.
+
+### Configuration
+First, configure the plugin with a routes registry and an optional pattern serializer.
+
+```ts
+import { apiClient } from '@japa/api-client'
+
+export const plugins: Config['plugins'] = [
+  apiClient({
+    baseURL: 'http://localhost:3333',
+    registry: myRoutesRegistry,
+    patternSerializer: (pattern, params) => {
+      // Convert pattern like '/users/:id' to '/users/1'
+      return pattern.replace(/:(\w+)/g, (_, key) => String(params[key] ?? ''))
+    },
+  }),
+]
+```
+
+The `patternSerializer` option allows you to customize how route patterns are converted to URLs. By default, a simple `:param` replacement is used.
+
+### Declaring routes types
+To enable type checking, you need to augment the `UserRoutesRegistry` interface from `@japa/api-client`. Each route entry defines the pattern, and its types for params, query, body, and response.
+
+```ts
+declare module '@japa/api-client/types' {
+  interface UserRoutesRegistry {
+    'users.list': {
+      pattern: '/users'
+      types: {
+        params: {}
+        query: { page?: number; limit?: number }
+        body: {}
+        response: { users: Array<{ id: number; name: string }> }
+      }
+    }
+    'users.show': {
+      pattern: '/users/:id'
+      types: {
+        params: { id: string }
+        query: {}
+        body: {}
+        response: { id: number; name: string }
+      }
+    }
+    'users.store': {
+      pattern: '/users'
+      types: {
+        params: {}
+        query: {}
+        body: { name: string; email: string }
+        response: { id: number; name: string; email: string }
+      }
+    }
+  }
+}
+```
+
+### Using visit()
+Once your routes are declared, use the `visit` method to make type-safe requests by route name.
+
+```ts
+test('list users', async ({ client }) => {
+  // TypeScript knows the response type
+  const response = await client.visit('users.list')
+
+  // response.body() is typed as { users: Array<{ id: number; name: string }> }
+  response.assertBodyContains({ users: [] })
+})
+
+test('show user', async ({ client }) => {
+  // TypeScript requires the 'id' parameter
+  const response = await client
+    .visit('users.show', { id: '1' })
+  
+  response.assertOk()
+})
+
+test('create user', async ({ client }) => {
+  const response = await client
+    .visit('users.store')
+    // TypeScript validates the body shape
+    .json({ name: 'John', email: 'john@example.com' })
+    
+  response.assertCreated()
+})
+```
+
+### Bypassing type checks
+Sometimes you need to test invalid payloads to ensure your API properly rejects them. The `unsafeForm`, `unsafeJson`, and `unsafeQs` methods allow you to bypass type checking without using `@ts-ignore`.
+
+```ts
+test('rejects invalid payload', async ({ client }) => {
+  const response = await client
+    .visit('users.store')
+    // Send invalid data without TypeScript errors
+    .unsafeJson({ invalid: 'payload' })
+
+  response.assertUnprocessableEntity()
+})
+
+test('rejects invalid query params', async ({ client }) => {
+  const response = await client
+    .visit('users.list')
+    .unsafeQs({ invalidParam: 'value' })
+
+  response.assertBadRequest()
+})
+```
+
 ## Request API
 Following are the available methods on the request class. You can get an instance of the request class by calling the HTTP request methods on the client object. For example:
 
@@ -429,6 +541,15 @@ request.form({
 })
 ```
 
+### unsafeForm
+Same as `form`, but bypasses TypeScript type checking. Useful when testing invalid form data to ensure your API properly rejects it.
+
+```ts
+request.unsafeForm({
+  invalid: 'data'
+})
+```
+
 ### json
 The `json` method accepts the same data as the `form` method. However, it sets the request content type to `application/json`.
 
@@ -440,6 +561,15 @@ request.json({
 })
 ```
 
+### unsafeJson
+Same as `json`, but bypasses TypeScript type checking. Useful when testing invalid JSON payloads to ensure your API properly rejects them.
+
+```ts
+request.unsafeJson({
+  invalid: 'payload'
+})
+```
+
 ### qs
 Set the query string for the request.
 
@@ -447,6 +577,15 @@ Set the query string for the request.
 request.qs({
   order_by: 'id',
   direction: 'desc'
+})
+```
+
+### unsafeQs
+Same as `qs`, but bypasses TypeScript type checking. Useful when testing invalid query parameters to ensure your API properly rejects them.
+
+```ts
+request.unsafeQs({
+  invalid: 'param'
 })
 ```
 
