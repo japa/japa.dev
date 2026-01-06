@@ -332,10 +332,46 @@ test('get /users', async ({ client }) => {
 ```
 
 ## Type-safe routes
-The API client plugin supports type-safe routes through TypeScript's module augmentation. This allows you to get full type checking for route parameters, request body, query string, and response.
+The API client plugin supports type-safe routes through a routes registry. This allows you to get full type checking for route parameters, request body, query string, and response.
+
+### Defining a routes registry
+Define a routes registry object containing your route definitions. Each route has its HTTP methods, URL pattern, and types for params, query, body, and response.
+
+```ts
+const routesRegistry = {
+  'users.list': {
+    methods: ['GET'] as const,
+    pattern: '/users',
+    types: {} as {
+      params: {}
+      query: { page?: number; limit?: number }
+      body: {}
+      response: { users: Array<{ id: number; name: string }> }
+    },
+  },
+  'users.show': {
+    methods: ['GET'] as const,
+    pattern: '/users/:id',
+    types: {} as {
+      params: { id: string }
+      query: {}
+      body: {}
+      response: { id: number; name: string }
+    },
+  }
+}
+```
+
+Then, augment the `UserRoutesRegistry` interface using `typeof` to enable type checking.
+
+```ts
+declare module '@japa/api-client/types' {
+  interface UserRoutesRegistry extends typeof routesRegistry {}
+}
+```
 
 ### Configuration
-First, configure the plugin with a routes registry and an optional pattern serializer.
+Finally, configure the plugin with the registry and an optional pattern serializer.
 
 ```ts
 import { apiClient } from '@japa/api-client'
@@ -343,7 +379,7 @@ import { apiClient } from '@japa/api-client'
 export const plugins: Config['plugins'] = [
   apiClient({
     baseURL: 'http://localhost:3333',
-    registry: myRoutesRegistry,
+    registry: routesRegistry,
     patternSerializer: (pattern, params) => {
       // Convert pattern like '/users/:id' to '/users/1'
       return pattern.replace(/:(\w+)/g, (_, key) => String(params[key] ?? ''))
@@ -353,43 +389,6 @@ export const plugins: Config['plugins'] = [
 ```
 
 The `patternSerializer` option allows you to customize how route patterns are converted to URLs. By default, a simple `:param` replacement is used.
-
-### Declaring routes types
-To enable type checking, you need to augment the `UserRoutesRegistry` interface from `@japa/api-client`. Each route entry defines the pattern, and its types for params, query, body, and response.
-
-```ts
-declare module '@japa/api-client/types' {
-  interface UserRoutesRegistry {
-    'users.list': {
-      pattern: '/users'
-      types: {
-        params: {}
-        query: { page?: number; limit?: number }
-        body: {}
-        response: { users: Array<{ id: number; name: string }> }
-      }
-    }
-    'users.show': {
-      pattern: '/users/:id'
-      types: {
-        params: { id: string }
-        query: {}
-        body: {}
-        response: { id: number; name: string }
-      }
-    }
-    'users.store': {
-      pattern: '/users'
-      types: {
-        params: {}
-        query: {}
-        body: { name: string; email: string }
-        response: { id: number; name: string; email: string }
-      }
-    }
-  }
-}
-```
 
 ### Using visit()
 Once your routes are declared, use the `visit` method to make type-safe requests by route name.
