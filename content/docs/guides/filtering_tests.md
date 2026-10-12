@@ -228,3 +228,74 @@ You can run failed tests using the `--failed` CLI flag. The CLI flag will execut
 ```sh
 node bin/test.js --failed
 ```
+
+## Sharding tests
+
+You can split a large test suite across multiple processes or CI jobs using the `--shard` flag. The flag accepts the shard to run and the total number of shards in the `current/total` format.
+
+```sh
+node bin/test.js --shard=1/3
+node bin/test.js --shard=2/3
+node bin/test.js --shard=3/3
+```
+
+Sharding works at the file level. Japa collects the test files of the selected suites, applies the `--files` filter, and distributes the remaining files across shards in round-robin order. Other filters, like `--tags` or `--tests`, apply to the tests inside the files of the current shard.
+
+The distribution is deterministic. Running every shard from `1` to `total` runs each test file exactly once.
+
+You can also define the shard within the config object, for example, to compute it from environment variables.
+
+```ts
+// title: bin/test.js
+configure({
+  files: ['tests/**/*.spec.js'],
+  filters: {
+    shard: { current: 1, total: 4 },
+  },
+})
+```
+
+### Running shards in parallel on CI
+
+The most common use case for sharding is running each shard as a separate CI job. Following is an example of a GitHub Actions workflow that splits the tests into four parallel jobs using a matrix.
+
+:::caption{for="info"}
+**.github/workflows/test.yml**
+:::
+
+```yaml
+name: test
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: node bin/test.js --shard=${{ matrix.shard }}/4
+```
+
+### Running shards in parallel locally
+
+You can also run multiple shards in parallel on the same machine using a tool like [concurrently](https://www.npmjs.com/package/concurrently). The command fails when any of the shards fail.
+
+```json
+{
+  "scripts": {
+    "test:parallel": "concurrently --group \"node bin/test.js --shard=1/3\" \"node bin/test.js --shard=2/3\" \"node bin/test.js --shard=3/3\""
+  }
+}
+```
+
+:::note
+Shards running on the same machine share resources like databases, caches, and network ports. If your tests rely on such resources, make sure each shard uses an isolated copy of them, or run shards as separate CI jobs instead.
+:::
