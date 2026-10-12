@@ -163,6 +163,7 @@ configure({
     tags: [], // by tags
     groups: [], // by group titles
     files: [], // import only mentioned files
+    shard: { current: 1, total: 4 }, // run a subset of test files
   }
 })
 ```
