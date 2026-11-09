@@ -115,6 +115,28 @@ html.dark {
   display: none;
 }
 
+/**
+ * Gold featured sponsors span a full row of the featured sponsors grid,
+ * so the width matches the grid columns (and gaps) at each breakpoint
+ */
+.sponsors_list .sponsor_item.featured_sponsor.featured_sponsor_gold {
+  padding: 28px 0;
+}
+@media (min-width: 768px) {
+  .sponsors_list .sponsor_item.featured_sponsor.featured_sponsor_gold {
+    width: calc(
+      2 * var(--featured-sponsor-container-width) + var(--featured-sponsor-margin-right)
+    );
+  }
+}
+@media (min-width: 1024px) {
+  .sponsors_list .sponsor_item.featured_sponsor.featured_sponsor_gold {
+    width: calc(
+      3 * var(--featured-sponsor-container-width) + 2 * var(--featured-sponsor-margin-right)
+    );
+  }
+}
+
 .cards_grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));

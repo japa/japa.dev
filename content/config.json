@@ -14,6 +14,12 @@
   ],
   "featured_sponsors": [
     {
+      "name": "Encore",
+      "website": "https://encore.dev/",
+      "logo": "logos/sponsors/encore",
+      "tier": "gold"
+    },
+    {
       "name": "Vehicle Routing and Route Optimization Software",
       "website": "https://route4me.com/",
       "logo": "logos/sponsors/route4me"

@@ -10,7 +10,7 @@
       @each(sponsor in featuredSponsors)
         <a
           href="{{ sponsor.website }}?utm_source=adonisjs.com"
-          class="sponsor_item featured_sponsor"
+          class="sponsor_item featured_sponsor {{ sponsor.tier === 'gold' ? 'featured_sponsor_gold' : '' }}"
           target="_blank"
         >
           @include(sponsor.logo)
